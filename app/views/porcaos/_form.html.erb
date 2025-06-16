@@ -1,0 +1,39 @@
+<%= form_with(model: porcao, data: { controller: "porcao_form" }) do |form| %>
+  <% if porcao.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(porcao.errors.count, "error") %> prohibited this porcao from being saved:</h2>
+
+      <ul>
+        <% porcao.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :item_id, "Ingrediente:", style: "display: block" %>
+    <%= form.collection_select :item_id, Item.ativos.order(:nome), :id, :nome, 
+        { prompt: "Selecione um ingrediente..." }, 
+        { class: "form-control", data: { "porcao_form_target": "itemSelect", action: "change->porcao_form#updatePreco" } } %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :peso_utilizado, "Peso Utilizado (kg):", style: "display: block" %>
+    <%= form.number_field :peso_utilizado, step: 0.001, min: 0.001, 
+        class: "form-control", placeholder: "Ex: 0.250", 
+        data: { "porcao_form_target": "pesoUtilizado", action: "input->porcao_form#calculateCusto" } %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :custo, "Custo Calculado:", style: "display: block" %>
+    <%= form.number_field :custo, step: 0.01, readonly: true, 
+        class: "form-control", style: "background-color: #f8f9fa;", 
+        data: { "porcao_form_target": "custo" } %>
+    <small class="form-text text-muted">Este valor é calculado automaticamente</small>
+  </div>
+
+  <div class="form-group" style="margin-top: 20px;">
+    <%= form.submit "Salvar Porção", class: "btn btn-primary" %>
+  </div>
+<% end %>

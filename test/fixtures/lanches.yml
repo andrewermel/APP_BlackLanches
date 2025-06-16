@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: MyString
+  ingredientes: MyText
+  custo: 9.99
+  preco_sugerido: 9.99
+
+two:
+  nome: MyString
+  ingredientes: MyText
+  custo: 9.99
+  preco_sugerido: 9.99

@@ -1,0 +1,54 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Compras" %>
+
+<div class="compras-header">
+  <h1>🛒 Compras Realizadas</h1>
+  <%= link_to "➕ Nova Compra", new_compra_path, class: "btn btn-primary" %>
+</div>
+
+<% if @compras.any? %>
+  <!-- Resumo dos Preços Médios -->
+  <% items_com_compras = @compras.includes(:item).map(&:item).uniq %>
+  <% if items_com_compras.any? %>
+    <div class="precos-medios-resumo" style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+      <h3>📊 Preços Médios Atuais</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
+        <% items_com_compras.each do |item| %>
+          <div style="background: white; padding: 10px; border-radius: 5px; border-left: 4px solid #007bff;">
+            <strong><%= item.nome %>:</strong><br>
+            <span style="color: #28a745; font-size: 1.1em;">R$ <%= number_with_precision(item.preco, precision: 2) %>/kg</span><br>
+            <small style="color: #6c757d;">(<%= item.compras.count %> compras)</small>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
+  <!-- Lista de Compras -->
+  <div class="compras-grid">
+    <% @compras.includes(:item).each do |compra| %>
+      <div class="compra-card">
+        <h3><%= compra.nome %></h3>
+        <p><strong>Categoria:</strong> <%= compra.item.nome %></p>
+        <p><strong>Preço Pago:</strong> R$ <%= number_with_precision(compra.preco, precision: 2) %>/kg</p>
+        <p><strong>Peso Comprado:</strong> <%= compra.peso %> kg</p>
+        <p><strong>Data:</strong> <%= compra.data_compra.strftime("%d/%m/%Y") %></p>
+        
+        <div class="compra-actions">
+          <%= link_to "Ver", compra, class: "btn btn-info btn-sm" %>
+          <%= link_to "Editar", edit_compra_path(compra), class: "btn btn-warning btn-sm" %>
+          <%= link_to "Excluir", compra, method: :delete, 
+              confirm: "Tem certeza?", class: "btn btn-danger btn-sm" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <div class="empty-state">
+    <p>Nenhuma compra registrada ainda.</p>
+    <%= link_to "Fazer primeira compra", new_compra_path, class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<%= link_to "← Voltar ao início", root_path, class: "btn btn-secondary" %>

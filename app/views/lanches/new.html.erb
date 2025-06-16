@@ -1,0 +1,12 @@
+<% content_for :title, "Novo Lanche" %>
+
+<h1>🍔 Criar Novo Lanche</h1>
+
+<%= render "form", lanch: @lanch %>
+
+<br>
+
+<div>
+  <%= link_to "Voltar aos Lanches", lanches_path, class: "btn btn-secondary" %> |
+  <%= link_to "← Home", root_path, class: "btn btn-info" %>
+</div>

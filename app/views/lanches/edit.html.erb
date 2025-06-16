@@ -1,0 +1,13 @@
+<% content_for :title, "Editando Lanche" %>
+
+<h1>🍔 Editando: <%= @lanch.nome %></h1>
+
+<%= render "form", lanch: @lanch %>
+
+<br>
+
+<div>
+  <%= link_to "Ver Lanche", @lanch, class: "btn btn-info" %> |
+  <%= link_to "Voltar aos Lanches", lanches_path, class: "btn btn-secondary" %> |
+  <%= link_to "← Home", root_path, class: "btn btn-info" %>
+</div>

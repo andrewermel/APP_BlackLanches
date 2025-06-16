@@ -1,0 +1,12 @@
+<% content_for :title, "Nova Porção" %>
+
+<h1>🍽️ Nova Porção</h1>
+
+<%= render "form", porcao: @porcao %>
+
+<br>
+
+<div>
+  <%= link_to "Voltar às porções", porcaos_path %> |
+  <%= link_to "← Home", root_path %>
+</div>

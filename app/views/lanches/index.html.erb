@@ -1,0 +1,57 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Lanches" %>
+
+<div class="lanches-header">
+  <h1>🍔 Menu de Lanches</h1>
+  <%= link_to "➕ Novo Lanche", new_lanch_path, class: "btn btn-primary" %>
+</div>
+
+<% if @lanches.any? %>
+  <div class="lanches-grid">
+    <% @lanches.includes(:porcaos).each do |lanch| %>
+      <div class="lanche-card">
+        <h3><%= lanch.nome %></h3>
+        
+        <% if lanch.ingredientes.present? %>
+          <p class="ingredientes"><em><%= lanch.ingredientes %></em></p>
+        <% end %>
+        
+        <div class="lanche-info">
+          <p><strong>Porções:</strong> <%= lanch.porcaos.count %> item(ns)</p>
+          
+          <% if lanch.porcaos.any? %>
+            <div class="porcoes-list">
+              <small>
+                <% lanch.porcaos.includes(:item).each do |porcao| %>
+                  • <%= porcao.item.nome %> (<%= porcao.peso_utilizado %>kg)<br>
+                <% end %>
+              </small>
+            </div>
+          <% end %>
+        </div>
+        
+        <div class="pricing">
+          <p><strong>Custo:</strong> <span class="custo">R$ <%= number_with_precision(lanch.custo || 0, precision: 2) %></span></p>
+          <p><strong>Preço Sugerido:</strong> <span class="preco-sugerido">R$ <%= number_with_precision(lanch.preco_sugerido || 0, precision: 2) %></span></p>
+        </div>
+        
+        <div class="lanche-actions">
+          <%= link_to "Ver", lanch, class: "btn btn-info btn-sm" %>
+          <%= link_to "Editar", edit_lanch_path(lanch), class: "btn btn-warning btn-sm" %>
+          <%= link_to "Excluir", lanch, method: :delete, 
+              confirm: "Tem certeza?", class: "btn btn-danger btn-sm" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <div class="empty-state">
+    <p>Nenhum lanche cadastrado ainda.</p>
+    <%= link_to "Criar primeiro lanche", new_lanch_path, class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<div style="margin-top: 20px;">
+  <%= link_to "← Voltar para Home", root_path, class: "btn btn-secondary" %>
+</div>

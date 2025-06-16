@@ -1,0 +1,52 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="lanche-details">
+  <h1>🍔 <%= @lanch.nome %></h1>
+  
+  <% if @lanch.ingredientes.present? %>
+    <div class="ingredientes-section">
+      <h3>Descrição:</h3>
+      <p><%= simple_format(@lanch.ingredientes) %></p>
+    </div>
+  <% end %>
+  
+  <div class="porcoes-section">
+    <h3>Porções Utilizadas:</h3>
+    <% if @lanch.porcaos.any? %>
+      <div class="porcoes-detalhes">
+        <% @lanch.porcaos.includes(:item).each do |porcao| %>
+          <div class="porcao-item">
+            <strong><%= porcao.item.nome %></strong><br>
+            <small>
+              Peso: <%= porcao.peso_utilizado %>kg | 
+              Custo: R$ <%= number_with_precision(porcao.custo || 0, precision: 2) %>
+            </small>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <p><em>Nenhuma porção adicionada ainda.</em></p>
+    <% end %>
+  </div>
+  
+  <div class="pricing-section">
+    <div class="pricing-card">
+      <h3>💰 Resumo Financeiro</h3>
+      <p><strong>Custo Total:</strong> <span class="custo-total">R$ <%= number_with_precision(@lanch.custo || 0, precision: 2) %></span></p>
+      <p><strong>Preço Sugerido:</strong> <span class="preco-sugerido">R$ <%= number_with_precision(@lanch.preco_sugerido || 0, precision: 2) %></span></p>
+      <% if (@lanch.custo || 0) > 0 %>
+        <p><small>Margem: <%= number_with_precision(((@lanch.preco_sugerido || 0) - (@lanch.custo || 0)) / (@lanch.custo || 1) * 100, precision: 0) %>%</small></p>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="actions" style="margin-top: 30px;">
+  <%= link_to "Editar Lanche", edit_lanch_path(@lanch), class: "btn btn-warning" %>
+  <%= link_to "Voltar aos Lanches", lanches_path, class: "btn btn-secondary" %>
+  <%= link_to "← Home", root_path, class: "btn btn-info" %>
+  
+  <%= button_to "Excluir Lanche", @lanch, method: :delete, 
+      confirm: "Tem certeza que deseja excluir este lanche?", 
+      class: "btn btn-danger" %>
+</div>

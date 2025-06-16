@@ -1,0 +1,29 @@
+<div class="container">
+  <h1>🍔 Bem-vindo ao App BlackLanches!</h1>
+  
+  <% if user_signed_in? %>
+    <div class="user-info">
+      <h2>Olá, <%= current_user.email %>!</h2>
+      <p>Você está logado no sistema.</p>
+      
+      <div class="navigation-links">
+        <%= link_to "📦 Gerenciar Items", items_path, class: "btn btn-primary" %>
+        <%= link_to "🛒 Gerenciar Compras", compras_path, class: "btn btn-success" %>
+        <%= link_to "🍽️ Gerenciar Porções", porcaos_path, class: "btn btn-info" %>
+        <%= link_to "🍔 Menu de Lanches", lanches_path, class: "btn btn-warning" %>
+        <%= link_to "Sair", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
+      </div>
+    </div>
+  <% else %>
+    <div class="auth-links">
+      <p>Faça login ou cadastre-se para acessar o sistema de lanches:</p>
+      <%= link_to "Entrar", new_user_session_path, class: "btn btn-primary" %>
+      <%= link_to "Cadastrar", new_user_registration_path, class: "btn btn-secondary" %>
+    </div>
+  <% end %>
+  
+  <div class="info">
+    <h3>Sistema de Lanches BlackLanches</h3>
+    <p>Gerencie seus pedidos, cardápio e muito mais!</p>
+  </div>
+</div>

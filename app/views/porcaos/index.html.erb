@@ -1,0 +1,36 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Porções" %>
+
+<div class="porcaos-header">
+  <h1>🍽️ Gerenciar Porções</h1>
+  <%= link_to "➕ Nova Porção", new_porcao_path, class: "btn btn-primary" %>
+</div>
+
+<% if @porcaos.any? %>
+  <div class="porcaos-grid">
+    <% @porcaos.includes(:item).each do |porcao| %>
+      <div class="porcao-card">
+        <h3><%= porcao.item.nome %></h3>
+        <p><strong>Peso Utilizado:</strong> <%= porcao.peso_utilizado %> kg</p>
+        <p><strong>Custo:</strong> R$ <%= number_with_precision(porcao.custo, precision: 2) %></p>
+        <p><strong>Preço Base:</strong> R$ <%= number_with_precision(porcao.item.preco, precision: 2) %>/kg</p>
+        <p><strong>Data:</strong> <%= porcao.created_at.strftime("%d/%m/%Y às %H:%M") %></p>
+        
+        <div class="porcao-actions">
+          <%= link_to "Ver", porcao, class: "btn btn-info btn-sm" %>
+          <%= link_to "Editar", edit_porcao_path(porcao), class: "btn btn-warning btn-sm" %>
+          <%= link_to "Excluir", porcao, method: :delete, 
+              confirm: "Tem certeza?", class: "btn btn-danger btn-sm" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <div class="empty-state">
+    <p>Nenhuma porção registrada ainda.</p>
+    <%= link_to "Criar primeira porção", new_porcao_path, class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<%= link_to "← Voltar ao início", root_path, class: "btn btn-secondary" %>

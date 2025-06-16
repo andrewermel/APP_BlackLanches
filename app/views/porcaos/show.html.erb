@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @porcao %>
+
+<div>
+  <%= link_to "Edit this porcao", edit_porcao_path(@porcao) %> |
+  <%= link_to "Back to porcaos", porcaos_path %>
+
+  <%= button_to "Destroy this porcao", @porcao, method: :delete %>
+</div>

@@ -1,0 +1,73 @@
+<%= form_with(model: lanch, data: { controller: "lanche_form" }) do |form| %>
+  <% if lanch.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(lanch.errors.count, "error") %> prohibited this lanch from being saved:</h2>
+
+      <ul>
+        <% lanch.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :nome, "Nome do Lanche", style: "display: block" %>
+    <%= form.text_field :nome, placeholder: "Ex: X-Burger, Misto Quente...", 
+        class: "form-control", required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :ingredientes, "Descrição dos Ingredientes", style: "display: block" %>
+    <%= form.text_area :ingredientes, rows: 3, 
+        placeholder: "Descreva os ingredientes do lanche...", 
+        class: "form-control" %>
+  </div>
+
+  <!-- Seleção de Porções -->
+  <div class="form-group">
+    <label style="display: block"><strong>Porções do Lanche:</strong></label>
+    <div class="porcoes-selection" style="max-height: 300px; overflow-y: auto; border: 1px solid #ddd; padding: 10px; border-radius: 5px;">
+      <% Porcao.includes(:item).each do |porcao| %>
+        <div class="porcao-checkbox" style="margin-bottom: 8px;">
+          <%= check_box_tag "lanch[porcao_ids][]", porcao.id, 
+              lanch.porcaos.include?(porcao), 
+              id: "porcao_#{porcao.id}",
+              data: { 
+                action: "change->lanche_form#calcularCusto",
+                custo: porcao.custo || 0
+              } %>
+          <%= label_tag "porcao_#{porcao.id}", style: "margin-left: 8px;" do %>
+            <strong><%= porcao.item.nome %></strong> - 
+            <%= porcao.peso_utilizado %>kg 
+            (R$ <%= number_with_precision(porcao.custo || 0, precision: 2) %>)
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <!-- Campos calculados automaticamente -->
+  <div class="calculated-fields" style="background: #f8f9fa; padding: 15px; border-radius: 5px; margin: 20px 0;">
+    <div class="form-group">
+      <%= form.label :custo, "Custo Total (Calculado automaticamente)", style: "display: block" %>
+      <%= form.number_field :custo, step: 0.01, readonly: true,
+          data: { target: "lanche_form.custoField" },
+          style: "background: #e9ecef;", 
+          class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :preco_sugerido, "Preço Sugerido (2x o custo)", style: "display: block" %>
+      <%= form.number_field :preco_sugerido, step: 0.01, readonly: true,
+          data: { target: "lanche_form.precoField" },
+          style: "background: #e9ecef;", 
+          class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= form.submit "Salvar Lanche", class: "btn btn-primary" %>
+    <%= link_to "Cancelar", lanches_path, class: "btn btn-secondary" %>
+  </div>
+<% end %>

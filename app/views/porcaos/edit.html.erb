@@ -1,0 +1,13 @@
+<% content_for :title, "Editando Porção" %>
+
+<h1>✏️ Editando Porção</h1>
+
+<%= render "form", porcao: @porcao %>
+
+<br>
+
+<div>
+  <%= link_to "Ver esta porção", @porcao %> |
+  <%= link_to "Voltar às porções", porcaos_path %> |
+  <%= link_to "← Home", root_path %>
+</div>

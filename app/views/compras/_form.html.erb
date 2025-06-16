@@ -1,0 +1,60 @@
+<%= form_with(model: compra, data: { controller: "compra-form" }) do |form| %>
+  <% if compra.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(compra.errors.count, "error") %> prohibited this compra from being saved:</h2>
+
+      <ul>
+        <% compra.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :item_id, "Selecione o Item:", style: "display: block" %>
+    <%= form.collection_select :item_id, 
+        Item.ativos.disponiveis, 
+        :id, 
+        ->(item) { "#{item.nome} - R$ #{item.preco} (#{item.categoria})" },
+        { prompt: "Escolha um item..." },
+        { class: "form-control", 
+          data: { 
+            "compra-form-target": "itemSelect",
+            action: "change->compra-form#itemChanged"
+          } } %>
+  </div>
+
+  <div>
+    <%= form.label :nome, "Nome/Marca do produto:", style: "display: block" %>
+    <%= form.text_field :nome, class: "form-control", 
+        placeholder: "Ex: Queijo Criollo, Batata Inglesa Super...",
+        data: { "compra-form-target": "nome" } %>
+    <small class="form-text">Especifique a marca ou tipo específico do produto</small>
+  </div>
+
+  <div>
+    <%= form.label :preco, "Preço pago por kg:", style: "display: block" %>
+    <%= form.number_field :preco, step: 0.01, class: "form-control",
+        placeholder: "Ex: 35.50",
+        data: { "compra-form-target": "preco" } %>
+    <small class="form-text">Preço real pago por quilograma</small>
+  </div>
+
+  <div>
+    <%= form.label :peso, "Peso comprado (kg):", style: "display: block" %>
+    <%= form.number_field :peso, step: 0.01, class: "form-control",
+        placeholder: "Ex: 0.5",
+        data: { "compra-form-target": "peso" } %>
+    <small class="form-text">Quantidade em quilogramas que foi comprada</small>
+  </div>
+
+  <div>
+    <%= form.label :data_compra, style: "display: block" %>
+    <%= form.date_field :data_compra %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
