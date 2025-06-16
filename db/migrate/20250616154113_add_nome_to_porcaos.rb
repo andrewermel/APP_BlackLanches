@@ -1,0 +1,5 @@
+class AddNomeToPorcaos < ActiveRecord::Migration[8.0]
+  def change
+    add_column :porcaos, :nome, :string
+  end
+end

@@ -19,10 +19,120 @@ export default class extends Controller {
     });
 
     // Atualiza o campo de custo
-    this.custoFieldTarget.value = custoTotal.toFixed(2);
+    if (this.hasCustoFieldTarget) {
+      this.custoFieldTarget.value = custoTotal.toFixed(2);
+    }
 
     // Calcula e atualiza o preço sugerido (2x o custo)
     const precoSugerido = custoTotal * 2;
-    this.precoFieldTarget.value = precoSugerido.toFixed(2);
+    if (this.hasPrecoFieldTarget) {
+      this.precoFieldTarget.value = precoSugerido.toFixed(2);
+    }
+  }
+
+  validatePhotos(event) {
+    const files = event.target.files;
+
+    // Calcular quantas fotos já existem
+    const existingPhotos = this.element.querySelectorAll(
+      ".existing-photos .col-md-4"
+    ).length;
+    const maxFiles = 3;
+    const availableSlots = maxFiles - existingPhotos;
+
+    if (files.length > availableSlots) {
+      alert(
+        `Você pode adicionar apenas ${availableSlots} foto(s) a mais. Você selecionou ${files.length} fotos.`
+      );
+      event.target.value = "";
+      return;
+    }
+
+    // Validar tipos de arquivo
+    const allowedTypes = ["image/jpeg", "image/jpg", "image/png", "image/gif"];
+    let invalidFiles = [];
+
+    Array.from(files).forEach((file) => {
+      if (!allowedTypes.includes(file.type)) {
+        invalidFiles.push(file.name);
+      }
+    });
+
+    if (invalidFiles.length > 0) {
+      alert(
+        `Tipos de arquivo não permitidos: ${invalidFiles.join(
+          ", "
+        )}\nApenas JPG, PNG e GIF são aceitos.`
+      );
+      event.target.value = "";
+      return;
+    }
+
+    // Validar tamanho dos arquivos (máximo 5MB por foto)
+    const maxSize = 5 * 1024 * 1024; // 5MB
+    let oversizedFiles = [];
+
+    Array.from(files).forEach((file) => {
+      if (file.size > maxSize) {
+        oversizedFiles.push(file.name);
+      }
+    });
+
+    if (oversizedFiles.length > 0) {
+      alert(
+        `Arquivos muito grandes (máximo 5MB): ${oversizedFiles.join(", ")}`
+      );
+      event.target.value = "";
+      return;
+    }
+
+    this.showPhotoPreview(files);
+  }
+
+  showPhotoPreview(files) {
+    const existingPreview = this.element.querySelector(".photo-preview");
+    if (existingPreview) {
+      existingPreview.remove();
+    }
+
+    if (files.length === 0) return;
+
+    const previewContainer = document.createElement("div");
+    previewContainer.className = "photo-preview mt-3";
+
+    const title = document.createElement("h6");
+    title.textContent = "Prévia das novas fotos:";
+    previewContainer.appendChild(title);
+
+    const previewGrid = document.createElement("div");
+    previewGrid.className = "row";
+
+    Array.from(files).forEach((file, index) => {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const col = document.createElement("div");
+        col.className = "col-md-4 mb-2";
+
+        const img = document.createElement("img");
+        img.src = e.target.result;
+        img.className = "img-thumbnail";
+        img.style.cssText = "width: 100%; height: 150px; object-fit: cover;";
+
+        const caption = document.createElement("div");
+        caption.className = "text-center mt-1";
+        caption.innerHTML = `<small>Nova foto ${index + 1}</small>`;
+
+        col.appendChild(img);
+        col.appendChild(caption);
+        previewGrid.appendChild(col);
+      };
+      reader.readAsDataURL(file);
+    });
+
+    previewContainer.appendChild(previewGrid);
+
+    // Inserir após o campo de upload
+    const uploadField = this.element.querySelector('input[type="file"]');
+    uploadField.parentNode.appendChild(previewContainer);
   }
 }

@@ -6,6 +6,7 @@ class Porcao < ApplicationRecord
   has_many :lanches, through: :lanche_porcaos
 
   # Validações
+  validates :nome, presence: true, length: { minimum: 2, maximum: 100 }
   validates :peso_utilizado, presence: true, numericality: { greater_than: 0 }
   validates :item_id, presence: true
 

@@ -1,17 +1,22 @@
 <div id="<%= dom_id porcao %>">
-  <p>
-    <strong>Item:</strong>
-    <%= porcao.item_id %>
-  </p>
+  <div class="porcao-card">
+    <h4 class="porcao-nome"><%= porcao.nome %></h4>
+    
+    <div class="porcao-details">
+      <p>
+        <strong>Ingrediente:</strong>
+        <%= porcao.item.nome %>
+      </p>
 
-  <p>
-    <strong>Peso utilizado:</strong>
-    <%= porcao.peso_utilizado %>
-  </p>
+      <p>
+        <strong>Peso utilizado:</strong>
+        <%= porcao.peso_utilizado %>kg
+      </p>
 
-  <p>
-    <strong>Custo:</strong>
-    <%= porcao.custo %>
-  </p>
-
+      <p>
+        <strong>Custo:</strong>
+        R$ <%= number_with_precision(porcao.custo, precision: 2) %>
+      </p>
+    </div>
+  </div>
 </div>

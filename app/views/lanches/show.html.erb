@@ -10,14 +10,70 @@
     </div>
   <% end %>
   
+  <!-- Fotos do Lanche -->
+  <% if @lanch.fotos.attached? %>
+    <div class="fotos-section">
+      <h3>📸 Fotos do Lanche:</h3>
+      <div class="row">
+        <% @lanch.fotos.each_with_index do |foto, index| %>
+          <div class="col-md-4 mb-3">
+            <div class="card">
+              <% if foto.representable? %>
+                <%= image_tag foto, 
+                    class: "card-img-top", 
+                    style: "height: 250px; object-fit: cover; cursor: pointer;",
+                    data: { 
+                      bs_toggle: "modal", 
+                      bs_target: "#fotoModal#{index}" 
+                    } %>
+              <% else %>
+                <div class="card-img-top d-flex align-items-center justify-content-center" style="height: 250px; background: #f8f9fa;">
+                  <div class="text-center">
+                    <i class="fas fa-file-image fa-3x text-muted"></i>
+                    <p class="mt-2 text-muted">Imagem não pode ser exibida</p>
+                  </div>
+                </div>
+              <% end %>
+              <div class="card-body p-2">
+                <small class="text-muted">Foto <%= index + 1 %></small>
+              </div>
+            </div>
+            
+            <!-- Modal para visualizar foto em tamanho maior -->
+            <div class="modal fade" id="fotoModal<%= index %>" tabindex="-1">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title"><%= @lanch.nome %> - Foto <%= index + 1 %></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                  </div>
+                  <div class="modal-body text-center">
+                    <% if foto.representable? %>
+                      <%= image_tag foto, 
+                          class: "img-fluid", 
+                          style: "max-height: 80vh; object-fit: contain;" %>
+                    <% else %>
+                      <p class="text-muted">Esta imagem não pode ser exibida</p>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+  
   <div class="porcoes-section">
     <h3>Porções Utilizadas:</h3>
     <% if @lanch.porcaos.any? %>
       <div class="porcoes-detalhes">
         <% @lanch.porcaos.includes(:item).each do |porcao| %>
           <div class="porcao-item">
-            <strong><%= porcao.item.nome %></strong><br>
+            <strong><%= porcao.nome || "#{porcao.item.nome} - #{porcao.peso_utilizado}kg" %></strong><br>
             <small>
+              Ingrediente: <%= porcao.item.nome %> | 
               Peso: <%= porcao.peso_utilizado %>kg | 
               Custo: R$ <%= number_with_precision(porcao.custo || 0, precision: 2) %>
             </small>

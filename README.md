@@ -5,30 +5,35 @@
 ## 📋 Funcionalidades
 
 ### 🛒 **Gestão de Compras**
+
 - Registrar compras de ingredientes
 - Atualização automática de preços médios
 - Controle de data de compra e peso
 - Validação de itens disponíveis
 
 ### 📦 **Controle de Ingredientes**
+
 - Cadastro de itens com categoria, preço e peso
 - Status de ativo/inativo e disponível/indisponível
 - Cálculo automático de preços médios baseado nas compras
 - Validação de dados de entrada
 
 ### ⚖️ **Gestão de Porções**
+
 - Definir porções específicas de cada ingrediente
 - Cálculo automático de custo por porção
 - Peso utilizado personalizável
 - Integração com o sistema de lanches
 
 ### 🥪 **Criação de Lanches**
+
 - Composição de lanches usando múltiplas porções
 - Cálculo automático do custo total
 - Sugestão de preço de venda (margem de 100%)
 - Relacionamento many-to-many com porções
 
 ### 👤 **Autenticação**
+
 - Sistema de usuários com Devise
 - Login, registro e recuperação de senha
 - Sessões persistentes
@@ -59,6 +64,7 @@ Users (Devise)
 ## 🚀 Como Executar
 
 ### Pré-requisitos
+
 - Ruby 3.x
 - PostgreSQL
 - Node.js (para assets)
@@ -67,17 +73,20 @@ Users (Devise)
 ### Instalação Local
 
 1. **Clone o repositório:**
+
 ```bash
 git clone <url-do-repositorio>
 cd App_BlackLanches
 ```
 
 2. **Instale as dependências:**
+
 ```bash
 bundle install
 ```
 
 3. **Configure o banco de dados:**
+
 ```bash
 # Edite config/database.yml com suas credenciais PostgreSQL
 rails db:create
@@ -86,11 +95,13 @@ rails db:seed
 ```
 
 4. **Execute a aplicação:**
+
 ```bash
 rails server
 ```
 
 5. **Acesse no navegador:**
+
 ```
 http://localhost:3000
 ```
@@ -108,10 +119,12 @@ docker run -p 3000:3000 blacklanches
 ## 📊 Modelos e Relacionamentos
 
 ### **User**
+
 - Autenticação com Devise
 - Campos: email, password, etc.
 
 ### **Item** (Ingredientes)
+
 - `nome`: Nome do ingrediente
 - `preco`: Preço por kg
 - `peso`: Peso padrão
@@ -120,6 +133,7 @@ docker run -p 3000:3000 blacklanches
 - `disponivel`: Se está disponível para uso
 
 ### **Compra**
+
 - `nome`: Nome da compra
 - `preco`: Preço pago
 - `peso`: Peso comprado
@@ -127,15 +141,18 @@ docker run -p 3000:3000 blacklanches
 - `item_id`: Referência ao item
 
 ### **Porcao**
+
 - `peso_utilizado`: Quantidade do ingrediente
 - `custo`: Custo calculado da porção
 - `item_id`: Referência ao item
 
 ### **Lanch**
+
 - `nome`: Nome do lanche
 - Relacionamento many-to-many com Porcaos
 
 ### **LanchePorcao** (Join Table)
+
 - `lanch_id`: ID do lanche
 - `porcao_id`: ID da porção
 
@@ -156,17 +173,20 @@ rails test test/system/
 ## 📈 Funcionalidades de Negócio
 
 ### Cálculo Automático de Custos
+
 - **Compras**: Atualiza automaticamente o preço médio dos itens
 - **Porções**: Calcula o custo baseado no peso utilizado e preço do item
 - **Lanches**: Soma automaticamente o custo de todas as porções
 
 ### Validações Implementadas
+
 - **Items**: Nome, preço, peso e categoria obrigatórios
 - **Compras**: Validação de item disponível e dados válidos
 - **Porções**: Peso utilizado obrigatório e positivo
 - **Lanches**: Nome obrigatório
 
 ### Callbacks e Automações
+
 - Atualização automática de preços médios após compras
 - Recálculo de custos quando porções são alteradas
 - Cópia automática de dados do item para compras
@@ -174,12 +194,14 @@ rails test test/system/
 ## 🔧 Configuração de Ambiente
 
 ### Desenvolvimento
+
 ```ruby
 # config/environments/development.rb
 # Configurações para desenvolvimento local
 ```
 
 ### Produção
+
 ```ruby
 # config/environments/production.rb
 # Configurações otimizadas para produção

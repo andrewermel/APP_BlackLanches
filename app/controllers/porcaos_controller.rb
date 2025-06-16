@@ -65,6 +65,6 @@ class PorcaosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def porcao_params
-      params.expect(porcao: [ :item_id, :peso_utilizado, :custo ])
+      params.expect(porcao: [ :nome, :item_id, :peso_utilizado, :custo ])
     end
 end

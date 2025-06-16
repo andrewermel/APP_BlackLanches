@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :lanches
+  resources :lanches do
+    member do
+      delete "remove_photo/:photo_id", to: "lanches#remove_photo", as: "remove_photo"
+    end
+  end
   resources :porcaos
   resources :compras do
     collection do

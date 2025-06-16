@@ -3,8 +3,12 @@ class Lanch < ApplicationRecord
   has_many :lanche_porcaos, dependent: :destroy
   has_many :porcaos, through: :lanche_porcaos
 
+  # Active Storage para fotos (máximo 3)
+  has_many_attached :fotos
+
   # Validações
   validates :nome, presence: true, length: { minimum: 2, maximum: 100 }
+  validate :maximo_tres_fotos
 
   # Callbacks
   before_save :calcular_custo_e_preco_sugerido
@@ -44,6 +48,12 @@ class Lanch < ApplicationRecord
   def atualizar_calculos_se_porcaos_mudaram
     if saved_change_to_attribute?("updated_at")
       calcular_custo_e_preco_sugerido
+    end
+  end
+
+  def maximo_tres_fotos
+    if fotos.attached? && fotos.count > 3
+      errors.add(:fotos, "Máximo de 3 fotos permitidas")
     end
   end
 end

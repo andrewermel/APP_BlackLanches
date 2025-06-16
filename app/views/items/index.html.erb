@@ -1,19 +1,44 @@
 <p style="color: green"><%= notice %></p>
 
-<% content_for :title, "Items" %>
+<% content_for :title, @showing_all ? "Todos os Itens" : "Itens Disponíveis" %>
 
-<h1>Items</h1>
-
-<div id="items">
-  <% @items.each do |item| %>
-    <%= render item %>
-    <p>
-      <%= link_to "Show this item", item %>
-    </p>
-  <% end %>
+<div class="items-header">
+  <h1>🛒 <%= @showing_all ? "Todos os Itens" : "Itens Disponíveis" %></h1>
+  <%= link_to "➕ Novo Item", new_item_path, class: "btn btn-primary" %>
 </div>
 
+<% if @items.any? %>
+  <div class="items-grid">
+    <% @items.each do |item| %>
+      <div class="item-card <%= 'item-indisponivel' unless item.disponivel %>">
+        <div class="item-info">
+          <h3 class="item-nome">
+            <%= item.nome %>
+            <% unless item.disponivel %>
+              <span class="badge bg-secondary">Indisponível</span>
+            <% end %>
+          </h3>
+          <p class="item-preco">R$ <%= number_with_precision(item.preco, precision: 2) %></p>
+        </div>
+        <div class="item-actions">
+          <%= link_to "Ver", item, class: "btn btn-info btn-sm" %>
+          <%= link_to "Editar", edit_item_path(item), class: "btn btn-warning btn-sm" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <div class="empty-state">
+    <p><%= @showing_all ? "Nenhum item cadastrado." : "Nenhum item disponível no momento." %></p>
+    <%= link_to "Cadastrar primeiro item", new_item_path, class: "btn btn-primary" %>
+  </div>
+<% end %>
+
 <div style="margin-top: 20px;">
-  <%= link_to "New item", new_item_path, class: "btn btn-primary" %>
+  <% if @showing_all %>
+    <%= link_to "Ver Apenas Disponíveis", items_path, class: "btn btn-success" %>
+  <% else %>
+    <%= link_to "Ver Todos os Itens", items_path(todos: true), class: "btn btn-outline-secondary" %>
+  <% end %>
   <%= link_to "← Voltar para Home", root_path, class: "btn btn-secondary" %>
 </div>

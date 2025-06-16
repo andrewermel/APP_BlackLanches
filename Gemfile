@@ -20,6 +20,9 @@ gem "jbuilder"
 # Authentication with Devise [https://github.com/heartcombo/devise]
 gem "devise"
 
+# Image processing for Active Storage variants [https://github.com/janko/image_processing]
+gem "image_processing", "~> 1.2"
+
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
 

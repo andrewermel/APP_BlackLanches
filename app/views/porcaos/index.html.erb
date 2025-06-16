@@ -11,7 +11,8 @@
   <div class="porcaos-grid">
     <% @porcaos.includes(:item).each do |porcao| %>
       <div class="porcao-card">
-        <h3><%= porcao.item.nome %></h3>
+        <h3><%= porcao.nome %></h3>
+        <p><strong>Ingrediente:</strong> <%= porcao.item.nome %></p>
         <p><strong>Peso Utilizado:</strong> <%= porcao.peso_utilizado %> kg</p>
         <p><strong>Custo:</strong> R$ <%= number_with_precision(porcao.custo, precision: 2) %></p>
         <p><strong>Preço Base:</strong> R$ <%= number_with_precision(porcao.item.preco, precision: 2) %>/kg</p>

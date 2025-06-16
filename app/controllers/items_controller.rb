@@ -3,7 +3,13 @@ class ItemsController < ApplicationController
 
   # GET /items or /items.json
   def index
-    @items = Item.all
+    if params[:todos] == "true"
+      @items = Item.all
+      @showing_all = true
+    else
+      @items = Item.disponiveis
+      @showing_all = false
+    end
   end
 
   # GET /items/1 or /items/1.json
