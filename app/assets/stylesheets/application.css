@@ -656,31 +656,129 @@ h2 {
   min-width: 70px;
 }
 
-/* Badge para status */
+/* Estilos para quantidades nas porções */
+.quantidade-input {
+  border-radius: 6px;
+  border: 2px solid #e9ecef;
+  font-weight: bold;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.quantidade-input:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+  outline: none;
+}
+
+.quantidade-input[value="0"] {
+  background-color: #f8f9fa;
+  color: #6c757d;
+}
+
+.quantidade-input:not([value="0"]) {
+  background-color: #e8f5e8;
+  border-color: #28a745;
+  color: #155724;
+}
+
+/* Contador de porções */
+.porcoes-contador {
+  border-left: 4px solid #17a2b8;
+  background: #d1ecf1;
+  border-color: #bee5eb;
+}
+
+/* Badge para quantidades */
 .badge {
   font-size: 0.75rem;
   padding: 4px 8px;
   border-radius: 12px;
+  font-weight: 600;
 }
 
-.bg-secondary {
-  background-color: #6c757d !important;
+.bg-primary {
+  background-color: #3498db !important;
   color: white;
 }
 
-/* Empty state */
-.empty-state {
-  text-align: center;
-  padding: 40px 20px;
+/* Melhorias no layout das porções */
+.porcao-item {
   background: #f8f9fa;
-  border-radius: 12px;
-  margin: 20px 0;
+  border-left: 4px solid #3498db;
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 0 8px 8px 0;
+  transition: background-color 0.2s ease;
 }
 
-.empty-state p {
+.porcao-item:hover {
+  background: #e9ecef;
+}
+
+.porcao-info strong {
+  color: #2c3e50;
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+}
+
+.porcao-custo {
+  min-width: 120px;
+}
+
+.porcao-custo strong {
   font-size: 1.1rem;
-  color: #6c757d;
-  margin-bottom: 20px;
+}
+
+/* Seleção de porções no formulário */
+.porcao-checkbox {
+  transition: all 0.2s ease;
+  border: 2px solid #e9ecef !important;
+}
+
+.porcao-checkbox:hover {
+  background: #f1f3f4 !important;
+  border-color: #3498db !important;
+  transform: translateY(-1px);
+}
+
+.porcao-checkbox.has-quantity {
+  background: #e8f5e8 !important;
+  border-color: #28a745 !important;
+}
+
+.quantidade-control {
+  background: #f8f9fa;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #dee2e6;
+}
+
+/* Responsividade para controles de quantidade */
+@media (max-width: 768px) {
+  .porcao-checkbox {
+    padding: 12px !important;
+  }
+
+  .quantidade-control {
+    flex-direction: column;
+    gap: 5px !important;
+    text-align: center;
+  }
+
+  .quantidade-input {
+    width: 60px !important;
+  }
+
+  .porcao-item .d-flex {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .porcao-custo {
+    text-align: left !important;
+    min-width: auto;
+  }
 }
 
 /* Responsividade */

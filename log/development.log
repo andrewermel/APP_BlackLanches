@@ -21948,3 +21948,1621 @@ Processing by LanchesController#edit as HTML
 Completed 200 OK in 30ms (Views: 19.4ms | ActiveRecord: 4.5ms (20 queries, 1 cached) | GC: 2.7ms)
 
 
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AppBlacklanches'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8082251016300119820) /*application='AppBlacklanches'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AppBlacklanches'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='AppBlacklanches'*/[0m
+Migrating to AddQuantidadeToLanchePorcaos (20250616155237)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='AppBlacklanches'*/[0m
+  [1m[35m (2.2ms)[0m  [1m[35mALTER TABLE "lanche_porcaos" ADD "quantidade" integer /*application='AppBlacklanches'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250616155237') RETURNING "version" /*application='AppBlacklanches'*/[0m
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT /*application='AppBlacklanches'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8082251016300119820) /*application='AppBlacklanches'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AppBlacklanches'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8082251016300119820) /*application='AppBlacklanches'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AppBlacklanches'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='AppBlacklanches'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(8082251016300119820) /*application='AppBlacklanches'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AppBlacklanches'*/[0m
+Started GET "/lanches/8/edit" for 127.0.0.1 at 2025-06-16 12:57:29 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AppBlacklanches'*/[0m
+Processing by LanchesController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mLanch Load (0.8ms)[0m  [1m[34mSELECT "lanches".* FROM "lanches" WHERE "lanches"."id" = 8 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:97:in `set_lanch'
+  Rendering layout layouts/application.html.erb
+  Rendering lanches/edit.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 8 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:41
+  [1m[36mCACHE ActiveStorage::Attachment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 8 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' LIMIT 1[0m
+  ↳ app/views/lanches/_form.html.erb:84
+  [1m[36mPorcao Load (0.9ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" ORDER BY "porcaos"."nome" ASC /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:98
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" IN (5, 9, 1, 11, 3, 8, 7, 14, 10, 13, 12, 6, 2, 4) /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:98
+  [1m[36mLanchePorcao Load (1.0ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 5 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.4ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 6 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.3ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 1 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.3ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 10 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.3ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 3 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.4ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 14 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.5ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 8 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.4ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 9 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.7ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 13 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.3ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 7 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.3ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 12 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.3ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 11 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.4ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 16 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (1.0ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 4 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.6ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 15 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  Rendered lanches/_form.html.erb (Duration: 66.0ms | GC: 8.7ms)
+  Rendered lanches/edit.html.erb within layouts/application (Duration: 67.6ms | GC: 8.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 70.4ms | GC: 8.7ms)
+Completed 200 OK in 101ms (Views: 62.1ms | ActiveRecord: 12.4ms (20 queries, 1 cached) | GC: 8.7ms)
+
+
+Started GET "/assets/controllers/lanche_form_controller-d9b36f00.js" for 127.0.0.1 at 2025-06-16 12:57:29 -0300
+Started PATCH "/lanches/8" for 127.0.0.1 at 2025-06-16 12:58:38 -0300
+Processing by LanchesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "lanch"=>{"nome"=>"big black", "ingredientes"=>"", "fotos"=>[""], "porcoes_com_quantidade"=>{"5"=>"1", "6"=>"0", "1"=>"0", "10"=>"0", "3"=>"2", "14"=>"0", "8"=>"0", "9"=>"0", "13"=>"0", "7"=>"0", "12"=>"1", "11"=>"1", "16"=>"1", "4"=>"2", "15"=>"1"}, "custo"=>"13.08", "preco_sugerido"=>"26.16"}, "commit"=>"Salvar Lanche", "id"=>"8"}
+  [1m[36mLanch Load (0.4ms)[0m  [1m[34mSELECT "lanches".* FROM "lanches" WHERE "lanches"."id" = 8 LIMIT 1 /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:97:in `set_lanch'
+  [1m[36mLanchePorcao Load (0.3ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:110:in `processar_porcoes_com_quantidade'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:110:in `processar_porcoes_com_quantidade'
+  [1m[36mLanchePorcao Destroy (1.4ms)[0m  [1m[31mDELETE FROM "lanche_porcaos" WHERE "lanche_porcaos"."id" = 38 /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:110:in `processar_porcoes_com_quantidade'
+  [1m[36mLanchePorcao Destroy (0.1ms)[0m  [1m[31mDELETE FROM "lanche_porcaos" WHERE "lanche_porcaos"."id" = 39 /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:110:in `processar_porcoes_com_quantidade'
+  [1m[36mLanchePorcao Destroy (0.5ms)[0m  [1m[31mDELETE FROM "lanche_porcaos" WHERE "lanche_porcaos"."id" = 40 /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:110:in `processar_porcoes_com_quantidade'
+  [1m[36mLanchePorcao Destroy (0.4ms)[0m  [1m[31mDELETE FROM "lanche_porcaos" WHERE "lanche_porcaos"."id" = 41 /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:110:in `processar_porcoes_com_quantidade'
+  [1m[36mLanchePorcao Destroy (0.2ms)[0m  [1m[31mDELETE FROM "lanche_porcaos" WHERE "lanche_porcaos"."id" = 42 /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:110:in `processar_porcoes_com_quantidade'
+  [1m[36mLanchePorcao Destroy (0.6ms)[0m  [1m[31mDELETE FROM "lanche_porcaos" WHERE "lanche_porcaos"."id" = 43 /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:110:in `processar_porcoes_com_quantidade'
+  [1m[36mLanchePorcao Destroy (0.4ms)[0m  [1m[31mDELETE FROM "lanche_porcaos" WHERE "lanche_porcaos"."id" = 44 /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:110:in `processar_porcoes_com_quantidade'
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:110:in `processar_porcoes_com_quantidade'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:116:in `block in processar_porcoes_com_quantidade'
+  [1m[36mPorcao Load (0.3ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" = 5 LIMIT 1 /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:116:in `block in processar_porcoes_com_quantidade'
+  [1m[36mLanchePorcao Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 5 LIMIT 1 /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:116:in `block in processar_porcoes_com_quantidade'
+  [1m[36mLanchePorcao Create (0.5ms)[0m  [1m[32mINSERT INTO "lanche_porcaos" ("lanch_id", "porcao_id", "created_at", "updated_at", "quantidade") VALUES (8, 5, '2025-06-16 15:58:38.238123', '2025-06-16 15:58:38.238123', 1) RETURNING "id" /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:116:in `block in processar_porcoes_com_quantidade'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:116:in `block in processar_porcoes_com_quantidade'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:116:in `block in processar_porcoes_com_quantidade'
+  [1m[36mPorcao Load (1.5ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" = 3 LIMIT 1 /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:116:in `block in processar_porcoes_com_quantidade'
+  [1m[36mLanchePorcao Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 3 LIMIT 1 /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:116:in `block in processar_porcoes_com_quantidade'
+  [1m[36mLanchePorcao Create (0.4ms)[0m  [1m[32mINSERT INTO "lanche_porcaos" ("lanch_id", "porcao_id", "created_at", "updated_at", "quantidade") VALUES (8, 3, '2025-06-16 15:58:38.247748', '2025-06-16 15:58:38.247748', 2) RETURNING "id" /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:116:in `block in processar_porcoes_com_quantidade'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:116:in `block in processar_porcoes_com_quantidade'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:116:in `block in processar_porcoes_com_quantidade'
+  [1m[36mPorcao Load (1.8ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" = 12 LIMIT 1 /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:116:in `block in processar_porcoes_com_quantidade'
+  [1m[36mLanchePorcao Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 12 LIMIT 1 /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:116:in `block in processar_porcoes_com_quantidade'
+  [1m[36mLanchePorcao Create (0.5ms)[0m  [1m[32mINSERT INTO "lanche_porcaos" ("lanch_id", "porcao_id", "created_at", "updated_at", "quantidade") VALUES (8, 12, '2025-06-16 15:58:38.256153', '2025-06-16 15:58:38.256153', 1) RETURNING "id" /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:116:in `block in processar_porcoes_com_quantidade'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:116:in `block in processar_porcoes_com_quantidade'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:116:in `block in processar_porcoes_com_quantidade'
+  [1m[36mPorcao Load (0.9ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" = 11 LIMIT 1 /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:116:in `block in processar_porcoes_com_quantidade'
+  [1m[36mLanchePorcao Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 11 LIMIT 1 /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:116:in `block in processar_porcoes_com_quantidade'
+  [1m[36mLanchePorcao Create (0.3ms)[0m  [1m[32mINSERT INTO "lanche_porcaos" ("lanch_id", "porcao_id", "created_at", "updated_at", "quantidade") VALUES (8, 11, '2025-06-16 15:58:38.261358', '2025-06-16 15:58:38.261358', 1) RETURNING "id" /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:116:in `block in processar_porcoes_com_quantidade'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:116:in `block in processar_porcoes_com_quantidade'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:116:in `block in processar_porcoes_com_quantidade'
+  [1m[36mPorcao Load (1.5ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" = 16 LIMIT 1 /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:116:in `block in processar_porcoes_com_quantidade'
+  [1m[36mLanchePorcao Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 16 LIMIT 1 /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:116:in `block in processar_porcoes_com_quantidade'
+  [1m[36mLanchePorcao Create (0.6ms)[0m  [1m[32mINSERT INTO "lanche_porcaos" ("lanch_id", "porcao_id", "created_at", "updated_at", "quantidade") VALUES (8, 16, '2025-06-16 15:58:38.268210', '2025-06-16 15:58:38.268210', 1) RETURNING "id" /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:116:in `block in processar_porcoes_com_quantidade'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:116:in `block in processar_porcoes_com_quantidade'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:116:in `block in processar_porcoes_com_quantidade'
+  [1m[36mPorcao Load (1.1ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" = 4 LIMIT 1 /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:116:in `block in processar_porcoes_com_quantidade'
+  [1m[36mLanchePorcao Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 4 LIMIT 1 /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:116:in `block in processar_porcoes_com_quantidade'
+  [1m[36mLanchePorcao Create (0.8ms)[0m  [1m[32mINSERT INTO "lanche_porcaos" ("lanch_id", "porcao_id", "created_at", "updated_at", "quantidade") VALUES (8, 4, '2025-06-16 15:58:38.280092', '2025-06-16 15:58:38.280092', 2) RETURNING "id" /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:116:in `block in processar_porcoes_com_quantidade'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:116:in `block in processar_porcoes_com_quantidade'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:116:in `block in processar_porcoes_com_quantidade'
+  [1m[36mPorcao Load (4.7ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" = 15 LIMIT 1 /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:116:in `block in processar_porcoes_com_quantidade'
+  [1m[36mLanchePorcao Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 15 LIMIT 1 /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:116:in `block in processar_porcoes_com_quantidade'
+  [1m[36mLanchePorcao Create (0.5ms)[0m  [1m[32mINSERT INTO "lanche_porcaos" ("lanch_id", "porcao_id", "created_at", "updated_at", "quantidade") VALUES (8, 15, '2025-06-16 15:58:38.305710', '2025-06-16 15:58:38.305710', 1) RETURNING "id" /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:116:in `block in processar_porcoes_com_quantidade'
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:116:in `block in processar_porcoes_com_quantidade'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/models/lanch.rb:55:in `maximo_tres_fotos'
+  [1m[36mActiveStorage::Attachment Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 8 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' LIMIT 1 /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/models/lanch.rb:55:in `maximo_tres_fotos'
+  [1m[36mLanchePorcao Load (0.8ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/models/lanch.rb:18:in `total_custo'
+  [1m[36mPorcao Load (0.4ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" IN (5, 3, 12, 11, 16, 4, 15) /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/models/lanch.rb:18:in `total_custo'
+  [1m[36mCACHE LanchePorcao Load (0.0ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8[0m
+  ↳ app/models/lanch.rb:18:in `total_custo'
+  [1m[36mCACHE Porcao Load (0.0ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" IN (5, 3, 12, 11, 16, 4, 15)[0m
+  ↳ app/models/lanch.rb:18:in `total_custo'
+  [1m[36mLanch Update (0.5ms)[0m  [1m[33mUPDATE "lanches" SET "custo" = 16.28, "preco_sugerido" = 32.56, "updated_at" = '2025-06-16 15:58:38.342298' WHERE "lanches"."id" = 8 /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:58:in `block in update'
+  [1m[36mLanchePorcao Load (0.3ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/models/lanch.rb:18:in `total_custo'
+  [1m[36mPorcao Load (0.4ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" IN (5, 3, 12, 11, 16, 4, 15) /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/models/lanch.rb:18:in `total_custo'
+  [1m[36mCACHE LanchePorcao Load (0.0ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8[0m
+  ↳ app/models/lanch.rb:18:in `total_custo'
+  [1m[36mCACHE Porcao Load (0.0ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" IN (5, 3, 12, 11, 16, 4, 15)[0m
+  ↳ app/models/lanch.rb:18:in `total_custo'
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT /*action='update',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:58:in `block in update'
+Redirected to http://127.0.0.1:3000/lanches/8
+Completed 302 Found in 171ms (ActiveRecord: 56.4ms (40 queries, 4 cached) | GC: 46.7ms)
+
+
+Started GET "/lanches/8" for 127.0.0.1 at 2025-06-16 12:58:38 -0300
+Processing by LanchesController#show as TURBO_STREAM
+  Parameters: {"id"=>"8"}
+  [1m[36mLanch Load (0.5ms)[0m  [1m[34mSELECT "lanches".* FROM "lanches" WHERE "lanches"."id" = 8 LIMIT 1 /*action='show',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:97:in `set_lanch'
+  Rendering layout layouts/application.html.erb
+  Rendering lanches/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 8 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' LIMIT 1 /*action='show',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/show.html.erb:14
+  [1m[36mPorcao Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "porcaos" INNER JOIN "lanche_porcaos" ON "porcaos"."id" = "lanche_porcaos"."porcao_id" WHERE "lanche_porcaos"."lanch_id" = 8 LIMIT 1 /*action='show',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/show.html.erb:70
+  [1m[36mLanchePorcao Load (0.3ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 /*action='show',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/show.html.erb:72
+  [1m[36mPorcao Load (0.5ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" IN (5, 3, 12, 11, 16, 4, 15) /*action='show',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/show.html.erb:72
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" IN (5, 3, 13, 12, 6, 2, 4) /*action='show',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/show.html.erb:72
+  Rendered lanches/show.html.erb within layouts/application (Duration: 22.4ms | GC: 2.9ms)
+  Rendered layout layouts/application.html.erb (Duration: 24.7ms | GC: 3.1ms)
+Completed 200 OK in 35ms (Views: 23.4ms | ActiveRecord: 5.4ms (6 queries, 0 cached) | GC: 4.9ms)
+
+
+Started GET "/assets/application-0d85dcdc.css" for 127.0.0.1 at 2025-06-16 12:58:38 -0300
+Started GET "/lanches/8" for 127.0.0.1 at 2025-06-16 12:58:38 -0300
+Processing by LanchesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mLanch Load (0.4ms)[0m  [1m[34mSELECT "lanches".* FROM "lanches" WHERE "lanches"."id" = 8 LIMIT 1 /*action='show',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:97:in `set_lanch'
+  Rendering layout layouts/application.html.erb
+  Rendering lanches/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 8 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' LIMIT 1 /*action='show',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/show.html.erb:14
+  [1m[36mPorcao Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "porcaos" INNER JOIN "lanche_porcaos" ON "porcaos"."id" = "lanche_porcaos"."porcao_id" WHERE "lanche_porcaos"."lanch_id" = 8 LIMIT 1 /*action='show',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/show.html.erb:70
+  [1m[36mLanchePorcao Load (0.4ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 /*action='show',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/show.html.erb:72
+  [1m[36mPorcao Load (0.2ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" IN (5, 3, 12, 11, 16, 4, 15) /*action='show',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/show.html.erb:72
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" IN (5, 3, 13, 12, 6, 2, 4) /*action='show',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/show.html.erb:72
+  Rendered lanches/show.html.erb within layouts/application (Duration: 10.4ms | GC: 0.8ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | GC: 0.8ms)
+Completed 200 OK in 16ms (Views: 9.4ms | ActiveRecord: 2.1ms (6 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/assets/controllers/lanche_form_controller-2fddbd5b.js" for 127.0.0.1 at 2025-06-16 12:58:38 -0300
+Started GET "/lanches/8/edit" for 127.0.0.1 at 2025-06-16 12:58:51 -0300
+Processing by LanchesController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mLanch Load (0.5ms)[0m  [1m[34mSELECT "lanches".* FROM "lanches" WHERE "lanches"."id" = 8 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:97:in `set_lanch'
+  Rendering layout layouts/application.html.erb
+  Rendering lanches/edit.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 8 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:41
+  [1m[36mCACHE ActiveStorage::Attachment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 8 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' LIMIT 1[0m
+  ↳ app/views/lanches/_form.html.erb:84
+  [1m[36mPorcao Load (0.4ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" ORDER BY "porcaos"."nome" ASC /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:98
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" IN (5, 9, 1, 11, 3, 8, 7, 14, 10, 13, 12, 6, 2, 4) /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:98
+  [1m[36mLanchePorcao Load (0.4ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 5 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.2ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 6 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.3ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 1 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.8ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 10 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.4ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 3 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.3ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 14 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.2ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 8 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.2ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 9 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.2ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 13 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.1ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 7 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.3ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 12 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.3ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 11 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.2ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 16 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.2ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 4 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.2ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 15 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  Rendered lanches/_form.html.erb (Duration: 30.9ms | GC: 2.1ms)
+  Rendered lanches/edit.html.erb within layouts/application (Duration: 32.9ms | GC: 2.8ms)
+  Rendered layout layouts/application.html.erb (Duration: 33.7ms | GC: 2.8ms)
+Completed 200 OK in 42ms (Views: 28.8ms | ActiveRecord: 5.8ms (20 queries, 1 cached) | GC: 2.8ms)
+
+
+Started GET "/lanches/8/edit" for 127.0.0.1 at 2025-06-16 12:58:52 -0300
+Processing by LanchesController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mLanch Load (0.5ms)[0m  [1m[34mSELECT "lanches".* FROM "lanches" WHERE "lanches"."id" = 8 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:97:in `set_lanch'
+  Rendering layout layouts/application.html.erb
+  Rendering lanches/edit.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 8 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:41
+  [1m[36mCACHE ActiveStorage::Attachment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 8 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' LIMIT 1[0m
+  ↳ app/views/lanches/_form.html.erb:84
+  [1m[36mPorcao Load (0.4ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" ORDER BY "porcaos"."nome" ASC /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:98
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" IN (5, 9, 1, 11, 3, 8, 7, 14, 10, 13, 12, 6, 2, 4) /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:98
+  [1m[36mLanchePorcao Load (0.5ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 5 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.2ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 6 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.2ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 1 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.3ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 10 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.4ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 3 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.4ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 14 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.3ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 8 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.3ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 9 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.3ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 13 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.3ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 7 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.3ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 12 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.3ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 11 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.5ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 16 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.5ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 4 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.3ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 15 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  Rendered lanches/_form.html.erb (Duration: 31.8ms | GC: 5.4ms)
+  Rendered lanches/edit.html.erb within layouts/application (Duration: 32.1ms | GC: 5.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 32.7ms | GC: 5.4ms)
+Completed 200 OK in 41ms (Views: 26.7ms | ActiveRecord: 6.7ms (20 queries, 1 cached) | GC: 5.4ms)
+
+
+Started GET "/lanches" for 127.0.0.1 at 2025-06-16 12:58:52 -0300
+Processing by LanchesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering lanches/index.html.erb within layouts/application
+  [1m[36mLanch Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "lanches" LIMIT 1 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:10
+  [1m[36mLanch Load (0.4ms)[0m  [1m[34mSELECT "lanches".* FROM "lanches" /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:12
+  [1m[36mLanchePorcao Load (0.7ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" IN (3, 4, 5, 6, 8) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:12
+  [1m[36mPorcao Load (0.6ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" IN (1, 4, 7, 8, 11, 12, 3, 6, 9, 10, 13, 5, 16, 15) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:12
+  [1m[36mActiveStorage::Attachment Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' LIMIT 1 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:15
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' ORDER BY "active_storage_attachments"."id" ASC LIMIT 1 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:15
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 7 LIMIT 1 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:15
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' ORDER BY "active_storage_attachments"."id" ASC LIMIT 1[0m
+  ↳ app/views/lanches/index.html.erb:17
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 7 LIMIT 1[0m
+  ↳ app/views/lanches/index.html.erb:17
+  [1m[36mActiveStorage::Attachment Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:20
+  [1m[36mCACHE ActiveStorage::Attachment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos'[0m
+  ↳ app/views/lanches/index.html.erb:21
+  Rendered lanches/index.html.erb within layouts/application (Duration: 25.5ms | GC: 1.9ms)
+  Rendered layout layouts/application.html.erb (Duration: 25.7ms | GC: 1.9ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 6.1ms (11 queries, 3 cached) | GC: 1.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `lanche_porcaos' for nil)
+Caused by: NoMethodError (undefined method `lanche_porcaos' for nil)
+
+Information for: ActionView::Template::Error (undefined method `lanche_porcaos' for nil):
+    38:         
+    39:         <div class="lanche-info">
+    40:           <p><strong>Porções:</strong> 
+    41:             <%= @lanch.lanche_porcaos.sum(:quantidade) %> unidade(s) 
+    42:             (<%= @lanch.lanche_porcaos.count %> tipo(s))
+    43:           </p>
+    44:           
+  
+app/views/lanches/index.html.erb:41
+app/views/lanches/index.html.erb:12
+
+Information for cause: NoMethodError (undefined method `lanche_porcaos' for nil):
+  
+app/views/lanches/index.html.erb:41
+app/views/lanches/index.html.erb:12
+Started GET "/lanches/8" for 127.0.0.1 at 2025-06-16 12:59:01 -0300
+Started GET "/favicon.ico" for 127.0.0.1 at 2025-06-16 12:59:01 -0300
+Processing by LanchesController#show as HTML
+  Parameters: {"id"=>"8"}
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+  [1m[36mLanch Load (0.5ms)[0m  [1m[34mSELECT "lanches".* FROM "lanches" WHERE "lanches"."id" = 8 LIMIT 1 /*action='show',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:97:in `set_lanch'
+  Rendering layout layouts/application.html.erb
+  Rendering lanches/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 8 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' LIMIT 1 /*action='show',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/show.html.erb:14
+  [1m[36mPorcao Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "porcaos" INNER JOIN "lanche_porcaos" ON "porcaos"."id" = "lanche_porcaos"."porcao_id" WHERE "lanche_porcaos"."lanch_id" = 8 LIMIT 1 /*action='show',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/show.html.erb:70
+  [1m[36mLanchePorcao Load (0.4ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 /*action='show',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/show.html.erb:72
+  [1m[36mPorcao Load (0.3ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" IN (5, 3, 12, 11, 16, 4, 15) /*action='show',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/show.html.erb:72
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" IN (5, 3, 13, 12, 6, 2, 4) /*action='show',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/show.html.erb:72
+  Rendered lanches/show.html.erb within layouts/application (Duration: 13.2ms | GC: 1.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | GC: 1.3ms)
+Completed 200 OK in 119ms (Views: 11.3ms | ActiveRecord: 3.1ms (6 queries, 0 cached) | GC: 51.0ms)
+
+
+Started GET "/lanches" for 127.0.0.1 at 2025-06-16 12:59:03 -0300
+Processing by LanchesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering lanches/index.html.erb within layouts/application
+  [1m[36mLanch Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "lanches" LIMIT 1 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:10
+  [1m[36mLanch Load (0.2ms)[0m  [1m[34mSELECT "lanches".* FROM "lanches" /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:12
+  [1m[36mLanchePorcao Load (0.4ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" IN (3, 4, 5, 6, 8) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:12
+  [1m[36mPorcao Load (0.2ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" IN (1, 4, 7, 8, 11, 12, 3, 6, 9, 10, 13, 5, 16, 15) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:12
+  [1m[36mActiveStorage::Attachment Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' LIMIT 1 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:15
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' ORDER BY "active_storage_attachments"."id" ASC LIMIT 1 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:15
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 7 LIMIT 1 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:15
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' ORDER BY "active_storage_attachments"."id" ASC LIMIT 1[0m
+  ↳ app/views/lanches/index.html.erb:17
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 7 LIMIT 1[0m
+  ↳ app/views/lanches/index.html.erb:17
+  [1m[36mActiveStorage::Attachment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:20
+  [1m[36mCACHE ActiveStorage::Attachment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos'[0m
+  ↳ app/views/lanches/index.html.erb:21
+  Rendered lanches/index.html.erb within layouts/application (Duration: 12.4ms | GC: 1.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | GC: 1.1ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 2.0ms (11 queries, 3 cached) | GC: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `lanche_porcaos' for nil)
+Caused by: NoMethodError (undefined method `lanche_porcaos' for nil)
+
+Information for: ActionView::Template::Error (undefined method `lanche_porcaos' for nil):
+    38:         
+    39:         <div class="lanche-info">
+    40:           <p><strong>Porções:</strong> 
+    41:             <%= @lanch.lanche_porcaos.sum(:quantidade) %> unidade(s) 
+    42:             (<%= @lanch.lanche_porcaos.count %> tipo(s))
+    43:           </p>
+    44:           
+  
+app/views/lanches/index.html.erb:41
+app/views/lanches/index.html.erb:12
+
+Information for cause: NoMethodError (undefined method `lanche_porcaos' for nil):
+  
+app/views/lanches/index.html.erb:41
+app/views/lanches/index.html.erb:12
+Started GET "/" for 127.0.0.1 at 2025-06-16 12:59:03 -0300
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='AppBlacklanches',controller='home'*/[0m
+  ↳ app/views/home/index.html.erb:4
+  Rendered home/index.html.erb within layouts/application (Duration: 6.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 5.7ms | ActiveRecord: 2.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/lanches" for 127.0.0.1 at 2025-06-16 12:59:04 -0300
+Processing by LanchesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering lanches/index.html.erb within layouts/application
+  [1m[36mLanch Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "lanches" LIMIT 1 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:10
+  [1m[36mLanch Load (0.3ms)[0m  [1m[34mSELECT "lanches".* FROM "lanches" /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:12
+  [1m[36mLanchePorcao Load (0.3ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" IN (3, 4, 5, 6, 8) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:12
+  [1m[36mPorcao Load (0.3ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" IN (1, 4, 7, 8, 11, 12, 3, 6, 9, 10, 13, 5, 16, 15) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:12
+  [1m[36mActiveStorage::Attachment Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' LIMIT 1 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:15
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' ORDER BY "active_storage_attachments"."id" ASC LIMIT 1 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:15
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 7 LIMIT 1 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:15
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' ORDER BY "active_storage_attachments"."id" ASC LIMIT 1[0m
+  ↳ app/views/lanches/index.html.erb:17
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 7 LIMIT 1[0m
+  ↳ app/views/lanches/index.html.erb:17
+  [1m[36mActiveStorage::Attachment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:20
+  [1m[36mCACHE ActiveStorage::Attachment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos'[0m
+  ↳ app/views/lanches/index.html.erb:21
+  Rendered lanches/index.html.erb within layouts/application (Duration: 14.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 2.6ms (11 queries, 3 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `lanche_porcaos' for nil)
+Caused by: NoMethodError (undefined method `lanche_porcaos' for nil)
+
+Information for: ActionView::Template::Error (undefined method `lanche_porcaos' for nil):
+    38:         
+    39:         <div class="lanche-info">
+    40:           <p><strong>Porções:</strong> 
+    41:             <%= @lanch.lanche_porcaos.sum(:quantidade) %> unidade(s) 
+    42:             (<%= @lanch.lanche_porcaos.count %> tipo(s))
+    43:           </p>
+    44:           
+  
+app/views/lanches/index.html.erb:41
+app/views/lanches/index.html.erb:12
+
+Information for cause: NoMethodError (undefined method `lanche_porcaos' for nil):
+  
+app/views/lanches/index.html.erb:41
+app/views/lanches/index.html.erb:12
+Started GET "/compras" for 127.0.0.1 at 2025-06-16 12:59:04 -0300
+Processing by ComprasController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering compras/index.html.erb within layouts/application
+  [1m[36mCompra Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "compras" LIMIT 1 /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:10
+  [1m[36mCompra Load (0.2ms)[0m  [1m[34mSELECT "compras".* FROM "compras" /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:12:in `map'
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" IN (1, 2, 4, 5, 3, 7, 8, 10, 9, 12, 13, 14, 15) /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:12:in `map'
+  [1m[36mCompra Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "compras" WHERE "compras"."item_id" = 1 /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:21
+  [1m[36mCompra Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "compras" WHERE "compras"."item_id" = 2 /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:21
+  [1m[36mCompra Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "compras" WHERE "compras"."item_id" = 4 /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:21
+  [1m[36mCompra Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "compras" WHERE "compras"."item_id" = 5 /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:21
+  [1m[36mCompra Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "compras" WHERE "compras"."item_id" = 3 /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:21
+  [1m[36mCompra Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "compras" WHERE "compras"."item_id" = 7 /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:21
+  [1m[36mCompra Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "compras" WHERE "compras"."item_id" = 8 /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:21
+  [1m[36mCompra Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "compras" WHERE "compras"."item_id" = 10 /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:21
+  [1m[36mCompra Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "compras" WHERE "compras"."item_id" = 9 /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:21
+  [1m[36mCompra Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "compras" WHERE "compras"."item_id" = 12 /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:21
+  [1m[36mCompra Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "compras" WHERE "compras"."item_id" = 13 /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:21
+  [1m[36mCompra Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "compras" WHERE "compras"."item_id" = 14 /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:21
+  [1m[36mCompra Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "compras" WHERE "compras"."item_id" = 15 /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:21
+  [1m[36mCACHE Compra Load (0.0ms)[0m  [1m[34mSELECT "compras".* FROM "compras"[0m
+  ↳ app/views/compras/index.html.erb:30
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" IN (1, 2, 4, 5, 3, 7, 8, 10, 9, 12, 13, 14, 15)[0m
+  ↳ app/views/compras/index.html.erb:30
+  Rendered compras/index.html.erb within layouts/application (Duration: 29.5ms | GC: 3.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 30.1ms | GC: 3.6ms)
+Completed 200 OK in 38ms (Views: 25.3ms | ActiveRecord: 5.3ms (18 queries, 2 cached) | GC: 3.6ms)
+
+
+Started GET "/lanches" for 127.0.0.1 at 2025-06-16 12:59:05 -0300
+Processing by LanchesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering lanches/index.html.erb within layouts/application
+  [1m[36mLanch Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "lanches" LIMIT 1 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:10
+  [1m[36mLanch Load (0.2ms)[0m  [1m[34mSELECT "lanches".* FROM "lanches" /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:12
+  [1m[36mLanchePorcao Load (0.2ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" IN (3, 4, 5, 6, 8) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:12
+  [1m[36mPorcao Load (0.3ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" IN (1, 4, 7, 8, 11, 12, 3, 6, 9, 10, 13, 5, 16, 15) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:12
+  [1m[36mActiveStorage::Attachment Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' LIMIT 1 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:15
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' ORDER BY "active_storage_attachments"."id" ASC LIMIT 1 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:15
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 7 LIMIT 1 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:15
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' ORDER BY "active_storage_attachments"."id" ASC LIMIT 1[0m
+  ↳ app/views/lanches/index.html.erb:17
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 7 LIMIT 1[0m
+  ↳ app/views/lanches/index.html.erb:17
+  [1m[36mActiveStorage::Attachment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:20
+  [1m[36mCACHE ActiveStorage::Attachment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos'[0m
+  ↳ app/views/lanches/index.html.erb:21
+  Rendered lanches/index.html.erb within layouts/application (Duration: 12.5ms | GC: 0.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | GC: 0.7ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.8ms (11 queries, 3 cached) | GC: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `lanche_porcaos' for nil)
+Caused by: NoMethodError (undefined method `lanche_porcaos' for nil)
+
+Information for: ActionView::Template::Error (undefined method `lanche_porcaos' for nil):
+    38:         
+    39:         <div class="lanche-info">
+    40:           <p><strong>Porções:</strong> 
+    41:             <%= @lanch.lanche_porcaos.sum(:quantidade) %> unidade(s) 
+    42:             (<%= @lanch.lanche_porcaos.count %> tipo(s))
+    43:           </p>
+    44:           
+  
+app/views/lanches/index.html.erb:41
+app/views/lanches/index.html.erb:12
+
+Information for cause: NoMethodError (undefined method `lanche_porcaos' for nil):
+  
+app/views/lanches/index.html.erb:41
+app/views/lanches/index.html.erb:12
+Started GET "/" for 127.0.0.1 at 2025-06-16 12:59:08 -0300
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='AppBlacklanches',controller='home'*/[0m
+  ↳ app/views/home/index.html.erb:4
+  Rendered home/index.html.erb within layouts/application (Duration: 2.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 3.2ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/compras" for 127.0.0.1 at 2025-06-16 12:59:08 -0300
+Processing by ComprasController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering compras/index.html.erb within layouts/application
+  [1m[36mCompra Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "compras" LIMIT 1 /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:10
+  [1m[36mCompra Load (0.4ms)[0m  [1m[34mSELECT "compras".* FROM "compras" /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:12:in `map'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" IN (1, 2, 4, 5, 3, 7, 8, 10, 9, 12, 13, 14, 15) /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:12:in `map'
+  [1m[36mCompra Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "compras" WHERE "compras"."item_id" = 1 /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:21
+  [1m[36mCompra Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "compras" WHERE "compras"."item_id" = 2 /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:21
+  [1m[36mCompra Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "compras" WHERE "compras"."item_id" = 4 /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:21
+  [1m[36mCompra Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "compras" WHERE "compras"."item_id" = 5 /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:21
+  [1m[36mCompra Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "compras" WHERE "compras"."item_id" = 3 /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:21
+  [1m[36mCompra Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "compras" WHERE "compras"."item_id" = 7 /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:21
+  [1m[36mCompra Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "compras" WHERE "compras"."item_id" = 8 /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:21
+  [1m[36mCompra Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "compras" WHERE "compras"."item_id" = 10 /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:21
+  [1m[36mCompra Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "compras" WHERE "compras"."item_id" = 9 /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:21
+  [1m[36mCompra Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "compras" WHERE "compras"."item_id" = 12 /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:21
+  [1m[36mCompra Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "compras" WHERE "compras"."item_id" = 13 /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:21
+  [1m[36mCompra Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "compras" WHERE "compras"."item_id" = 14 /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:21
+  [1m[36mCompra Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "compras" WHERE "compras"."item_id" = 15 /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:21
+  [1m[36mCACHE Compra Load (0.0ms)[0m  [1m[34mSELECT "compras".* FROM "compras"[0m
+  ↳ app/views/compras/index.html.erb:30
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" IN (1, 2, 4, 5, 3, 7, 8, 10, 9, 12, 13, 14, 15)[0m
+  ↳ app/views/compras/index.html.erb:30
+  Rendered compras/index.html.erb within layouts/application (Duration: 30.0ms | GC: 1.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 30.7ms | GC: 1.6ms)
+Completed 200 OK in 36ms (Views: 25.9ms | ActiveRecord: 5.1ms (18 queries, 2 cached) | GC: 2.8ms)
+
+
+Started GET "/porcaos" for 127.0.0.1 at 2025-06-16 12:59:09 -0300
+Processing by PorcaosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering porcaos/index.html.erb within layouts/application
+  [1m[36mPorcao Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "porcaos" LIMIT 1 /*action='index',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/views/porcaos/index.html.erb:10
+  [1m[36mPorcao Load (0.3ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" /*action='index',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/views/porcaos/index.html.erb:12
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" IN (3, 1, 6, 2, 5, 9, 10, 8, 7, 11, 12, 13, 14, 4) /*action='index',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/views/porcaos/index.html.erb:12
+  Rendered porcaos/index.html.erb within layouts/application (Duration: 12.3ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | GC: 0.2ms)
+Completed 200 OK in 18ms (Views: 12.7ms | ActiveRecord: 1.0ms (3 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/porcaos/6" for 127.0.0.1 at 2025-06-16 12:59:11 -0300
+Processing by PorcaosController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPorcao Load (1.0ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" = 6 LIMIT 1 /*action='show',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/controllers/porcaos_controller.rb:63:in `set_porcao'
+  Rendering layout layouts/application.html.erb
+  Rendering porcaos/show.html.erb within layouts/application
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = 9 LIMIT 1 /*action='show',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/views/porcaos/_porcao.html.erb:8
+  Rendered porcaos/_porcao.html.erb (Duration: 4.7ms | GC: 2.5ms)
+  Rendered porcaos/show.html.erb within layouts/application (Duration: 8.0ms | GC: 4.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | GC: 5.7ms)
+Completed 200 OK in 19ms (Views: 9.6ms | ActiveRecord: 1.5ms (2 queries, 0 cached) | GC: 7.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-06-16 12:59:18 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AppBlacklanches'*/[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='AppBlacklanches',controller='home'*/[0m
+  ↳ app/views/home/index.html.erb:4
+  Rendered home/index.html.erb within layouts/application (Duration: 5.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | GC: 0.1ms)
+Completed 200 OK in 13ms (Views: 6.3ms | ActiveRecord: 1.7ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/assets/application-bf8a7a8e.css" for 127.0.0.1 at 2025-06-16 12:59:18 -0300
+Started GET "/" for 127.0.0.1 at 2025-06-16 12:59:18 -0300
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='AppBlacklanches',controller='home'*/[0m
+  ↳ app/views/home/index.html.erb:4
+  Rendered home/index.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 2.7ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/assets/controllers/lanche_form_controller-f8d5e823.js" for 127.0.0.1 at 2025-06-16 12:59:18 -0300
+Started GET "/lanches" for 127.0.0.1 at 2025-06-16 12:59:19 -0300
+Processing by LanchesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering lanches/index.html.erb within layouts/application
+  [1m[36mLanch Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "lanches" LIMIT 1 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:10
+  [1m[36mLanch Load (0.3ms)[0m  [1m[34mSELECT "lanches".* FROM "lanches" /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:12
+  [1m[36mLanchePorcao Load (0.4ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" IN (3, 4, 5, 6, 8) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:12
+  [1m[36mPorcao Load (1.0ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" IN (1, 4, 7, 8, 11, 12, 3, 6, 9, 10, 13, 5, 16, 15) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:12
+  [1m[36mActiveStorage::Attachment Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' LIMIT 1 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:15
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' ORDER BY "active_storage_attachments"."id" ASC LIMIT 1 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:15
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 7 LIMIT 1 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:15
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' ORDER BY "active_storage_attachments"."id" ASC LIMIT 1[0m
+  ↳ app/views/lanches/index.html.erb:17
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 7 LIMIT 1[0m
+  ↳ app/views/lanches/index.html.erb:17
+  [1m[36mActiveStorage::Attachment Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:20
+  [1m[36mCACHE ActiveStorage::Attachment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos'[0m
+  ↳ app/views/lanches/index.html.erb:21
+  Rendered lanches/index.html.erb within layouts/application (Duration: 49.4ms | GC: 4.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 49.5ms | GC: 4.6ms)
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 12.9ms (11 queries, 3 cached) | GC: 4.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `lanche_porcaos' for nil)
+Caused by: NoMethodError (undefined method `lanche_porcaos' for nil)
+
+Information for: ActionView::Template::Error (undefined method `lanche_porcaos' for nil):
+    38:         
+    39:         <div class="lanche-info">
+    40:           <p><strong>Porções:</strong> 
+    41:             <%= @lanch.lanche_porcaos.sum(:quantidade) %> unidade(s) 
+    42:             (<%= @lanch.lanche_porcaos.count %> tipo(s))
+    43:           </p>
+    44:           
+  
+app/views/lanches/index.html.erb:41
+app/views/lanches/index.html.erb:12
+
+Information for cause: NoMethodError (undefined method `lanche_porcaos' for nil):
+  
+app/views/lanches/index.html.erb:41
+app/views/lanches/index.html.erb:12
+Started GET "/lanches" for 127.0.0.1 at 2025-06-16 12:59:40 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AppBlacklanches'*/[0m
+Processing by LanchesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering lanches/index.html.erb within layouts/application
+  [1m[36mLanch Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "lanches" LIMIT 1 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:10
+  [1m[36mLanch Load (0.2ms)[0m  [1m[34mSELECT "lanches".* FROM "lanches" /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:12
+  [1m[36mLanchePorcao Load (0.9ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" IN (3, 4, 5, 6, 8) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:12
+  [1m[36mPorcao Load (0.4ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" IN (1, 4, 7, 8, 11, 12, 3, 6, 9, 10, 13, 5, 16, 15) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:12
+  [1m[36mActiveStorage::Attachment Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' LIMIT 1 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:15
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' ORDER BY "active_storage_attachments"."id" ASC LIMIT 1 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:15
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 7 LIMIT 1 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:15
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' ORDER BY "active_storage_attachments"."id" ASC LIMIT 1[0m
+  ↳ app/views/lanches/index.html.erb:17
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 7 LIMIT 1[0m
+  ↳ app/views/lanches/index.html.erb:17
+  [1m[36mActiveStorage::Attachment Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:20
+  [1m[36mCACHE ActiveStorage::Attachment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos'[0m
+  ↳ app/views/lanches/index.html.erb:21
+  Rendered lanches/index.html.erb within layouts/application (Duration: 82.6ms | GC: 12.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 82.8ms | GC: 12.3ms)
+Completed 500 Internal Server Error in 114ms (ActiveRecord: 20.1ms (11 queries, 3 cached) | GC: 27.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `lanche_porcaos' for nil)
+Caused by: NoMethodError (undefined method `lanche_porcaos' for nil)
+
+Information for: ActionView::Template::Error (undefined method `lanche_porcaos' for nil):
+    38:         
+    39:         <div class="lanche-info">
+    40:           <p><strong>Porções:</strong> 
+    41:             <%= @lanch.lanche_porcaos.sum(:quantidade) %> unidade(s) 
+    42:             (<%= @lanch.lanche_porcaos.count %> tipo(s))
+    43:           </p>
+    44:           
+  
+app/views/lanches/index.html.erb:41
+app/views/lanches/index.html.erb:12
+
+Information for cause: NoMethodError (undefined method `lanche_porcaos' for nil):
+  
+app/views/lanches/index.html.erb:41
+app/views/lanches/index.html.erb:12
+Started GET "/lanches" for 127.0.0.1 at 2025-06-16 13:00:52 -0300
+Processing by LanchesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering lanches/index.html.erb within layouts/application
+  [1m[36mLanch Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "lanches" LIMIT 1 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:10
+  [1m[36mLanch Load (0.3ms)[0m  [1m[34mSELECT "lanches".* FROM "lanches" /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:12
+  [1m[36mLanchePorcao Load (0.8ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" IN (3, 4, 5, 6, 8) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:12
+  [1m[36mPorcao Load (0.4ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" IN (1, 4, 7, 8, 11, 12, 3, 6, 9, 10, 13, 5, 16, 15) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:12
+  [1m[36mActiveStorage::Attachment Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' LIMIT 1 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:15
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' ORDER BY "active_storage_attachments"."id" ASC LIMIT 1 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:15
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 7 LIMIT 1 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:15
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' ORDER BY "active_storage_attachments"."id" ASC LIMIT 1[0m
+  ↳ app/views/lanches/index.html.erb:17
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 7 LIMIT 1[0m
+  ↳ app/views/lanches/index.html.erb:17
+  [1m[36mActiveStorage::Attachment Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:20
+  [1m[36mCACHE ActiveStorage::Attachment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos'[0m
+  ↳ app/views/lanches/index.html.erb:21
+  [1m[36mLanchePorcao Sum (0.5ms)[0m  [1m[34mSELECT SUM("lanche_porcaos"."quantidade") FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 3 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:41
+  [1m[36mLanchePorcao Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 3 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:42
+  [1m[36mLanchePorcao Load (0.4ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 3 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:48
+  [1m[36mPorcao Load (0.4ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" IN (1, 4, 7, 8, 11, 12) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:48
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" IN (1, 2, 10, 8, 12, 13) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:48
+  [1m[36mActiveStorage::Attachment Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 4 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' LIMIT 1 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:15
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 4 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' ORDER BY "active_storage_attachments"."id" ASC LIMIT 1 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:15
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 9 LIMIT 1 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:15
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 4 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' ORDER BY "active_storage_attachments"."id" ASC LIMIT 1[0m
+  ↳ app/views/lanches/index.html.erb:17
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 9 LIMIT 1[0m
+  ↳ app/views/lanches/index.html.erb:17
+  [1m[36mActiveStorage::Attachment Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 4 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:20
+  [1m[36mCACHE ActiveStorage::Attachment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 4 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos'[0m
+  ↳ app/views/lanches/index.html.erb:21
+  [1m[36mLanchePorcao Sum (0.3ms)[0m  [1m[34mSELECT SUM("lanche_porcaos"."quantidade") FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 4 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:41
+  [1m[36mLanchePorcao Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 4 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:42
+  [1m[36mLanchePorcao Load (0.3ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 4 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:48
+  [1m[36mPorcao Load (0.3ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" IN (1, 3, 4, 8, 11, 12) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:48
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" IN (1, 3, 2, 8, 12, 13) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:48
+  [1m[36mActiveStorage::Attachment Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 5 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' LIMIT 1 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:15
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 5 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' ORDER BY "active_storage_attachments"."id" ASC LIMIT 1 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:15
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 11 LIMIT 1 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:15
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 5 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' ORDER BY "active_storage_attachments"."id" ASC LIMIT 1[0m
+  ↳ app/views/lanches/index.html.erb:17
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 11 LIMIT 1[0m
+  ↳ app/views/lanches/index.html.erb:17
+  [1m[36mActiveStorage::Attachment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 5 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:20
+  [1m[36mCACHE ActiveStorage::Attachment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 5 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos'[0m
+  ↳ app/views/lanches/index.html.erb:21
+  [1m[36mLanchePorcao Sum (0.4ms)[0m  [1m[34mSELECT SUM("lanche_porcaos"."quantidade") FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 5 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:41
+  [1m[36mLanchePorcao Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 5 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:42
+  [1m[36mLanchePorcao Load (0.3ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 5 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:48
+  [1m[36mPorcao Load (0.3ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" IN (1, 6, 9, 11, 12) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:48
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" IN (1, 9, 7, 12, 13) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:48
+  [1m[36mActiveStorage::Attachment Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 6 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' LIMIT 1 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:15
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 6 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' ORDER BY "active_storage_attachments"."id" ASC LIMIT 1 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:15
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 13 LIMIT 1 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:15
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 6 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' ORDER BY "active_storage_attachments"."id" ASC LIMIT 1[0m
+  ↳ app/views/lanches/index.html.erb:17
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 13 LIMIT 1[0m
+  ↳ app/views/lanches/index.html.erb:17
+  [1m[36mActiveStorage::Attachment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 6 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:20
+  [1m[36mCACHE ActiveStorage::Attachment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 6 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos'[0m
+  ↳ app/views/lanches/index.html.erb:21
+  [1m[36mLanchePorcao Sum (0.2ms)[0m  [1m[34mSELECT SUM("lanche_porcaos"."quantidade") FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 6 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:41
+  [1m[36mLanchePorcao Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 6 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:42
+  [1m[36mLanchePorcao Load (0.1ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 6 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:48
+  [1m[36mPorcao Load (0.2ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" IN (1, 3, 8, 10, 11, 12, 13) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:48
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" IN (1, 3, 8, 11, 12, 13, 14) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:48
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 8 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' LIMIT 1 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:15
+  [1m[36mLanchePorcao Sum (0.1ms)[0m  [1m[34mSELECT SUM("lanche_porcaos"."quantidade") FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:41
+  [1m[36mLanchePorcao Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:42
+  [1m[36mLanchePorcao Load (0.1ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:48
+  [1m[36mPorcao Load (0.1ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" IN (5, 3, 12, 11, 16, 4, 15) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:48
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" IN (5, 3, 13, 12, 6, 2, 4) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:48
+  Rendered lanches/index.html.erb within layouts/application (Duration: 144.3ms | GC: 35.9ms)
+  Rendered layout layouts/application.html.erb (Duration: 149.5ms | GC: 35.9ms)
+Completed 200 OK in 170ms (Views: 129.4ms | ActiveRecord: 26.8ms (58 queries, 12 cached) | GC: 40.7ms)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6NywicHVyIjoiYmxvYl9pZCJ9fQ==--c18d6d0b9af2e7fe12fede07f4d8d65238fd6052/WhatsApp%20Image%202025-06-09%20at%2015.32.41.jpeg" for 127.0.0.1 at 2025-06-16 13:00:52 -0300
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MTMsInB1ciI6ImJsb2JfaWQifX0=--1d95deb364b509205416b62585417ad1e05160f4/WhatsApp%20Image%202025-06-02%20at%2010.59.41%20(1).jpeg" for 127.0.0.1 at 2025-06-16 13:00:52 -0300
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MTEsInB1ciI6ImJsb2JfaWQifX0=--fba86f18aaddd4319a32b587562b425e56a6bbee/WhatsApp%20Image%202025-06-02%20at%2010.59.41.jpeg" for 127.0.0.1 at 2025-06-16 13:00:52 -0300
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6NywicHVyIjoiYmxvYl9pZCJ9fQ==--c18d6d0b9af2e7fe12fede07f4d8d65238fd6052", "filename"=>"WhatsApp Image 2025-06-09 at 15.32.41"}
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MTEsInB1ciI6ImJsb2JfaWQifX0=--fba86f18aaddd4319a32b587562b425e56a6bbee", "filename"=>"WhatsApp Image 2025-06-02 at 10.59.41"}
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MTMsInB1ciI6ImJsb2JfaWQifX0=--1d95deb364b509205416b62585417ad1e05160f4", "filename"=>"WhatsApp Image 2025-06-02 at 10.59.41 (1)"}
+  [1m[36mActiveStorage::Blob Load (1.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 7 LIMIT 1 /*action='show',application='AppBlacklanches',controller='redirect'*/[0m
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: wzj7dtxej3vag2ghur7197yezpcs (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ3emo3ZHR4ZWozdmFnMmdodXI3MTk3eWV6cGNzIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiV2hhdHNBcHAgSW1hZ2UgMjAyNS0wNi0wOSBhdCAxNS4zMi40MS5qcGVnXCI7IGZpbGVuYW1lKj1VVEYtOCcnV2hhdHNBcHAlMjBJbWFnZSUyMDIwMjUtMDYtMDklMjBhdCUyMDE1LjMyLjQxLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNi0xNlQxNjowNTo1Mi45OTBaIiwicHVyIjoiYmxvYl9rZXkifX0=--b249c5be065344866999919062fd233b31426ccc/WhatsApp%20Image%202025-06-09%20at%2015.32.41.jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ3emo3ZHR4ZWozdmFnMmdodXI3MTk3eWV6cGNzIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiV2hhdHNBcHAgSW1hZ2UgMjAyNS0wNi0wOSBhdCAxNS4zMi40MS5qcGVnXCI7IGZpbGVuYW1lKj1VVEYtOCcnV2hhdHNBcHAlMjBJbWFnZSUyMDIwMjUtMDYtMDklMjBhdCUyMDE1LjMyLjQxLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNi0xNlQxNjowNTo1Mi45OTBaIiwicHVyIjoiYmxvYl9rZXkifX0=--b249c5be065344866999919062fd233b31426ccc/WhatsApp%20Image%202025-06-09%20at%2015.32.41.jpeg
+Completed 302 Found in 29ms (ActiveRecord: 1.3ms (1 query, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ3emo3ZHR4ZWozdmFnMmdodXI3MTk3eWV6cGNzIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiV2hhdHNBcHAgSW1hZ2UgMjAyNS0wNi0wOSBhdCAxNS4zMi40MS5qcGVnXCI7IGZpbGVuYW1lKj1VVEYtOCcnV2hhdHNBcHAlMjBJbWFnZSUyMDIwMjUtMDYtMDklMjBhdCUyMDE1LjMyLjQxLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNi0xNlQxNjowNTo1Mi45OTBaIiwicHVyIjoiYmxvYl9rZXkifX0=--b249c5be065344866999919062fd233b31426ccc/WhatsApp%20Image%202025-06-09%20at%2015.32.41.jpeg" for 127.0.0.1 at 2025-06-16 13:00:52 -0300
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 11 LIMIT 1 /*action='show',application='AppBlacklanches',controller='redirect'*/[0m
+[36m  Disk Storage (0.3ms) [0m[34mGenerated URL for file at key: xh7ybia2aa6pkurnp8z2iczi61hc (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ4aDd5YmlhMmFhNnBrdXJucDh6Mmljemk2MWhjIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiV2hhdHNBcHAgSW1hZ2UgMjAyNS0wNi0wMiBhdCAxMC41OS40MS5qcGVnXCI7IGZpbGVuYW1lKj1VVEYtOCcnV2hhdHNBcHAlMjBJbWFnZSUyMDIwMjUtMDYtMDIlMjBhdCUyMDEwLjU5LjQxLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNi0xNlQxNjowNTo1My4wMDRaIiwicHVyIjoiYmxvYl9rZXkifX0=--aa9c9dafe606986ac91f3c62c330db2c5375b5ae/WhatsApp%20Image%202025-06-02%20at%2010.59.41.jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ4aDd5YmlhMmFhNnBrdXJucDh6Mmljemk2MWhjIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiV2hhdHNBcHAgSW1hZ2UgMjAyNS0wNi0wMiBhdCAxMC41OS40MS5qcGVnXCI7IGZpbGVuYW1lKj1VVEYtOCcnV2hhdHNBcHAlMjBJbWFnZSUyMDIwMjUtMDYtMDIlMjBhdCUyMDEwLjU5LjQxLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNi0xNlQxNjowNTo1My4wMDRaIiwicHVyIjoiYmxvYl9rZXkifX0=--aa9c9dafe606986ac91f3c62c330db2c5375b5ae/WhatsApp%20Image%202025-06-02%20at%2010.59.41.jpeg
+Completed 302 Found in 32ms (ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ4aDd5YmlhMmFhNnBrdXJucDh6Mmljemk2MWhjIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiV2hhdHNBcHAgSW1hZ2UgMjAyNS0wNi0wMiBhdCAxMC41OS40MS5qcGVnXCI7IGZpbGVuYW1lKj1VVEYtOCcnV2hhdHNBcHAlMjBJbWFnZSUyMDIwMjUtMDYtMDIlMjBhdCUyMDEwLjU5LjQxLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNi0xNlQxNjowNTo1My4wMDRaIiwicHVyIjoiYmxvYl9rZXkifX0=--aa9c9dafe606986ac91f3c62c330db2c5375b5ae/WhatsApp%20Image%202025-06-02%20at%2010.59.41.jpeg" for 127.0.0.1 at 2025-06-16 13:00:53 -0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"WhatsApp Image 2025-06-09 at 15.32.41"}
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"WhatsApp Image 2025-06-02 at 10.59.41"}
+  [1m[36mActiveStorage::Blob Load (21.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 13 LIMIT 1 /*action='show',application='AppBlacklanches',controller='redirect'*/[0m
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: y2hn49yxh1agqw5prz135amn72p7 (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ5MmhuNDl5eGgxYWdxdzVwcnoxMzVhbW43MnA3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiV2hhdHNBcHAgSW1hZ2UgMjAyNS0wNi0wMiBhdCAxMC41OS40MSAlMjgxJTI5LmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydXaGF0c0FwcCUyMEltYWdlJTIwMjAyNS0wNi0wMiUyMGF0JTIwMTAuNTkuNDElMjAlMjgxJTI5LmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNi0xNlQxNjowNTo1My4wMjVaIiwicHVyIjoiYmxvYl9rZXkifX0=--407aa0c833cabf853f3c3898a58a5dfc731fca32/WhatsApp%20Image%202025-06-02%20at%2010.59.41%20(1).jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ5MmhuNDl5eGgxYWdxdzVwcnoxMzVhbW43MnA3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiV2hhdHNBcHAgSW1hZ2UgMjAyNS0wNi0wMiBhdCAxMC41OS40MSAlMjgxJTI5LmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydXaGF0c0FwcCUyMEltYWdlJTIwMjAyNS0wNi0wMiUyMGF0JTIwMTAuNTkuNDElMjAlMjgxJTI5LmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNi0xNlQxNjowNTo1My4wMjVaIiwicHVyIjoiYmxvYl9rZXkifX0=--407aa0c833cabf853f3c3898a58a5dfc731fca32/WhatsApp%20Image%202025-06-02%20at%2010.59.41%20(1).jpeg
+Completed 302 Found in 51ms (ActiveRecord: 26.0ms (1 query, 0 cached) | GC: 1.2ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ5MmhuNDl5eGgxYWdxdzVwcnoxMzVhbW43MnA3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiV2hhdHNBcHAgSW1hZ2UgMjAyNS0wNi0wMiBhdCAxMC41OS40MSAlMjgxJTI5LmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydXaGF0c0FwcCUyMEltYWdlJTIwMjAyNS0wNi0wMiUyMGF0JTIwMTAuNTkuNDElMjAlMjgxJTI5LmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNi0xNlQxNjowNTo1My4wMjVaIiwicHVyIjoiYmxvYl9rZXkifX0=--407aa0c833cabf853f3c3898a58a5dfc731fca32/WhatsApp%20Image%202025-06-02%20at%2010.59.41%20(1).jpeg" for 127.0.0.1 at 2025-06-16 13:00:53 -0300
+Completed 200 OK in 23ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"WhatsApp Image 2025-06-02 at 10.59.41 (1)"}
+Completed 200 OK in 21ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Completed 200 OK in 6ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6OSwicHVyIjoiYmxvYl9pZCJ9fQ==--d3aced9a3c8505c20951cfe847eb7048b08c7d9e/WhatsApp%20Image%202025-06-02%20at%2010.59.40%20(2).jpeg" for 127.0.0.1 at 2025-06-16 13:00:53 -0300
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6OSwicHVyIjoiYmxvYl9pZCJ9fQ==--d3aced9a3c8505c20951cfe847eb7048b08c7d9e", "filename"=>"WhatsApp Image 2025-06-02 at 10.59.40 (2)"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 9 LIMIT 1 /*action='show',application='AppBlacklanches',controller='redirect'*/[0m
+[36m  Disk Storage (0.3ms) [0m[34mGenerated URL for file at key: v6k8xankti5ajohy6bh26llq6kby (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ2Nms4eGFua3RpNWFqb2h5NmJoMjZsbHE2a2J5IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiV2hhdHNBcHAgSW1hZ2UgMjAyNS0wNi0wMiBhdCAxMC41OS40MCAlMjgyJTI5LmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydXaGF0c0FwcCUyMEltYWdlJTIwMjAyNS0wNi0wMiUyMGF0JTIwMTAuNTkuNDAlMjAlMjgyJTI5LmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNi0xNlQxNjowNTo1My4yNDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--cf36dfbc929abc4eb8cfcea43d65d7fb90a5f759/WhatsApp%20Image%202025-06-02%20at%2010.59.40%20(2).jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ2Nms4eGFua3RpNWFqb2h5NmJoMjZsbHE2a2J5IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiV2hhdHNBcHAgSW1hZ2UgMjAyNS0wNi0wMiBhdCAxMC41OS40MCAlMjgyJTI5LmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydXaGF0c0FwcCUyMEltYWdlJTIwMjAyNS0wNi0wMiUyMGF0JTIwMTAuNTkuNDAlMjAlMjgyJTI5LmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNi0xNlQxNjowNTo1My4yNDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--cf36dfbc929abc4eb8cfcea43d65d7fb90a5f759/WhatsApp%20Image%202025-06-02%20at%2010.59.40%20(2).jpeg
+Completed 302 Found in 9ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ2Nms4eGFua3RpNWFqb2h5NmJoMjZsbHE2a2J5IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiV2hhdHNBcHAgSW1hZ2UgMjAyNS0wNi0wMiBhdCAxMC41OS40MCAlMjgyJTI5LmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydXaGF0c0FwcCUyMEltYWdlJTIwMjAyNS0wNi0wMiUyMGF0JTIwMTAuNTkuNDAlMjAlMjgyJTI5LmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNi0xNlQxNjowNTo1My4yNDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--cf36dfbc929abc4eb8cfcea43d65d7fb90a5f759/WhatsApp%20Image%202025-06-02%20at%2010.59.40%20(2).jpeg" for 127.0.0.1 at 2025-06-16 13:00:53 -0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"WhatsApp Image 2025-06-02 at 10.59.40 (2)"}
+Completed 200 OK in 4ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/lanches/5/edit" for 127.0.0.1 at 2025-06-16 13:01:18 -0300
+Processing by LanchesController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mLanch Load (0.9ms)[0m  [1m[34mSELECT "lanches".* FROM "lanches" WHERE "lanches"."id" = 5 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:97:in `set_lanch'
+  Rendering layout layouts/application.html.erb
+  Rendering lanches/edit.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 5 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:41
+  [1m[36mActiveStorage::Attachment Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 5 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:43
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 5 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:45
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 11 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:48
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 12 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:48
+  [1m[36mCACHE ActiveStorage::Attachment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 5 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos'[0m
+  ↳ app/views/lanches/_form.html.erb:75
+  [1m[36mCACHE ActiveStorage::Attachment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 5 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos'[0m
+  ↳ app/views/lanches/_form.html.erb:84
+  [1m[36mPorcao Load (0.7ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" ORDER BY "porcaos"."nome" ASC /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:98
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" IN (5, 9, 1, 11, 3, 8, 7, 14, 10, 13, 12, 6, 2, 4) /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:98
+  [1m[36mLanchePorcao Load (0.6ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 5 AND "lanche_porcaos"."porcao_id" = 5 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.4ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 5 AND "lanche_porcaos"."porcao_id" = 6 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.6ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 5 AND "lanche_porcaos"."porcao_id" = 1 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.3ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 5 AND "lanche_porcaos"."porcao_id" = 10 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.5ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 5 AND "lanche_porcaos"."porcao_id" = 3 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.3ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 5 AND "lanche_porcaos"."porcao_id" = 14 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.5ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 5 AND "lanche_porcaos"."porcao_id" = 8 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.3ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 5 AND "lanche_porcaos"."porcao_id" = 9 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.2ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 5 AND "lanche_porcaos"."porcao_id" = 13 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.4ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 5 AND "lanche_porcaos"."porcao_id" = 7 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.4ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 5 AND "lanche_porcaos"."porcao_id" = 12 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.3ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 5 AND "lanche_porcaos"."porcao_id" = 11 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.3ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 5 AND "lanche_porcaos"."porcao_id" = 16 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.2ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 5 AND "lanche_porcaos"."porcao_id" = 4 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.2ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 5 AND "lanche_porcaos"."porcao_id" = 15 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  Rendered lanches/_form.html.erb (Duration: 45.1ms | GC: 5.3ms)
+  Rendered lanches/edit.html.erb within layouts/application (Duration: 47.7ms | GC: 5.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 48.1ms | GC: 5.3ms)
+Completed 200 OK in 55ms (Views: 39.5ms | ActiveRecord: 9.8ms (25 queries, 2 cached) | GC: 5.3ms)
+
+
+Started GET "/lanches/8/edit" for 127.0.0.1 at 2025-06-16 13:01:31 -0300
+Processing by LanchesController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mLanch Load (0.7ms)[0m  [1m[34mSELECT "lanches".* FROM "lanches" WHERE "lanches"."id" = 8 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:97:in `set_lanch'
+  Rendering layout layouts/application.html.erb
+  Rendering lanches/edit.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 8 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:41
+  [1m[36mCACHE ActiveStorage::Attachment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 8 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' LIMIT 1[0m
+  ↳ app/views/lanches/_form.html.erb:84
+  [1m[36mPorcao Load (0.4ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" ORDER BY "porcaos"."nome" ASC /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:98
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" IN (5, 9, 1, 11, 3, 8, 7, 14, 10, 13, 12, 6, 2, 4) /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:98
+  [1m[36mLanchePorcao Load (0.5ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 5 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.4ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 6 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.3ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 1 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.4ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 10 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.3ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 3 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.3ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 14 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.4ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 8 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.4ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 9 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.3ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 13 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.3ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 7 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.2ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 12 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.2ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 11 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.2ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 16 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.5ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 4 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.3ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 15 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  Rendered lanches/_form.html.erb (Duration: 23.2ms | GC: 0.6ms)
+  Rendered lanches/edit.html.erb within layouts/application (Duration: 23.5ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 24.0ms | GC: 0.7ms)
+Completed 200 OK in 31ms (Views: 17.8ms | ActiveRecord: 7.1ms (20 queries, 1 cached) | GC: 1.4ms)
+
+
+Started GET "/lanches" for 127.0.0.1 at 2025-06-16 13:01:54 -0300
+Processing by LanchesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering lanches/index.html.erb within layouts/application
+  [1m[36mLanch Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "lanches" LIMIT 1 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:10
+  [1m[36mLanch Load (0.2ms)[0m  [1m[34mSELECT "lanches".* FROM "lanches" /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:12
+  [1m[36mLanchePorcao Load (0.4ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" IN (3, 4, 5, 6, 8) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:12
+  [1m[36mPorcao Load (0.2ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" IN (1, 4, 7, 8, 11, 12, 3, 6, 9, 10, 13, 5, 16, 15) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:12
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" IN (1, 6, 3, 2, 5, 9, 10, 8, 7, 11, 12, 13, 14, 4) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:12
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' AND "active_storage_attachments"."record_id" IN (3, 4, 5, 6, 8) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:12
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (7, 8, 9, 10, 11, 12, 13, 14) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:12
+  [1m[36mActiveStorage::VariantRecord Load (0.6ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" IN (8, 7, 9, 10, 11, 12, 13, 14) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:12
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = 'ActiveStorage::Blob' AND "active_storage_attachments"."name" = 'preview_image' AND "active_storage_attachments"."record_id" IN (8, 7, 9, 10, 11, 12, 13, 14) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:12
+  [1m[36mActiveStorage::Attachment Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:20
+  [1m[36mCACHE ActiveStorage::Attachment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos'[0m
+  ↳ app/views/lanches/index.html.erb:21
+  [1m[36mLanchePorcao Sum (0.2ms)[0m  [1m[34mSELECT SUM("lanche_porcaos"."quantidade") FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 3 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:41
+  [1m[36mLanchePorcao Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 3 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:42
+  [1m[36mLanchePorcao Load (0.1ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 3 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:48
+  [1m[36mPorcao Load (0.2ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" IN (1, 4, 7, 8, 11, 12) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:48
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" IN (1, 2, 10, 8, 12, 13) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:48
+  [1m[36mActiveStorage::Attachment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 4 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:20
+  [1m[36mCACHE ActiveStorage::Attachment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 4 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos'[0m
+  ↳ app/views/lanches/index.html.erb:21
+  [1m[36mLanchePorcao Sum (0.2ms)[0m  [1m[34mSELECT SUM("lanche_porcaos"."quantidade") FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 4 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:41
+  [1m[36mLanchePorcao Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 4 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:42
+  [1m[36mLanchePorcao Load (0.2ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 4 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:48
+  [1m[36mPorcao Load (0.7ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" IN (1, 3, 4, 8, 11, 12) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:48
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" IN (1, 3, 2, 8, 12, 13) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:48
+  [1m[36mActiveStorage::Attachment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 5 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:20
+  [1m[36mCACHE ActiveStorage::Attachment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 5 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos'[0m
+  ↳ app/views/lanches/index.html.erb:21
+  [1m[36mLanchePorcao Sum (0.3ms)[0m  [1m[34mSELECT SUM("lanche_porcaos"."quantidade") FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 5 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:41
+  [1m[36mLanchePorcao Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 5 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:42
+  [1m[36mLanchePorcao Load (0.6ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 5 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:48
+  [1m[36mPorcao Load (0.4ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" IN (1, 6, 9, 11, 12) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:48
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" IN (1, 9, 7, 12, 13) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:48
+  [1m[36mActiveStorage::Attachment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 6 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:20
+  [1m[36mCACHE ActiveStorage::Attachment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 6 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos'[0m
+  ↳ app/views/lanches/index.html.erb:21
+  [1m[36mLanchePorcao Sum (0.4ms)[0m  [1m[34mSELECT SUM("lanche_porcaos"."quantidade") FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 6 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:41
+  [1m[36mLanchePorcao Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 6 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:42
+  [1m[36mLanchePorcao Load (0.3ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 6 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:48
+  [1m[36mPorcao Load (0.4ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" IN (1, 3, 8, 10, 11, 12, 13) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:48
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" IN (1, 3, 8, 11, 12, 13, 14) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:48
+  [1m[36mLanchePorcao Sum (0.3ms)[0m  [1m[34mSELECT SUM("lanche_porcaos"."quantidade") FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:41
+  [1m[36mLanchePorcao Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:42
+  [1m[36mLanchePorcao Load (0.3ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:48
+  [1m[36mPorcao Load (0.5ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" IN (5, 3, 12, 11, 16, 4, 15) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:48
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" IN (5, 3, 13, 12, 6, 2, 4) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:48
+  Rendered lanches/index.html.erb within layouts/application (Duration: 90.6ms | GC: 5.9ms)
+  Rendered layout layouts/application.html.erb (Duration: 92.8ms | GC: 6.4ms)
+Completed 200 OK in 107ms (Views: 69.1ms | ActiveRecord: 25.2ms (42 queries, 4 cached) | GC: 6.7ms)
+
+
+Started GET "/lanches/8/edit" for 127.0.0.1 at 2025-06-16 13:02:04 -0300
+Processing by LanchesController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mLanch Load (0.6ms)[0m  [1m[34mSELECT "lanches".* FROM "lanches" WHERE "lanches"."id" = 8 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/controllers/lanches_controller.rb:97:in `set_lanch'
+  Rendering layout layouts/application.html.erb
+  Rendering lanches/edit.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 8 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:41
+  [1m[36mCACHE ActiveStorage::Attachment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 8 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' LIMIT 1[0m
+  ↳ app/views/lanches/_form.html.erb:84
+  [1m[36mPorcao Load (0.7ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" ORDER BY "porcaos"."nome" ASC /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:98
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" IN (5, 9, 1, 11, 3, 8, 7, 14, 10, 13, 12, 6, 2, 4) /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:98
+  [1m[36mLanchePorcao Load (0.3ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 5 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.5ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 6 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.4ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 1 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.6ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 10 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.4ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 3 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.6ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 14 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.7ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 8 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.5ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 9 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.4ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 13 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.3ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 7 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.3ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 12 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.4ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 11 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.5ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 16 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.5ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 4 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  [1m[36mLanchePorcao Load (0.5ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 AND "lanche_porcaos"."porcao_id" = 15 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/_form.html.erb:116
+  Rendered lanches/_form.html.erb (Duration: 57.3ms | GC: 4.8ms)
+  Rendered lanches/edit.html.erb within layouts/application (Duration: 58.1ms | GC: 4.8ms)
+  Rendered layout layouts/application.html.erb (Duration: 59.9ms | GC: 5.0ms)
+Completed 200 OK in 78ms (Views: 41.2ms | ActiveRecord: 22.9ms (20 queries, 1 cached) | GC: 5.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-06-16 13:02:05 -0300
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='AppBlacklanches',controller='home'*/[0m
+  ↳ app/views/home/index.html.erb:4
+  Rendered home/index.html.erb within layouts/application (Duration: 8.3ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | GC: 0.2ms)
+Completed 200 OK in 13ms (Views: 6.0ms | ActiveRecord: 3.0ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/compras" for 127.0.0.1 at 2025-06-16 13:02:06 -0300
+Processing by ComprasController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering compras/index.html.erb within layouts/application
+  [1m[36mCompra Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "compras" LIMIT 1 /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:10
+  [1m[36mCompra Load (0.4ms)[0m  [1m[34mSELECT "compras".* FROM "compras" /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:12:in `map'
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" IN (1, 2, 4, 5, 3, 7, 8, 10, 9, 12, 13, 14, 15) /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:12:in `map'
+  [1m[36mCompra Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "compras" WHERE "compras"."item_id" = 1 /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:21
+  [1m[36mCompra Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "compras" WHERE "compras"."item_id" = 2 /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:21
+  [1m[36mCompra Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "compras" WHERE "compras"."item_id" = 4 /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:21
+  [1m[36mCompra Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "compras" WHERE "compras"."item_id" = 5 /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:21
+  [1m[36mCompra Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "compras" WHERE "compras"."item_id" = 3 /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:21
+  [1m[36mCompra Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "compras" WHERE "compras"."item_id" = 7 /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:21
+  [1m[36mCompra Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "compras" WHERE "compras"."item_id" = 8 /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:21
+  [1m[36mCompra Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "compras" WHERE "compras"."item_id" = 10 /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:21
+  [1m[36mCompra Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "compras" WHERE "compras"."item_id" = 9 /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:21
+  [1m[36mCompra Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "compras" WHERE "compras"."item_id" = 12 /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:21
+  [1m[36mCompra Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "compras" WHERE "compras"."item_id" = 13 /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:21
+  [1m[36mCompra Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "compras" WHERE "compras"."item_id" = 14 /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:21
+  [1m[36mCompra Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "compras" WHERE "compras"."item_id" = 15 /*action='index',application='AppBlacklanches',controller='compras'*/[0m
+  ↳ app/views/compras/index.html.erb:21
+  [1m[36mCACHE Compra Load (0.0ms)[0m  [1m[34mSELECT "compras".* FROM "compras"[0m
+  ↳ app/views/compras/index.html.erb:30
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" IN (1, 2, 4, 5, 3, 7, 8, 10, 9, 12, 13, 14, 15)[0m
+  ↳ app/views/compras/index.html.erb:30
+  Rendered compras/index.html.erb within layouts/application (Duration: 35.0ms | GC: 7.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 36.2ms | GC: 7.5ms)
+Completed 200 OK in 44ms (Views: 30.4ms | ActiveRecord: 6.2ms (18 queries, 2 cached) | GC: 7.6ms)
+
+
+Started GET "/porcaos" for 127.0.0.1 at 2025-06-16 13:02:07 -0300
+Processing by PorcaosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering porcaos/index.html.erb within layouts/application
+  [1m[36mPorcao Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "porcaos" LIMIT 1 /*action='index',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/views/porcaos/index.html.erb:10
+  [1m[36mPorcao Load (0.2ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" /*action='index',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/views/porcaos/index.html.erb:12
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" IN (3, 1, 6, 2, 5, 9, 10, 8, 7, 11, 12, 13, 14, 4) /*action='index',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/views/porcaos/index.html.erb:12
+  Rendered porcaos/index.html.erb within layouts/application (Duration: 6.5ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | GC: 0.1ms)
+Completed 200 OK in 12ms (Views: 6.4ms | ActiveRecord: 1.1ms (3 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/porcaos/4/edit" for 127.0.0.1 at 2025-06-16 13:02:18 -0300
+Processing by PorcaosController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPorcao Load (0.6ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" = 4 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/controllers/porcaos_controller.rb:63:in `set_porcao'
+  Rendering layout layouts/application.html.erb
+  Rendering porcaos/edit.html.erb within layouts/application
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."ativo" = TRUE ORDER BY "items"."nome" ASC /*action='edit',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/views/porcaos/_form.html.erb:27
+  Rendered porcaos/_form.html.erb (Duration: 5.1ms | GC: 0.0ms)
+  Rendered porcaos/edit.html.erb within layouts/application (Duration: 6.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | GC: 0.0ms)
+Completed 200 OK in 14ms (Views: 6.2ms | ActiveRecord: 1.4ms (2 queries, 0 cached) | GC: 0.8ms)
+
+
+Started PATCH "/porcaos/4" for 127.0.0.1 at 2025-06-16 13:02:26 -0300
+Processing by PorcaosController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "porcao"=>{"nome"=>"queijo 30g", "item_id"=>"2", "peso_utilizado"=>"0.015", "custo"=>"1.2"}, "commit"=>"Salvar Porção", "id"=>"4"}
+  [1m[36mPorcao Load (0.8ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" = 4 LIMIT 1 /*action='update',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/controllers/porcaos_controller.rb:63:in `set_porcao'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*action='update',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/models/porcao.rb:20:in `calcular_custo'
+  [1m[36mItem Load (1.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = 2 LIMIT 1 /*action='update',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/models/porcao.rb:20:in `calcular_custo'
+  [1m[36mPorcao Update (0.4ms)[0m  [1m[33mUPDATE "porcaos" SET "peso_utilizado" = 0.015, "custo" = 0.6, "updated_at" = '2025-06-16 16:02:26.987041' WHERE "porcaos"."id" = 4 /*action='update',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/controllers/porcaos_controller.rb:40:in `block in update'
+  [1m[36mLanch Load (0.6ms)[0m  [1m[34mSELECT "lanches".* FROM "lanches" INNER JOIN "lanche_porcaos" ON "lanches"."id" = "lanche_porcaos"."lanch_id" WHERE "lanche_porcaos"."porcao_id" = 4 /*action='update',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/models/porcao.rb:29:in `atualizar_custos_dos_lanches'
+  [1m[36mActiveStorage::Attachment Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' LIMIT 1 /*action='update',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/models/lanch.rb:55:in `maximo_tres_fotos'
+  [1m[36mActiveStorage::Attachment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' /*action='update',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/models/lanch.rb:55:in `maximo_tres_fotos'
+  [1m[36mLanchePorcao Load (0.5ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 3 /*action='update',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/models/lanch.rb:18:in `total_custo'
+  [1m[36mPorcao Load (0.4ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" IN (1, 4, 7, 8, 11, 12) /*action='update',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/models/lanch.rb:18:in `total_custo'
+  [1m[36mCACHE LanchePorcao Load (0.0ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 3[0m
+  ↳ app/models/lanch.rb:18:in `total_custo'
+  [1m[36mCACHE Porcao Load (0.0ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" IN (1, 4, 7, 8, 11, 12)[0m
+  ↳ app/models/lanch.rb:18:in `total_custo'
+  [1m[36mLanch Update (0.4ms)[0m  [1m[33mUPDATE "lanches" SET "custo" = 6.6905, "preco_sugerido" = 13.381, "updated_at" = '2025-06-16 16:02:27.006478' WHERE "lanches"."id" = 3 /*action='update',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/models/porcao.rb:29:in `atualizar_custos_dos_lanches'
+  [1m[36mLanchePorcao Load (0.2ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 3 /*action='update',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/models/lanch.rb:18:in `total_custo'
+  [1m[36mPorcao Load (0.3ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" IN (1, 4, 7, 8, 11, 12) /*action='update',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/models/lanch.rb:18:in `total_custo'
+  [1m[36mCACHE LanchePorcao Load (0.0ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 3[0m
+  ↳ app/models/lanch.rb:18:in `total_custo'
+  [1m[36mCACHE Porcao Load (0.0ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" IN (1, 4, 7, 8, 11, 12)[0m
+  ↳ app/models/lanch.rb:18:in `total_custo'
+  [1m[36mActiveStorage::Attachment Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 4 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' LIMIT 1 /*action='update',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/models/lanch.rb:55:in `maximo_tres_fotos'
+  [1m[36mActiveStorage::Attachment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 4 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' /*action='update',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/models/lanch.rb:55:in `maximo_tres_fotos'
+  [1m[36mLanchePorcao Load (0.2ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 4 /*action='update',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/models/lanch.rb:18:in `total_custo'
+  [1m[36mPorcao Load (0.3ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" IN (1, 3, 4, 8, 11, 12) /*action='update',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/models/lanch.rb:18:in `total_custo'
+  [1m[36mCACHE LanchePorcao Load (0.0ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 4[0m
+  ↳ app/models/lanch.rb:18:in `total_custo'
+  [1m[36mCACHE Porcao Load (0.0ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" IN (1, 3, 4, 8, 11, 12)[0m
+  ↳ app/models/lanch.rb:18:in `total_custo'
+  [1m[36mLanch Update (0.3ms)[0m  [1m[33mUPDATE "lanches" SET "custo" = 8.1905, "preco_sugerido" = 16.381, "updated_at" = '2025-06-16 16:02:27.014739' WHERE "lanches"."id" = 4 /*action='update',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/models/porcao.rb:29:in `atualizar_custos_dos_lanches'
+  [1m[36mLanchePorcao Load (0.2ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 4 /*action='update',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/models/lanch.rb:18:in `total_custo'
+  [1m[36mPorcao Load (0.3ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" IN (1, 3, 4, 8, 11, 12) /*action='update',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/models/lanch.rb:18:in `total_custo'
+  [1m[36mCACHE LanchePorcao Load (0.0ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 4[0m
+  ↳ app/models/lanch.rb:18:in `total_custo'
+  [1m[36mCACHE Porcao Load (0.0ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" IN (1, 3, 4, 8, 11, 12)[0m
+  ↳ app/models/lanch.rb:18:in `total_custo'
+  [1m[36mActiveStorage::Attachment Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 8 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' LIMIT 1 /*action='update',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/models/lanch.rb:55:in `maximo_tres_fotos'
+  [1m[36mLanchePorcao Load (0.3ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 /*action='update',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/models/lanch.rb:18:in `total_custo'
+  [1m[36mPorcao Load (0.3ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" IN (5, 3, 12, 11, 16, 4, 15) /*action='update',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/models/lanch.rb:18:in `total_custo'
+  [1m[36mCACHE LanchePorcao Load (0.0ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8[0m
+  ↳ app/models/lanch.rb:18:in `total_custo'
+  [1m[36mCACHE Porcao Load (0.0ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" IN (5, 3, 12, 11, 16, 4, 15)[0m
+  ↳ app/models/lanch.rb:18:in `total_custo'
+  [1m[36mLanch Update (0.3ms)[0m  [1m[33mUPDATE "lanches" SET "custo" = 15.08, "preco_sugerido" = 30.16, "updated_at" = '2025-06-16 16:02:27.022234' WHERE "lanches"."id" = 8 /*action='update',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/models/porcao.rb:29:in `atualizar_custos_dos_lanches'
+  [1m[36mLanchePorcao Load (0.3ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 /*action='update',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/models/lanch.rb:18:in `total_custo'
+  [1m[36mPorcao Load (0.5ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" IN (5, 3, 12, 11, 16, 4, 15) /*action='update',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/models/lanch.rb:18:in `total_custo'
+  [1m[36mCACHE LanchePorcao Load (0.0ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8[0m
+  ↳ app/models/lanch.rb:18:in `total_custo'
+  [1m[36mCACHE Porcao Load (0.0ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" IN (5, 3, 12, 11, 16, 4, 15)[0m
+  ↳ app/models/lanch.rb:18:in `total_custo'
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT /*action='update',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/controllers/porcaos_controller.rb:40:in `block in update'
+Redirected to http://127.0.0.1:3000/porcaos/4
+Completed 302 Found in 53ms (ActiveRecord: 12.0ms (36 queries, 12 cached) | GC: 7.8ms)
+
+
+Started GET "/porcaos/4" for 127.0.0.1 at 2025-06-16 13:02:27 -0300
+Processing by PorcaosController#show as TURBO_STREAM
+  Parameters: {"id"=>"4"}
+  [1m[36mPorcao Load (0.4ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" = 4 LIMIT 1 /*action='show',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/controllers/porcaos_controller.rb:63:in `set_porcao'
+  Rendering layout layouts/application.html.erb
+  Rendering porcaos/show.html.erb within layouts/application
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = 2 LIMIT 1 /*action='show',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/views/porcaos/_porcao.html.erb:8
+  Rendered porcaos/_porcao.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered porcaos/show.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 2.7ms | ActiveRecord: 0.7ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/porcaos" for 127.0.0.1 at 2025-06-16 13:02:29 -0300
+Processing by PorcaosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering porcaos/index.html.erb within layouts/application
+  [1m[36mPorcao Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "porcaos" LIMIT 1 /*action='index',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/views/porcaos/index.html.erb:10
+  [1m[36mPorcao Load (0.4ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" /*action='index',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/views/porcaos/index.html.erb:12
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" IN (3, 1, 6, 5, 9, 10, 8, 7, 11, 12, 13, 14, 4, 2) /*action='index',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/views/porcaos/index.html.erb:12
+  Rendered porcaos/index.html.erb within layouts/application (Duration: 14.2ms | GC: 6.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | GC: 6.6ms)
+Completed 200 OK in 19ms (Views: 13.2ms | ActiveRecord: 1.7ms (3 queries, 0 cached) | GC: 6.6ms)
+
+
+Started GET "/porcaos/new" for 127.0.0.1 at 2025-06-16 13:02:31 -0300
+Processing by PorcaosController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering porcaos/new.html.erb within layouts/application
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."ativo" = TRUE ORDER BY "items"."nome" ASC /*action='new',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/views/porcaos/_form.html.erb:27
+  Rendered porcaos/_form.html.erb (Duration: 3.6ms | GC: 0.0ms)
+  Rendered porcaos/new.html.erb within layouts/application (Duration: 4.6ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | GC: 0.4ms)
+Completed 200 OK in 11ms (Views: 5.1ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/porcaos/new" for 127.0.0.1 at 2025-06-16 13:02:31 -0300
+Processing by PorcaosController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering porcaos/new.html.erb within layouts/application
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."ativo" = TRUE ORDER BY "items"."nome" ASC /*action='new',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/views/porcaos/_form.html.erb:27
+  Rendered porcaos/_form.html.erb (Duration: 2.9ms | GC: 0.0ms)
+  Rendered porcaos/new.html.erb within layouts/application (Duration: 3.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 2.8ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/porcaos/11/edit" for 127.0.0.1 at 2025-06-16 13:02:32 -0300
+Processing by PorcaosController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mPorcao Load (0.5ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" = 11 LIMIT 1 /*action='edit',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/controllers/porcaos_controller.rb:63:in `set_porcao'
+  Rendering layout layouts/application.html.erb
+  Rendering porcaos/edit.html.erb within layouts/application
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."ativo" = TRUE ORDER BY "items"."nome" ASC /*action='edit',application='AppBlacklanches',controller='porcaos'*/[0m
+  ↳ app/views/porcaos/_form.html.erb:27
+  Rendered porcaos/_form.html.erb (Duration: 2.2ms | GC: 0.0ms)
+  Rendered porcaos/edit.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 2.6ms | ActiveRecord: 0.9ms (2 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-06-16 13:02:33 -0300
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='AppBlacklanches',controller='home'*/[0m
+  ↳ app/views/home/index.html.erb:4
+  Rendered home/index.html.erb within layouts/application (Duration: 1.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 2.1ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/lanches" for 127.0.0.1 at 2025-06-16 13:02:34 -0300
+Processing by LanchesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering lanches/index.html.erb within layouts/application
+  [1m[36mLanch Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "lanches" LIMIT 1 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:10
+  [1m[36mLanch Load (0.2ms)[0m  [1m[34mSELECT "lanches".* FROM "lanches" /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:12
+  [1m[36mLanchePorcao Load (0.6ms)[0m  [1m[34mSELECT "lanche_porcaos".* FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" IN (5, 6, 3, 4, 8) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:12
+  [1m[36mPorcao Load (0.4ms)[0m  [1m[34mSELECT "porcaos".* FROM "porcaos" WHERE "porcaos"."id" IN (1, 4, 7, 8, 11, 12, 3, 6, 9, 10, 13, 5, 16, 15) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:12
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" IN (1, 6, 3, 5, 9, 10, 8, 7, 11, 12, 13, 14, 4, 2) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:12
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' AND "active_storage_attachments"."record_id" IN (5, 6, 3, 4, 8) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:12
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (7, 8, 9, 10, 11, 12, 13, 14) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:12
+  [1m[36mActiveStorage::VariantRecord Load (0.3ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" IN (8, 7, 9, 10, 11, 12, 13, 14) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:12
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = 'ActiveStorage::Blob' AND "active_storage_attachments"."name" = 'preview_image' AND "active_storage_attachments"."record_id" IN (8, 7, 9, 10, 11, 12, 13, 14) /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:12
+  [1m[36mActiveStorage::Attachment Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 5 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:20
+  [1m[36mCACHE ActiveStorage::Attachment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 5 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos'[0m
+  ↳ app/views/lanches/index.html.erb:21
+  [1m[36mLanchePorcao Sum (0.3ms)[0m  [1m[34mSELECT SUM("lanche_porcaos"."quantidade") FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 5 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:41
+  [1m[36mLanchePorcao Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 5 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:42
+  [1m[36mActiveStorage::Attachment Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 6 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:20
+  [1m[36mCACHE ActiveStorage::Attachment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 6 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos'[0m
+  ↳ app/views/lanches/index.html.erb:21
+  [1m[36mLanchePorcao Sum (0.3ms)[0m  [1m[34mSELECT SUM("lanche_porcaos"."quantidade") FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 6 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:41
+  [1m[36mLanchePorcao Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 6 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:42
+  [1m[36mActiveStorage::Attachment Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:20
+  [1m[36mCACHE ActiveStorage::Attachment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos'[0m
+  ↳ app/views/lanches/index.html.erb:21
+  [1m[36mLanchePorcao Sum (0.3ms)[0m  [1m[34mSELECT SUM("lanche_porcaos"."quantidade") FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 3 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:41
+  [1m[36mLanchePorcao Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 3 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:42
+  [1m[36mActiveStorage::Attachment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 4 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos' /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:20
+  [1m[36mCACHE ActiveStorage::Attachment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 4 AND "active_storage_attachments"."record_type" = 'Lanch' AND "active_storage_attachments"."name" = 'fotos'[0m
+  ↳ app/views/lanches/index.html.erb:21
+  [1m[36mLanchePorcao Sum (0.2ms)[0m  [1m[34mSELECT SUM("lanche_porcaos"."quantidade") FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 4 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:41
+  [1m[36mLanchePorcao Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 4 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:42
+  [1m[36mLanchePorcao Sum (0.2ms)[0m  [1m[34mSELECT SUM("lanche_porcaos"."quantidade") FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:41
+  [1m[36mLanchePorcao Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lanche_porcaos" WHERE "lanche_porcaos"."lanch_id" = 8 /*action='index',application='AppBlacklanches',controller='lanches'*/[0m
+  ↳ app/views/lanches/index.html.erb:42
+  Rendered lanches/index.html.erb within layouts/application (Duration: 51.7ms | GC: 4.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 52.3ms | GC: 4.1ms)
+Completed 200 OK in 58ms (Views: 41.5ms | ActiveRecord: 11.1ms (27 queries, 4 cached) | GC: 4.1ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ4aDd5YmlhMmFhNnBrdXJucDh6Mmljemk2MWhjIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiV2hhdHNBcHAgSW1hZ2UgMjAyNS0wNi0wMiBhdCAxMC41OS40MS5qcGVnXCI7IGZpbGVuYW1lKj1VVEYtOCcnV2hhdHNBcHAlMjBJbWFnZSUyMDIwMjUtMDYtMDIlMjBhdCUyMDEwLjU5LjQxLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNi0xNlQxNjowNTo1My4wMDRaIiwicHVyIjoiYmxvYl9rZXkifX0=--aa9c9dafe606986ac91f3c62c330db2c5375b5ae/WhatsApp%20Image%202025-06-02%20at%2010.59.41.jpeg" for 127.0.0.1 at 2025-06-16 13:02:34 -0300
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ5MmhuNDl5eGgxYWdxdzVwcnoxMzVhbW43MnA3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiV2hhdHNBcHAgSW1hZ2UgMjAyNS0wNi0wMiBhdCAxMC41OS40MSAlMjgxJTI5LmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydXaGF0c0FwcCUyMEltYWdlJTIwMjAyNS0wNi0wMiUyMGF0JTIwMTAuNTkuNDElMjAlMjgxJTI5LmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNi0xNlQxNjowNTo1My4wMjVaIiwicHVyIjoiYmxvYl9rZXkifX0=--407aa0c833cabf853f3c3898a58a5dfc731fca32/WhatsApp%20Image%202025-06-02%20at%2010.59.41%20(1).jpeg" for 127.0.0.1 at 2025-06-16 13:02:34 -0300
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ3emo3ZHR4ZWozdmFnMmdodXI3MTk3eWV6cGNzIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiV2hhdHNBcHAgSW1hZ2UgMjAyNS0wNi0wOSBhdCAxNS4zMi40MS5qcGVnXCI7IGZpbGVuYW1lKj1VVEYtOCcnV2hhdHNBcHAlMjBJbWFnZSUyMDIwMjUtMDYtMDklMjBhdCUyMDE1LjMyLjQxLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNi0xNlQxNjowNTo1Mi45OTBaIiwicHVyIjoiYmxvYl9rZXkifX0=--b249c5be065344866999919062fd233b31426ccc/WhatsApp%20Image%202025-06-09%20at%2015.32.41.jpeg" for 127.0.0.1 at 2025-06-16 13:02:34 -0300
+Processing by ActiveStorage::DiskController#show as JPEG
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"WhatsApp Image 2025-06-09 at 15.32.41"}
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"WhatsApp Image 2025-06-02 at 10.59.41 (1)"}
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"WhatsApp Image 2025-06-02 at 10.59.41"}
+Completed 304 Not Modified in 24ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 4.0ms)
+
+
+Completed 304 Not Modified in 24ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 4.0ms)
+
+
+Completed 304 Not Modified in 23ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 4.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ2Nms4eGFua3RpNWFqb2h5NmJoMjZsbHE2a2J5IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiV2hhdHNBcHAgSW1hZ2UgMjAyNS0wNi0wMiBhdCAxMC41OS40MCAlMjgyJTI5LmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydXaGF0c0FwcCUyMEltYWdlJTIwMjAyNS0wNi0wMiUyMGF0JTIwMTAuNTkuNDAlMjAlMjgyJTI5LmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNi0xNlQxNjowNTo1My4yNDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--cf36dfbc929abc4eb8cfcea43d65d7fb90a5f759/WhatsApp%20Image%202025-06-02%20at%2010.59.40%20(2).jpeg" for 127.0.0.1 at 2025-06-16 13:02:34 -0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"WhatsApp Image 2025-06-02 at 10.59.40 (2)"}
+Completed 304 Not Modified in 4ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+

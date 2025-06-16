@@ -3,7 +3,7 @@ class LanchesController < ApplicationController
 
   # GET /lanches or /lanches.json
   def index
-    @lanches = Lanch.all
+    @lanches = Lanch.includes(lanche_porcaos: { porcao: :item }).with_attached_fotos
   end
 
   # GET /lanches/1 or /lanches/1.json
@@ -17,9 +17,7 @@ class LanchesController < ApplicationController
 
   # GET /lanches/1/edit
   def edit
-  end
-
-  # POST /lanches or /lanches.json
+  end  # POST /lanches or /lanches.json
   def create
     @lanch = Lanch.new(lanch_params)
 
@@ -30,6 +28,11 @@ class LanchesController < ApplicationController
           adicionar_fotos_ao_lanche
         end
 
+        # Processar porções com quantidades
+        if params[:lanch][:porcoes_com_quantidade].present?
+          processar_porcoes_com_quantidade
+        end
+
         format.html { redirect_to @lanch, notice: "Lanche foi criado com sucesso." }
         format.json { render :show, status: :created, location: @lanch }
       else
@@ -37,15 +40,19 @@ class LanchesController < ApplicationController
         format.json { render json: @lanch.errors, status: :unprocessable_entity }
       end
     end
-  end
-
-  # PATCH/PUT /lanches/1 or /lanches/1.json
+  end# PATCH/PUT /lanches/1 or /lanches/1.json
   def update
     respond_to do |format|
       # Processar fotos separadamente para adicionar ao invés de substituir
       if params[:lanch][:fotos].present?
         adicionar_fotos_ao_lanche
         params[:lanch].delete(:fotos)  # Remove do params para não sobrescrever
+      end
+
+      # Processar porções com quantidades
+      if params[:lanch][:porcoes_com_quantidade].present?
+        processar_porcoes_com_quantidade
+        params[:lanch].delete(:porcoes_com_quantidade)
       end
 
       if @lanch.update(lanch_params)
@@ -92,7 +99,26 @@ class LanchesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def lanch_params
-      params.expect(lanch: [ :nome, :ingredientes, :custo, :preco_sugerido, porcao_ids: [], fotos: [] ])
+      params.expect(lanch: [ :nome, :ingredientes, :custo, :preco_sugerido, porcao_ids: [], fotos: [], porcoes_com_quantidade: {} ])
+    end
+
+    # Processa porções com suas respectivas quantidades
+    def processar_porcoes_com_quantidade
+      return unless params[:lanch][:porcoes_com_quantidade].present?
+
+      # Remove todas as porções atuais
+      @lanch.lanche_porcaos.destroy_all
+
+      # Adiciona as novas porções com quantidades
+      params[:lanch][:porcoes_com_quantidade].each do |porcao_id, quantidade|
+        quantidade_int = quantidade.to_i
+        if quantidade_int > 0
+          @lanch.lanche_porcaos.create!(
+            porcao_id: porcao_id.to_i,
+            quantidade: quantidade_int
+          )
+        end
+      end
     end
 
     # Adiciona fotos ao lanche sem substituir as existentes

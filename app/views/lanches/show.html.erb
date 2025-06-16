@@ -69,14 +69,31 @@
     <h3>Porções Utilizadas:</h3>
     <% if @lanch.porcaos.any? %>
       <div class="porcoes-detalhes">
-        <% @lanch.porcaos.includes(:item).each do |porcao| %>
+        <% @lanch.lanche_porcaos.includes(:porcao, porcao: :item).each do |lanche_porcao| %>
           <div class="porcao-item">
-            <strong><%= porcao.nome || "#{porcao.item.nome} - #{porcao.peso_utilizado}kg" %></strong><br>
-            <small>
-              Ingrediente: <%= porcao.item.nome %> | 
-              Peso: <%= porcao.peso_utilizado %>kg | 
-              Custo: R$ <%= number_with_precision(porcao.custo || 0, precision: 2) %>
-            </small>
+            <div class="d-flex justify-content-between align-items-start">
+              <div class="porcao-info">
+                <strong>
+                  <%= lanche_porcao.porcao.nome || "#{lanche_porcao.porcao.item.nome} - #{lanche_porcao.porcao.peso_utilizado}kg" %>
+                  <% if lanche_porcao.quantidade > 1 %>
+                    <span class="badge bg-primary ms-2"><%= lanche_porcao.quantidade %>x</span>
+                  <% end %>
+                </strong><br>
+                <small>
+                  Ingrediente: <%= lanche_porcao.porcao.item.nome %> | 
+                  Peso unitário: <%= lanche_porcao.porcao.peso_utilizado %>kg | 
+                  Custo unitário: R$ <%= number_with_precision(lanche_porcao.porcao.custo || 0, precision: 2) %>
+                </small>
+              </div>
+              <div class="porcao-custo text-end">
+                <strong class="text-success">
+                  R$ <%= number_with_precision((lanche_porcao.porcao.custo || 0) * lanche_porcao.quantidade, precision: 2) %>
+                </strong>
+                <% if lanche_porcao.quantidade > 1 %>
+                  <br><small class="text-muted">(<%= lanche_porcao.quantidade %> unidades)</small>
+                <% end %>
+              </div>
+            </div>
           </div>
         <% end %>
       </div>

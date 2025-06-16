@@ -94,28 +94,44 @@
   <!-- Seleção de Porções -->
   <div class="form-group">
     <label style="display: block"><strong>Porções do Lanche:</strong></label>
-    <div class="porcoes-selection" style="max-height: 300px; overflow-y: auto; border: 1px solid #ddd; padding: 10px; border-radius: 5px;">
-      <% Porcao.includes(:item).each do |porcao| %>
-        <div class="porcao-checkbox" style="margin-bottom: 8px;">
-          <%= check_box_tag "lanch[porcao_ids][]", porcao.id, 
-              lanch.porcaos.include?(porcao), 
-              id: "porcao_#{porcao.id}",
-              data: { 
-                action: "change->lanche_form#calcularCusto",
-                custo: porcao.custo || 0
-              } %>
-          <%= label_tag "porcao_#{porcao.id}", style: "margin-left: 8px;" do %>
-            <strong><%= porcao.nome || "#{porcao.item.nome} - #{porcao.peso_utilizado}kg" %></strong>
-            <br>
-            <small class="text-muted">
-              Ingrediente: <%= porcao.item.nome %> | 
-              Peso: <%= porcao.peso_utilizado %>kg | 
-              Custo: R$ <%= number_with_precision(porcao.custo || 0, precision: 2) %>
-            </small>
-          <% end %>
+    <div class="porcoes-selection" style="max-height: 400px; overflow-y: auto; border: 1px solid #ddd; padding: 15px; border-radius: 5px;">
+      <% Porcao.includes(:item).order(:nome).each do |porcao| %>
+        <div class="porcao-checkbox" style="margin-bottom: 15px; background: white; border: 1px solid #e9ecef; border-radius: 8px; padding: 15px;">
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="porcao-info" style="flex: 1;">
+              <label style="margin: 0; cursor: pointer; display: block;">
+                <strong><%= porcao.nome || "#{porcao.item.nome} - #{porcao.peso_utilizado}kg" %></strong>
+                <br>
+                <small class="text-muted">
+                  Ingrediente: <%= porcao.item.nome %> | 
+                  Peso: <%= porcao.peso_utilizado %>kg | 
+                  Custo: R$ <%= number_with_precision(porcao.custo || 0, precision: 2) %>
+                </small>
+              </label>
+            </div>
+            
+            <div class="quantidade-control" style="display: flex; align-items: center; gap: 10px;">
+              <label for="porcao_quantidade_<%= porcao.id %>" style="margin: 0; font-weight: bold;">Qtd:</label>
+              <%= number_field_tag "lanch[porcoes_com_quantidade][#{porcao.id}]", 
+                  (@lanch.lanche_porcaos.find_by(porcao: porcao)&.quantidade || 0),
+                  min: 0, max: 10, 
+                  class: "form-control quantidade-input", 
+                  style: "width: 70px; text-align: center;",
+                  id: "porcao_quantidade_#{porcao.id}",
+                  data: { 
+                    action: "change->lanche_form#calcularCusto",
+                    custo: porcao.custo || 0,
+                    porcao_id: porcao.id
+                  } %>
+            </div>
+          </div>
         </div>
       <% end %>
     </div>
+    
+    <small class="form-text text-muted mt-2">
+      <strong>Dica:</strong> Use os campos de quantidade para adicionar múltiplas unidades da mesma porção (ex: 2x "Carne 150g")
+    </small>
   </div>
 
   <!-- Campos calculados automaticamente -->

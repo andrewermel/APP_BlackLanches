@@ -8,14 +8,23 @@ export default class extends Controller {
   }
 
   calcularCusto() {
-    const checkboxes = this.element.querySelectorAll(
-      'input[name="lanch[porcao_ids][]"]:checked'
+    const quantidadeInputs = this.element.querySelectorAll(
+      'input[name*="porcoes_com_quantidade"]'
     );
     let custoTotal = 0;
 
-    checkboxes.forEach((checkbox) => {
-      const custo = parseFloat(checkbox.dataset.custo) || 0;
-      custoTotal += custo;
+    quantidadeInputs.forEach((input) => {
+      const quantidade = parseInt(input.value) || 0;
+      const custo = parseFloat(input.dataset.custo) || 0;
+      custoTotal += custo * quantidade;
+
+      // Destacar visualmente porções com quantidade > 0
+      const porcaoDiv = input.closest(".porcao-checkbox");
+      if (quantidade > 0) {
+        porcaoDiv.classList.add("has-quantity");
+      } else {
+        porcaoDiv.classList.remove("has-quantity");
+      }
     });
 
     // Atualiza o campo de custo
@@ -27,6 +36,38 @@ export default class extends Controller {
     const precoSugerido = custoTotal * 2;
     if (this.hasPrecoFieldTarget) {
       this.precoFieldTarget.value = precoSugerido.toFixed(2);
+    }
+
+    // Atualiza contador visual de porções selecionadas
+    this.atualizarContadorPorcoes(quantidadeInputs);
+  }
+
+  atualizarContadorPorcoes(quantidadeInputs) {
+    let totalPorcoes = 0;
+    let porcoesUnicas = 0;
+
+    quantidadeInputs.forEach((input) => {
+      const quantidade = parseInt(input.value) || 0;
+      if (quantidade > 0) {
+        totalPorcoes += quantidade;
+        porcoesUnicas += 1;
+      }
+    });
+
+    // Atualiza ou cria indicador visual
+    let indicador = this.element.querySelector(".porcoes-contador");
+    if (!indicador) {
+      indicador = document.createElement("div");
+      indicador.className = "porcoes-contador alert alert-info mt-2";
+      const selecaoDiv = this.element.querySelector(".porcoes-selection");
+      selecaoDiv.parentNode.insertBefore(indicador, selecaoDiv.nextSibling);
+    }
+
+    if (totalPorcoes > 0) {
+      indicador.innerHTML = `<strong>Resumo:</strong> ${porcoesUnicas} tipo(s) de porção, total de ${totalPorcoes} unidade(s)`;
+      indicador.style.display = "block";
+    } else {
+      indicador.style.display = "none";
     }
   }
 

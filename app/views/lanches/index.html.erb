@@ -9,7 +9,7 @@
 
 <% if @lanches.any? %>
   <div class="lanches-grid">
-    <% @lanches.includes(:porcaos).each do |lanch| %>
+    <% @lanches.each do |lanch| %>
       <div class="lanche-card">
         <!-- Foto principal do lanche -->
         <% if lanch.fotos.attached? && lanch.fotos.first.representable? %>
@@ -37,13 +37,17 @@
           <% end %>
         
         <div class="lanche-info">
-          <p><strong>Porções:</strong> <%= lanch.porcaos.count %> item(ns)</p>
+          <p><strong>Porções:</strong> 
+            <%= lanch.lanche_porcaos.sum(:quantidade) %> unidade(s) 
+            (<%= lanch.lanche_porcaos.count %> tipo(s))
+          </p>
           
-          <% if lanch.porcaos.any? %>
+          <% if lanch.lanche_porcaos.any? %>
             <div class="porcoes-list">
               <small>
-                <% lanch.porcaos.includes(:item).each do |porcao| %>
-                  • <%= porcao.nome || "#{porcao.item.nome} (#{porcao.peso_utilizado}kg)" %><br>
+                <% lanch.lanche_porcaos.each do |lanche_porcao| %>
+                  • <%= lanche_porcao.quantidade %>x 
+                    <%= lanche_porcao.porcao.nome || "#{lanche_porcao.porcao.item.nome} (#{lanche_porcao.porcao.peso_utilizado}kg)" %><br>
                 <% end %>
               </small>
             </div>
