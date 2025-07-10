@@ -140,7 +140,7 @@
       <%= form.label :custo, "Custo Total (Calculado automaticamente)", style: "display: block" %>
       <%= form.number_field :custo, step: 0.01, readonly: true,
           data: { target: "lanche_form.custoField" },
-          style: "background: #e9ecef;", 
+          style: "background: #e9ecef;",
           class: "form-control" %>
     </div>
 
@@ -148,8 +148,17 @@
       <%= form.label :preco_sugerido, "Preço Sugerido (2x o custo)", style: "display: block" %>
       <%= form.number_field :preco_sugerido, step: 0.01, readonly: true,
           data: { target: "lanche_form.precoField" },
-          style: "background: #e9ecef;", 
+          style: "background: #e9ecef;",
           class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :valor_venda, "Valor de Venda (definido pelo usuário)", style: "display: block" %>
+      <%= form.number_field :valor_venda, step: 0.01,
+          class: "form-control",
+          placeholder: "Ex: 25.00",
+          required: false %>
+      <small class="form-text text-muted">Informe o valor de venda final do lanche.</small>
     </div>
   </div>
 

@@ -19,7 +19,9 @@ class LanchesController < ApplicationController
   def edit
   end  # POST /lanches or /lanches.json
   def create
-    @lanch = Lanch.new(lanch_params)
+    # Criar parâmetros sem porcoes_com_quantidade
+    create_params = lanch_params_without_special_attributes
+    @lanch = Lanch.new(create_params)
 
     respond_to do |format|
       if @lanch.save
@@ -31,6 +33,9 @@ class LanchesController < ApplicationController
         # Processar porções com quantidades
         if params[:lanch][:porcoes_com_quantidade].present?
           processar_porcoes_com_quantidade
+          # Recalcular custo após adicionar porções
+          @lanch.send(:calcular_custo_e_preco_sugerido)
+          @lanch.save
         end
 
         format.html { redirect_to @lanch, notice: "Lanche foi criado com sucesso." }
@@ -40,22 +45,24 @@ class LanchesController < ApplicationController
         format.json { render json: @lanch.errors, status: :unprocessable_entity }
       end
     end
-  end# PATCH/PUT /lanches/1 or /lanches/1.json
+  end  # PATCH/PUT /lanches/1 or /lanches/1.json
   def update
     respond_to do |format|
       # Processar fotos separadamente para adicionar ao invés de substituir
       if params[:lanch][:fotos].present?
         adicionar_fotos_ao_lanche
-        params[:lanch].delete(:fotos)  # Remove do params para não sobrescrever
       end
 
       # Processar porções com quantidades
       if params[:lanch][:porcoes_com_quantidade].present?
         processar_porcoes_com_quantidade
-        params[:lanch].delete(:porcoes_com_quantidade)
+        # Recalcular custo após modificar porções
+        @lanch.send(:calcular_custo_e_preco_sugerido)
       end
 
-      if @lanch.update(lanch_params)
+      # Usar parâmetros sem os atributos especiais
+      update_params = lanch_params_without_special_attributes
+      if @lanch.update(update_params)
         format.html { redirect_to @lanch, notice: "Lanche foi atualizado com sucesso." }
         format.json { render :show, status: :ok, location: @lanch }
       else
@@ -99,7 +106,12 @@ class LanchesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def lanch_params
-      params.expect(lanch: [ :nome, :ingredientes, :custo, :preco_sugerido, porcao_ids: [], fotos: [], porcoes_com_quantidade: {} ])
+      params.expect(lanch: [ :nome, :ingredientes, :custo, :preco_sugerido, :valor_venda, porcao_ids: [], fotos: [], porcoes_com_quantidade: {} ])
+    end
+
+    # Parâmetros sem os atributos especiais que precisam de processamento separado
+    def lanch_params_without_special_attributes
+      params.expect(lanch: [ :nome, :ingredientes, :custo, :preco_sugerido, :valor_venda ])
     end
 
     # Processa porções com suas respectivas quantidades
@@ -119,6 +131,9 @@ class LanchesController < ApplicationController
           )
         end
       end
+
+      # Recarregar as associações para garantir que os cálculos usem dados atualizados
+      @lanch.reload
     end
 
     # Adiciona fotos ao lanche sem substituir as existentes

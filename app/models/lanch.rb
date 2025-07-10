@@ -38,6 +38,12 @@ class Lanch < ApplicationRecord
     save
   end
 
+  # Lucro = valor de venda - custo
+  def lucro
+    return nil if valor_venda.nil? || custo.nil?
+    valor_venda - custo
+  end
+
   private
 
   def calcular_custo_e_preco_sugerido

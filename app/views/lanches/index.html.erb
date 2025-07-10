@@ -57,6 +57,8 @@
         <div class="pricing">
           <p><strong>Custo:</strong> <span class="custo">R$ <%= number_with_precision(lanch.custo || 0, precision: 2) %></span></p>
           <p><strong>Preço Sugerido:</strong> <span class="preco-sugerido">R$ <%= number_with_precision(lanch.preco_sugerido || 0, precision: 2) %></span></p>
+          <p><strong>Valor de Venda:</strong> <span class="valor-venda">R$ <%= number_with_precision(lanch.valor_venda || 0, precision: 2) %></span></p>
+          <p><strong>Lucro:</strong> <span class="lucro">R$ <%= number_with_precision(lanch.lucro || 0, precision: 2) %></span></p>
         </div>
         
           <div class="lanche-actions">

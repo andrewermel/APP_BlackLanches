@@ -102,15 +102,22 @@
     <% end %>
   </div>
   
-  <div class="pricing-section">
-    <div class="pricing-card">
-      <h3>💰 Resumo Financeiro</h3>
-      <p><strong>Custo Total:</strong> <span class="custo-total">R$ <%= number_with_precision(@lanch.custo || 0, precision: 2) %></span></p>
-      <p><strong>Preço Sugerido:</strong> <span class="preco-sugerido">R$ <%= number_with_precision(@lanch.preco_sugerido || 0, precision: 2) %></span></p>
-      <% if (@lanch.custo || 0) > 0 %>
-        <p><small>Margem: <%= number_with_precision(((@lanch.preco_sugerido || 0) - (@lanch.custo || 0)) / (@lanch.custo || 1) * 100, precision: 0) %>%</small></p>
-      <% end %>
-    </div>
+  <div class="precos-section mt-4">
+    <h3>💰 Preços</h3>
+    <ul class="list-group">
+      <li class="list-group-item">
+        <strong>Custo Total:</strong> R$ <%= number_with_precision(@lanch.custo || 0, precision: 2) %>
+      </li>
+      <li class="list-group-item">
+        <strong>Preço Sugerido:</strong> R$ <%= number_with_precision(@lanch.preco_sugerido || 0, precision: 2) %>
+      </li>
+      <li class="list-group-item">
+        <strong>Valor de Venda:</strong> R$ <%= number_with_precision(@lanch.valor_venda || 0, precision: 2) %>
+      </li>
+      <li class="list-group-item">
+        <strong>Lucro:</strong> R$ <%= number_with_precision(@lanch.lucro || 0, precision: 2) %>
+      </li>
+    </ul>
   </div>
 </div>
 
