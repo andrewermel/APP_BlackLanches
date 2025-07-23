@@ -61,6 +61,10 @@
           <p><strong>Lucro:</strong> <span class="lucro">R$ <%= number_with_precision(lanch.lucro || 0, precision: 2) %></span></p>
         </div>
         
+          <div class="lanche-actions" style="margin-bottom: 10px;">
+            <%= link_to "⬆️", move_up_lanch_path(lanch), method: :patch, class: "btn btn-warning btn-sm", title: "Mover para cima", data: { turbo: false } %>
+            <%= link_to "⬇️", move_down_lanch_path(lanch), method: :patch, class: "btn btn-warning btn-sm", title: "Mover para baixo", data: { turbo: false } %>
+          </div>
           <div class="lanche-actions">
             <%= link_to "Ver", lanch, class: "btn btn-info btn-sm" %>
             <%= link_to "Editar", edit_lanch_path(lanch), class: "btn btn-warning btn-sm" %>

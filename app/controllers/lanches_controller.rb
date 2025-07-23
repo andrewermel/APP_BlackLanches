@@ -98,6 +98,28 @@ class LanchesController < ApplicationController
     end
   end
 
+  def move_up
+    lanch = Lanch.find(params[:id])
+    anterior = Lanch.where("posicao < ?", lanch.posicao).order(posicao: :desc).first
+    if anterior
+      lanch.posicao, anterior.posicao = anterior.posicao, lanch.posicao
+      lanch.save!
+      anterior.save!
+    end
+    redirect_to lanches_path, notice: "Lanche movido para cima."
+  end
+
+  def move_down
+    lanch = Lanch.find(params[:id])
+    proximo = Lanch.where("posicao > ?", lanch.posicao).order(posicao: :asc).first
+    if proximo
+      lanch.posicao, proximo.posicao = proximo.posicao, lanch.posicao
+      lanch.save!
+      proximo.save!
+    end
+    redirect_to lanches_path, notice: "Lanche movido para baixo."
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_lanch

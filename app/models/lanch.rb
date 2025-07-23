@@ -14,6 +14,8 @@ class Lanch < ApplicationRecord
   before_save :calcular_custo_e_preco_sugerido
   after_update :atualizar_calculos_se_porcaos_mudaram
 
+  default_scope { order(:posicao) }
+
   def total_custo
     lanche_porcaos.includes(:porcao).sum { |lp| (lp.porcao.custo || 0) * lp.quantidade }
   end

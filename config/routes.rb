@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   resources :lanches do
     member do
       delete "remove_photo/:photo_id", to: "lanches#remove_photo", as: "remove_photo"
+      patch :move_up
+      patch :move_down
     end
   end
   resources :porcaos

@@ -1,4 +1,4 @@
-<%= form_with(model: lanch, data: { controller: "lanche_form" }) do |form| %>
+<%= form_with(model: lanch, data: { controller: "lanche_form" }, html: { multipart: true }) do |form| %>
   <% if lanch.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(lanch.errors.count, "error") %> prohibited this lanch from being saved:</h2>
@@ -61,7 +61,7 @@
                     confirm: "Tem certeza que deseja remover esta foto?",
                     class: "btn btn-danger btn-sm position-absolute",
                     style: "top: 5px; right: 5px; opacity: 0.8;",
-                    data: { bs_toggle: "tooltip", bs_title: "Remover foto" } do %>
+                    data: { turbo: false, bs_toggle: "tooltip", bs_title: "Remover foto" } do %>
                   <i class="fas fa-times"></i>
                 <% end %>
               </div>
