@@ -35,6 +35,9 @@ gem "solid_queue"
 gem "solid_cable"
 gem "pry"
 
+# Environment variables management [https://github.com/bkeepers/dotenv]
+gem "dotenv-rails", groups: [ :development, :test ]
+
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 

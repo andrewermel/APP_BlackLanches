@@ -21,13 +21,12 @@
               <% if foto.representable? %>
                 <%= image_tag foto, 
                     class: "card-img-top", 
-                    style: "height: 250px; object-fit: cover; cursor: pointer;",
                     data: { 
                       bs_toggle: "modal", 
                       bs_target: "#fotoModal#{index}" 
                     } %>
               <% else %>
-                <div class="card-img-top d-flex align-items-center justify-content-center" style="height: 250px; background: #f8f9fa;">
+                <div class="card-img-top d-flex align-items-center justify-content-center">
                   <div class="text-center">
                     <i class="fas fa-file-image fa-3x text-muted"></i>
                     <p class="mt-2 text-muted">Imagem não pode ser exibida</p>

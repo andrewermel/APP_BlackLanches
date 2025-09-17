@@ -11,11 +11,11 @@
   <!-- Resumo dos Preços Médios -->
   <% items_com_compras = @compras.includes(:item).map(&:item).uniq %>
   <% if items_com_compras.any? %>
-    <div class="precos-medios-resumo" style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+    <div class="precos-medios-resumo" style="background: #cc9900; padding: 15px; border-radius: 8px; margin-bottom: 20px; color: #2c3e50;">
       <h3>📊 Preços Médios Atuais</h3>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
         <% items_com_compras.each do |item| %>
-          <div style="background: white; padding: 10px; border-radius: 5px; border-left: 4px solid #007bff;">
+          <div style="background: #cc9900; padding: 10px; border-radius: 5px; border-left: 4px solid #007bff; color: #2c3e50;">
             <strong><%= item.nome %>:</strong><br>
             <span style="color: #28a745; font-size: 1.1em;">R$ <%= number_with_precision(item.preco, precision: 2) %>/kg</span><br>
             <small style="color: #6c757d;">(<%= item.compras.count %> compras)</small>
