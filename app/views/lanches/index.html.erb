@@ -3,8 +3,8 @@
 <% content_for :title, "Lanches" %>
 
 <div class="lanches-header">
-  <h1>🍔 Menu de Lanches</h1>
-  <%= link_to "➕ Novo Lanche", new_lanch_path, class: "btn btn-primary" %>
+  <h1>🍔 <%= t('lanches.title') %></h1>
+  <%= link_to "➕ #{t('lanches.new')}", new_lanch_path, class: "btn btn-primary" %>
 </div>
 
 <% if @lanches.any? %>
@@ -36,9 +36,9 @@
           <% end %>
         
         <div class="lanche-info">
-          <p><strong>Porções:</strong> 
-            <%= lanch.lanche_porcaos.sum(:quantidade) %> unidade(s) 
-            (<%= lanch.lanche_porcaos.count %> tipo(s))
+          <p><strong><%= t('lanches.portions') %>:</strong> 
+            <%= lanch.lanche_porcaos.sum(:quantidade) %> <%= t('lanches.units') %> 
+            (<%= lanch.lanche_porcaos.count %> <%= t('lanches.types') %>)
           </p>
           
           <% if lanch.lanche_porcaos.any? %>
@@ -54,21 +54,21 @@
         </div>
         
         <div class="pricing">
-          <p><strong>Custo:</strong> <span class="custo">R$ <%= number_with_precision(lanch.custo || 0, precision: 2) %></span></p>
-          <p><strong>Preço Sugerido:</strong> <span class="preco-sugerido">R$ <%= number_with_precision(lanch.preco_sugerido || 0, precision: 2) %></span></p>
-          <p><strong>Valor de Venda:</strong> <span class="valor-venda">R$ <%= number_with_precision(lanch.valor_venda || 0, precision: 2) %></span></p>
-          <p><strong>Lucro:</strong> <span class="lucro">R$ <%= number_with_precision(lanch.lucro || 0, precision: 2) %></span></p>
+          <p><strong><%= t('lanches.cost') %>:</strong> <span class="custo"><%= format_currency(lanch.custo) %></span></p>
+          <p><strong><%= t('lanches.suggested_price') %>:</strong> <span class="preco-sugerido"><%= format_currency(lanch.preco_sugerido) %></span></p>
+          <p><strong><%= t('lanches.sale_price') %>:</strong> <span class="valor-venda"><%= format_currency(lanch.valor_venda) %></span></p>
+          <p><strong><%= t('lanches.profit') %>:</strong> <span class="lucro"><%= format_currency(lanch.lucro) %></span></p>
         </div>
         
           <div class="lanche-actions" style="margin-bottom: 10px;">
-            <%= button_to "⬆️", move_up_lanch_path(lanch), method: :patch, class: "btn btn-warning btn-sm", title: "Mover para cima", style: "display: inline-block; margin-right: 5px;", authenticity_token: true %>
-            <%= button_to "⬇️", move_down_lanch_path(lanch), method: :patch, class: "btn btn-warning btn-sm", title: "Mover para baixo", style: "display: inline-block;", authenticity_token: true %>
+            <%= button_to "⬆️", move_up_lanch_path(lanch), method: :patch, class: "btn btn-warning btn-sm", title: t('common.move_up'), style: "display: inline-block; margin-right: 5px;", authenticity_token: true %>
+            <%= button_to "⬇️", move_down_lanch_path(lanch), method: :patch, class: "btn btn-warning btn-sm", title: t('common.move_down'), style: "display: inline-block;", authenticity_token: true %>
           </div>
           <div class="lanche-actions">
-            <%= link_to "Ver", lanch, class: "btn btn-info btn-sm" %>
-            <%= link_to "Editar", edit_lanch_path(lanch), class: "btn btn-warning btn-sm" %>
-            <%= button_to "Excluir", lanch, method: :delete, 
-                confirm: "Tem certeza?", class: "btn btn-danger btn-sm", style: "display: inline-block;", authenticity_token: true %>
+            <%= link_to t('common.show'), lanch, class: "btn btn-info btn-sm" %>
+            <%= link_to t('common.edit'), edit_lanch_path(lanch), class: "btn btn-warning btn-sm" %>
+            <%= button_to t('common.delete'), lanch, method: :delete, 
+                confirm: t('common.confirm_delete'), class: "btn btn-danger btn-sm", style: "display: inline-block;", authenticity_token: true %>
           </div>
         </div>
       </div>

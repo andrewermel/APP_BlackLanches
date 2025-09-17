@@ -28,4 +28,117 @@
 #       enabled: "ON"
 
 en:
-  hello: "Hello world"
+  app:
+    name: "BlackLanches"
+    tagline: "The best of the snack bar"
+    welcome: "Welcome to BlackLanches!"
+    description: "Complete management system for snack bars"
+    
+  navigation:
+    home: "Home"
+    lanches: "Burgers"
+    items: "Ingredients"
+    porcaos: "Portions"
+    compras: "Purchases"
+    logout: "Logout"
+    
+  common:
+    new: "New"
+    create: "Create"
+    edit: "Edit"
+    update: "Update"
+    delete: "Delete"
+    show: "Show"
+    back: "Back"
+    save: "Save"
+    cancel: "Cancel"
+    search: "Search"
+    actions: "Actions"
+    confirm_delete: "Are you sure?"
+    no_photo: "No photo"
+    move_up: "Move up"
+    move_down: "Move down"
+    
+  lanches:
+    title: "Burger Menu"
+    new: "New Burger"
+    create: "Create New Burger"
+    editing: "Editing"
+    name: "Name"
+    ingredients: "Ingredients"
+    portions: "Portions"
+    cost: "Cost"
+    suggested_price: "Suggested Price"
+    sale_price: "Sale Price"
+    profit: "Profit"
+    total_cost: "Total Cost"
+    unit_cost: "Unit cost"
+    photos: "Photos"
+    add_photos: "Add Photos"
+    remove_photo: "Remove photo"
+    confirm_remove_photo: "Are you sure you want to remove this photo?"
+    units: "unit(s)"
+    types: "type(s)"
+    moved_up: "Burger moved up."
+    moved_down: "Burger moved down."
+    created: "Burger was successfully created."
+    updated: "Burger was successfully updated."
+    deleted: "Burger was successfully deleted."
+    no_lanches: "No burgers registered yet."
+    create_first: "Create first burger"
+    
+  items:
+    title: "Ingredients"
+    new: "New Ingredient"
+    name: "Name"
+    category: "Category"
+    price: "Price"
+    created: "Ingredient was successfully created."
+    updated: "Ingredient was successfully updated."
+    deleted: "Ingredient was successfully deleted."
+    
+  porcaos:
+    title: "Portions"
+    new: "New Portion"
+    name: "Portion Name"
+    item: "Ingredient"
+    weight_used: "Weight Used"
+    cost: "Cost"
+    base_price: "Base Price"
+    created: "Portion was successfully created."
+    updated: "Portion was successfully updated."
+    deleted: "Portion was successfully deleted."
+    
+  compras:
+    title: "Purchases"
+    new: "New Purchase"
+    item: "Item"
+    price_paid: "Price Paid"
+    date: "Date"
+    current_price: "Current Price"
+    created: "Purchase was successfully recorded."
+    updated: "Purchase was successfully updated."
+    deleted: "Purchase was successfully deleted."
+    
+  home:
+    dashboard: "Dashboard"
+    quick_access: "Quick Access"
+    recent_activity: "Recent Activity"
+    statistics: "Statistics"
+    manage_menu: "Manage Menu"
+    manage_ingredients: "Manage Ingredients"
+    manage_portions: "Manage Portions"
+    manage_purchases: "Manage Purchases"
+    
+  forms:
+    select_item: "Select an ingredient"
+    quantity: "Quantity"
+    
+  currency:
+    symbol: "$"
+    format: "%s%n"
+    
+  language:
+    portuguese: "Português"
+    english: "English"
+    change_language: "Change language"

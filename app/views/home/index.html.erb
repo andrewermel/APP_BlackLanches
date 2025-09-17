@@ -1,29 +1,116 @@
+<!-- Hero Section -->
+<div class="hero-section">
+  <div class="container text-center">
+    <h1 class="hero-title fade-in">🍔 <%= t('app.welcome') %></h1>
+    <p class="hero-subtitle slide-in-right"><%= t('app.description') %></p>
+  </div>
+</div>
+
 <div class="container">
-  <h1>🍔 Bem-vindo ao App BlackLanches!</h1>
-  
   <% if user_signed_in? %>
-    <div class="user-info">
-      <h2>Olá, <%= current_user.email %>!</h2>
-      <p>Você está logado no sistema.</p>
-      
-      <div class="navigation-links">
-        <%= link_to "📦 Gerenciar Items", items_path, class: "btn btn-primary" %>
-        <%= link_to "🛒 Gerenciar Compras", compras_path, class: "btn btn-success" %>
-        <%= link_to "🍽️ Gerenciar Porções", porcaos_path, class: "btn btn-info" %>
-        <%= link_to "🍔 Menu de Lanches", lanches_path, class: "btn btn-warning" %>
-        <%= link_to "Sair", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
+    <!-- Dashboard do Usuário -->
+    <div class="row">
+      <div class="col-12">
+        <div class="card fade-in">
+          <div class="card-header">
+            <h2>📊 Painel de Controle</h2>
+          </div>
+          <div class="card-body">
+            <div class="welcome-message mb-4">
+              <h3>Olá, <span class="text-primary"><%= current_user.email %></span>!</h3>
+              <p class="text-muted">Escolha uma das opções abaixo para gerenciar sua lanchonete</p>
+            </div>
+            
+            <!-- Grid de Navegação -->
+            <div class="dashboard-grid">
+              <div class="dashboard-card pulse-hover">
+                <%= link_to items_path, class: "dashboard-link" do %>
+                  <div class="dashboard-icon">�</div>
+                  <h4>Gerenciar Itens</h4>
+                  <p>Cadastre e organize seus ingredientes</p>
+                <% end %>
+              </div>
+              
+              <div class="dashboard-card pulse-hover">
+                <%= link_to compras_path, class: "dashboard-link" do %>
+                  <div class="dashboard-icon">🛒</div>
+                  <h4>Compras</h4>
+                  <p>Controle seus pedidos e compras</p>
+                <% end %>
+              </div>
+              
+              <div class="dashboard-card pulse-hover">
+                <%= link_to porcaos_path, class: "dashboard-link" do %>
+                  <div class="dashboard-icon">🍽️</div>
+                  <h4>Porções</h4>
+                  <p>Defina porções e quantidades</p>
+                <% end %>
+              </div>
+              
+              <div class="dashboard-card pulse-hover">
+                <%= link_to lanches_path, class: "dashboard-link" do %>
+                  <div class="dashboard-icon">🍔</div>
+                  <h4>Menu de Lanches</h4>
+                  <p>Monte e gerencie seu cardápio</p>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   <% else %>
-    <div class="auth-links">
-      <p>Faça login ou cadastre-se para acessar o sistema de lanches:</p>
-      <%= link_to "Entrar", new_user_session_path, class: "btn btn-primary" %>
-      <%= link_to "Cadastrar", new_user_registration_path, class: "btn btn-secondary" %>
+    <!-- Seção de Autenticação -->
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card auth-card fade-in">
+          <div class="card-body text-center">
+            <div class="auth-icon mb-4">🔐</div>
+            <h3 class="card-title">Acesse sua conta</h3>
+            <p class="card-text">Faça login ou cadastre-se para acessar todas as funcionalidades do sistema</p>
+            
+            <div class="auth-buttons">
+              <%= link_to "Entrar", new_user_session_path, class: "btn btn-primary" %>
+              <%= link_to "Criar Conta", new_user_registration_path, class: "btn btn-outline-primary" %>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   <% end %>
   
-  <div class="info">
-    <h3>Sistema de Lanches BlackLanches</h3>
-    <p>Gerencie seus pedidos, cardápio e muito mais!</p>
+  <!-- Seção de Informações -->
+  <div class="row mt-5">
+    <div class="col-12">
+      <div class="card info-card slide-in-right">
+        <div class="card-body text-center">
+          <div class="info-icon">⭐</div>
+          <h3 class="card-title">Sistema BlackLanches</h3>
+          <p class="card-text">
+            Uma solução completa para gerenciar sua lanchonete com eficiência e organização.
+            Controle ingredientes, porções, cardápio e muito mais!
+          </p>
+          
+          <div class="features-list">
+            <div class="feature-item">
+              <span class="feature-icon">✅</span>
+              <span>Gestão de ingredientes</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">✅</span>
+              <span>Controle de porções</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">✅</span>
+              <span>Cardápio personalizado</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">✅</span>
+              <span>Histórico de compras</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

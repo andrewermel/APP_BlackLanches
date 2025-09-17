@@ -804,6 +804,26 @@
         opacity: 1 !important;
       }
       
+      /* Language Selector */
+      .language-selector {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+      
+      .lang-link {
+        font-size: 1.5rem;
+        text-decoration: none;
+        opacity: 0.7;
+        transition: opacity 0.3s ease;
+      }
+      
+      .lang-link:hover,
+      .lang-link.active {
+        opacity: 1;
+        text-decoration: none;
+      }
+      
       /* Cards específicos do Bootstrap */
       .card-header {
         background-color: #a67c00 !important;
@@ -895,15 +915,21 @@
       <!-- Header Principal -->
       <header class="header">
         <div class="container">
-          <h1>🍔 BlackLanches 🍔</h1>
+          <h1>🍔 <%= t('app.name') %> 🍔</h1>
           
           <nav class="nav">
-            <%= link_to "🏠 Home", root_path, class: "nav-link" %>
-            <%= link_to "🍔 Lanches", lanches_path, class: "nav-link" %>
-            <%= link_to "🍟 Porções", porcaos_path, class: "nav-link" %>
-            <%= link_to "📦 Items", items_path, class: "nav-link" %>
-            <%= link_to "🛒 Compras", compras_path, class: "nav-link" %>
+            <%= link_to "🏠 #{t('navigation.home')}", root_path, class: "nav-link" %>
+            <%= link_to "🍔 #{t('navigation.lanches')}", lanches_path, class: "nav-link" %>
+            <%= link_to "🍟 #{t('navigation.porcaos')}", porcaos_path, class: "nav-link" %>
+            <%= link_to "📦 #{t('navigation.items')}", items_path, class: "nav-link" %>
+            <%= link_to "🛒 #{t('navigation.compras')}", compras_path, class: "nav-link" %>
           </nav>
+          
+          <!-- Language Selector -->
+          <div class="language-selector">
+            <%= link_to "🇧🇷", url_for(locale: 'pt-BR'), class: "lang-link #{'active' if I18n.locale.to_s == 'pt-BR'}", title: t('language.portuguese') %>
+            <%= link_to "🇺🇸", url_for(locale: 'en'), class: "lang-link #{'active' if I18n.locale.to_s == 'en'}", title: t('language.english') %>
+          </div>
           
           <div class="auth-section">
             <% if user_signed_in? %>
@@ -937,7 +963,7 @@
     <!-- Footer -->
     <footer class="footer">
       <div class="container">
-        <p>🍔 © 2024 BlackLanches - O melhor da lanchonete 🍟</p>
+        <p>🍔 © 2024 <%= t('app.name') %> - <%= t('app.tagline') %> 🍟</p>
         <p><small>Desenvolvido com ❤️ para os amantes de lanches</small></p>
       </div>
     </footer>

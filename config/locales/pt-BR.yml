@@ -1,0 +1,115 @@
+pt-BR:
+  app:
+    name: "BlackLanches"
+    tagline: "O melhor da lanchonete"
+    welcome: "Bem-vindo ao BlackLanches!"
+    description: "Sistema completo de gestão para lanchonetes"
+    
+  navigation:
+    home: "Início"
+    lanches: "Lanches"
+    items: "Ingredientes"
+    porcaos: "Porções"
+    compras: "Compras"
+    logout: "Sair"
+    
+  common:
+    new: "Novo"
+    create: "Criar"
+    edit: "Editar"
+    update: "Atualizar"
+    delete: "Excluir"
+    show: "Ver"
+    back: "Voltar"
+    save: "Salvar"
+    cancel: "Cancelar"
+    search: "Buscar"
+    actions: "Ações"
+    confirm_delete: "Tem certeza?"
+    no_photo: "Sem foto"
+    move_up: "Mover para cima"
+    move_down: "Mover para baixo"
+    
+  lanches:
+    title: "Menu de Lanches"
+    new: "Novo Lanche"
+    create: "Criar Novo Lanche"
+    editing: "Editando"
+    name: "Nome"
+    ingredients: "Ingredientes"
+    portions: "Porções"
+    cost: "Custo"
+    suggested_price: "Preço Sugerido"
+    sale_price: "Valor de Venda"
+    profit: "Lucro"
+    total_cost: "Custo Total"
+    unit_cost: "Custo unitário"
+    photos: "Fotos"
+    add_photos: "Adicionar Fotos"
+    remove_photo: "Remover foto"
+    confirm_remove_photo: "Tem certeza que deseja remover esta foto?"
+    units: "unidade(s)"
+    types: "tipo(s)"
+    moved_up: "Lanche movido para cima."
+    moved_down: "Lanche movido para baixo."
+    created: "Lanche foi criado com sucesso."
+    updated: "Lanche foi atualizado com sucesso."
+    deleted: "Lanche foi excluído com sucesso."
+    no_lanches: "Nenhum lanche cadastrado ainda."
+    create_first: "Criar primeiro lanche"
+    
+  items:
+    title: "Ingredientes"
+    new: "Novo Ingrediente"
+    name: "Nome"
+    category: "Categoria"
+    price: "Preço"
+    created: "Ingrediente foi criado com sucesso."
+    updated: "Ingrediente foi atualizado com sucesso."
+    deleted: "Ingrediente foi excluído com sucesso."
+    
+  porcaos:
+    title: "Porções"
+    new: "Nova Porção"
+    name: "Nome da Porção"
+    item: "Ingrediente"
+    weight_used: "Peso Utilizado"
+    cost: "Custo"
+    base_price: "Preço Base"
+    created: "Porção foi criada com sucesso."
+    updated: "Porção foi atualizada com sucesso."
+    deleted: "Porção foi excluída com sucesso."
+    
+  compras:
+    title: "Compras"
+    new: "Nova Compra"
+    item: "Item"
+    price_paid: "Preço Pago"
+    date: "Data"
+    current_price: "Preço Atual"
+    created: "Compra foi registrada com sucesso."
+    updated: "Compra foi atualizada com sucesso."
+    deleted: "Compra foi excluída com sucesso."
+    
+  home:
+    dashboard: "Dashboard"
+    quick_access: "Acesso Rápido"
+    recent_activity: "Atividade Recente"
+    statistics: "Estatísticas"
+    manage_menu: "Gerenciar Menu"
+    manage_ingredients: "Gerenciar Ingredientes"
+    manage_portions: "Gerenciar Porções"
+    manage_purchases: "Gerenciar Compras"
+    
+  forms:
+    select_item: "Selecione um ingrediente"
+    quantity: "Quantidade"
+    
+  currency:
+    symbol: "R$"
+    format: "%s %n"
+    
+  language:
+    portuguese: "Português"
+    english: "English"
+    change_language: "Alterar idioma"
