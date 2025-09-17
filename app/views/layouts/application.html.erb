@@ -20,16 +20,926 @@
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    
+    <!-- CSS Melhorado para BlackLanches -->
+    <style>
+      /* Prevenção de problemas com zoom */
+      html {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      
+      /* Garantir que todos os elementos respeitem o box-sizing */
+      *, *::before, *::after {
+        box-sizing: border-box !important;
+      }
+      
+      /* Ajuste do body para melhor controle e zoom estável */
+      body {
+        background-color: #000000 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+        min-height: 100vh !important;
+        display: flex !important;
+        flex-direction: column !important;
+        overflow-x: hidden !important;
+        width: 100% !important;
+        position: relative !important;
+      }
+      
+      /* Header organizado - texto branco e estável no zoom */
+      .header {
+        background: linear-gradient(135deg, #000000, #1a1a1a) !important;
+        color: white !important;
+        padding: 20px 0 !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5) !important;
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 100 !important;
+        width: 100% !important;
+        overflow: hidden !important;
+      }
+      
+      .header .container {
+        background-color: transparent !important;
+        color: white !important;
+        border-radius: 0 !important;
+        min-height: auto !important;
+        margin: 0 auto !important; /* Centralização simples */
+        padding: 0 20px !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        flex-wrap: wrap !important;
+        max-width: 1100px !important; /* Mesma largura máxima do container principal */
+        width: 95% !important;
+        box-sizing: border-box !important;
+        /* Remove posicionamentos que causam deslocamento */
+      }
+      
+      .header h1 {
+        color: white !important; /* Mudado de #f4e4a6 para branco */
+        margin: 0 !important;
+        font-size: 2rem !important;
+        font-weight: bold !important;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+      }
+      
+      /* Navegação melhorada e estável no zoom */
+      .nav {
+        display: flex !important;
+        gap: 15px !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        align-items: center !important;
+        overflow: hidden !important;
+        max-width: 100% !important;
+      }
+      
+      .nav-link {
+        color: white !important;
+        text-decoration: none !important;
+        padding: 10px 15px !important;
+        border-radius: 25px !important;
+        transition: all 0.3s ease !important;
+        font-weight: 500 !important;
+        border: 1px solid transparent !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        flex-shrink: 0 !important;
+      }
+      
+      .nav-link:hover {
+        background-color: #cc9900 !important;
+        color: #000 !important;
+        text-decoration: none !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 8px rgba(204, 153, 0, 0.3) !important;
+      }
+      
+      /* Auth section */
+      .auth-section {
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+        flex-wrap: wrap !important;
+      }
+      
+      .user-greeting {
+        color: white !important; /* Mudado de #f4e4a6 para branco */
+        font-size: 0.9rem !important;
+      }
+      
+      /* Container principal - centralização simples e estável */
+      .container {
+        background: linear-gradient(135deg, #cc9900, #e6b300) !important;
+        max-width: 1100px !important;
+        margin: 30px auto !important; /* Centralização simples com auto */
+        padding: 40px !important;
+        border-radius: 20px !important;
+        min-height: auto !important;
+        color: #333 !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+        position: relative !important;
+        width: 95% !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+        word-wrap: break-word !important;
+        /* Remove transformações que causam deslocamento */
+      }
+      
+      /* Main wrapper com centralização natural */
+      .main-wrapper {
+        flex: 1 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        overflow-x: hidden !important;
+        align-items: center !important; /* Centraliza filhos */
+        justify-content: flex-start !important;
+      }
+      
+      /* Garante altura mínima apenas quando necessário */
+      .container.full-height {
+        min-height: calc(100vh - 300px) !important;
+      }
+      
+      .container::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        height: 4px !important;
+        background: linear-gradient(90deg, #ff6b35, #f7931e, #cc9900) !important;
+        border-radius: 20px 20px 0 0 !important;
+      }
+      
+      /* Títulos melhorados */
+      h1, h2, h3 {
+        color: #2c3e50 !important;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1) !important;
+        margin-bottom: 20px !important;
+      }
+      
+      h1 {
+        font-size: 2.5rem !important;
+        text-align: center !important;
+        border-bottom: 3px solid #2c3e50 !important;
+        padding-bottom: 15px !important;
+      }
+      
+      /* Botões melhorados - sem branco */
+      .btn {
+        padding: 12px 25px !important;
+        border-radius: 25px !important;
+        font-weight: 600 !important;
+        text-decoration: none !important;
+        display: inline-block !important;
+        margin: 5px !important;
+        transition: all 0.3s ease !important;
+        border: none !important;
+        cursor: pointer !important;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+      }
+      
+      .btn:hover {
+        transform: translateY(-3px) !important;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3) !important;
+      }
+      
+      .btn-primary {
+        background: linear-gradient(135deg, #007bff, #0056b3) !important;
+        color: white !important; /* Mudado de #cc9900 para branco */
+      }
+      
+      .btn-danger {
+        background: linear-gradient(135deg, #dc3545, #c82333) !important;
+        color: white !important; /* Mudado de #cc9900 para branco */
+      }
+      
+      .btn-success {
+        background: linear-gradient(135deg, #28a745, #1e7e34) !important;
+        color: white !important; /* Mudado de #cc9900 para branco */
+      }
+      
+      .btn-warning {
+        background: linear-gradient(135deg, #ffc107, #e0a800) !important;
+        color: #2c3e50 !important; /* Mantém texto escuro */
+      }
+      
+      .btn-info {
+        background: linear-gradient(135deg, #17a2b8, #138496) !important;
+        color: white !important; /* Mudado de #cc9900 para branco */
+      }
+      
+      .btn-secondary {
+        background: linear-gradient(135deg, #6c757d, #545b62) !important;
+        color: white !important; /* Mudado de #cc9900 para branco */
+      }
+      
+      /* Cards melhorados - mesmo amarelo com hover */
+      .card {
+        background-color: #cc9900 !important; /* Mesmo amarelo queimado */
+        border: none !important;
+        border-radius: 15px !important;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
+        margin: 20px 0 !important;
+        padding: 25px !important;
+        transition: all 0.3s ease !important;
+        color: #2c3e50 !important;
+      }
+      
+      .card:hover {
+        transform: translateY(-5px) !important;
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15) !important;
+        background-color: #a67c00 !important; /* Tom mais escuro no hover */
+      }
+      
+      /* Footer organizado - texto branco */
+      .footer {
+        background: linear-gradient(135deg, #000000, #1a1a1a) !important;
+        color: white !important; /* Mudado de #f4e4a6 para branco */
+        text-align: center !important;
+        padding: 30px 0 !important;
+        margin-top: 30px !important; /* Reduzido de 50px para 30px */
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3) !important;
+      }
+      
+      .footer .container {
+        background-color: transparent !important;
+        min-height: auto !important;
+        margin: 0 auto !important; /* Centralização simples */
+        padding: 0 20px !important;
+        max-width: 1100px !important; /* Mesma largura máxima */
+        width: 95% !important;
+        /* Remove posicionamentos que causam deslocamento */
+      }
+      
+      /* Ajuste do body para melhor controle */
+      body {
+        background-color: #000000 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+        min-height: 100vh !important;
+        display: flex !important;
+        flex-direction: column !important;
+      }
+      
+      /* Main content area */
+      .main-wrapper {
+        flex: 1 !important;
+        display: flex !important;
+        flex-direction: column !important;
+      }
+      
+      /* Lanches grid especial */
+      .lanches-grid {
+        background: linear-gradient(135deg, #cc9900, #e6b300) !important;
+        color: #2c3e50 !important;
+        padding: 25px !important;
+        border-radius: 15px !important;
+        margin: 25px 0 !important;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
+        display: grid !important;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
+        gap: 20px !important;
+      }
+      
+      /* Imagens padronizadas - todas do mesmo tamanho */
+      .lanche-imagem {
+        width: 100% !important;
+        height: 280px !important; /* Tamanho fixo e padronizado */
+        object-fit: contain !important;
+        background-color: #cc9900 !important;
+        border-radius: 8px 8px 0 0 !important;
+        padding: 15px !important;
+        box-sizing: border-box !important;
+      }
+      
+      .card-img-top {
+        width: 100% !important;
+        height: 280px !important; /* Mesmo tamanho em todos os lugares */
+        object-fit: contain !important;
+        background-color: #cc9900 !important;
+        border-radius: 8px 8px 0 0 !important;
+        padding: 15px !important;
+        box-sizing: border-box !important;
+        cursor: pointer !important;
+        transition: background-color 0.3s ease !important;
+      }
+      
+      .card-img-top:hover {
+        background-color: #a67c00 !important;
+      }
+      
+      /* Foto principal com tamanho padronizado */
+      .lanche-foto {
+        position: relative !important;
+        background-color: #cc9900 !important;
+        border-radius: 8px 8px 0 0 !important;
+        overflow: hidden !important;
+        height: 280px !important; /* Mesmo tamanho fixo */
+        width: 100% !important;
+      }
+      
+      /* Container das fotos sem imagem - mesmo tamanho */
+      .lanche-sem-foto div {
+        width: 100% !important;
+        height: 280px !important; /* Mesmo tamanho quando não tem foto */
+        background: #cc9900 !important;
+        border-radius: 8px 8px 0 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        color: #2c3e50 !important;
+      }
+      
+      .foto-count {
+        position: absolute !important;
+        top: 10px !important;
+        right: 10px !important;
+        background: rgba(0, 0, 0, 0.7) !important;
+        color: white !important;
+        padding: 5px 10px !important;
+        border-radius: 15px !important;
+        font-size: 0.8rem !important;
+      }
+      
+      /* Seção de fotos melhorada - mesmo amarelo com hover */
+      .fotos-section {
+        background-color: #cc9900 !important; /* Mesmo amarelo queimado */
+        padding: 20px !important;
+        border-radius: 10px !important;
+        margin: 20px 0 !important;
+        color: #2c3e50 !important;
+        transition: background-color 0.3s ease !important;
+      }
+      
+      .fotos-section:hover {
+        background-color: #a67c00 !important; /* Tom mais escuro no hover */
+      }
+      
+      .fotos-section h3 {
+        color: #2c3e50 !important;
+        margin-bottom: 15px !important;
+      }
+      
+      /* Modal de imagem melhorado */
+      .modal-body img {
+        max-width: 100% !important;
+        max-height: 80vh !important;
+        object-fit: contain !important;
+        background-color: #cc9900 !important; /* Mesmo amarelo queimado */
+        padding: 15px !important;
+        border-radius: 8px !important;
+      }
+      
+      /* Formulários e elementos de entrada - fundo branco para digitação */
+      .form-control, .form-select, input, textarea, select {
+        background-color: white !important; /* Fundo branco para digitação */
+        border: 2px solid #a67c00 !important;
+        color: #2c3e50 !important;
+        transition: all 0.3s ease !important;
+      }
+      
+      .form-control:focus, .form-select:focus, input:focus, textarea:focus, select:focus {
+        background-color: white !important; /* Mantém branco no focus */
+        border-color: #cc9900 !important;
+        box-shadow: 0 0 0 0.2rem rgba(204, 153, 0, 0.25) !important;
+      }
+      
+      .form-control:hover, .form-select:hover, input:hover, textarea:hover, select:hover {
+        background-color: white !important; /* Mantém branco no hover */
+        border-color: #cc9900 !important;
+      }
+      
+      /* Input groups com fundo branco */
+      .input-group-text {
+        background-color: #a67c00 !important; /* Mantém amarelo escuro nos labels */
+        border-color: #8b6914 !important;
+        color: white !important; /* Texto branco nos labels */
+      }
+      
+      /* Tables e listas - mesmo amarelo */
+      .table, .list-group {
+        background-color: #cc9900 !important;
+      }
+      
+      .table td, .table th, .list-group-item {
+        background-color: #cc9900 !important;
+        border-color: #a67c00 !important;
+        color: #2c3e50 !important;
+        transition: background-color 0.3s ease !important;
+      }
+      
+      .table td:hover, .table th:hover, .list-group-item:hover {
+        background-color: #a67c00 !important;
+      }
+      
+      /* Cards de lanche melhorados - mesmo amarelo com hover */
+      .lanche-card {
+        background-color: #cc9900 !important; /* Mesmo amarelo queimado */
+        border-radius: 12px !important;
+        overflow: hidden !important;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+        transition: all 0.3s ease !important;
+        color: #2c3e50 !important;
+      }
+      
+      .lanche-card:hover {
+        transform: translateY(-5px) !important;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+        background-color: #a67c00 !important; /* Tom mais escuro no hover */
+      }
+      
+      .lanche-sem-foto {
+        background-color: #cc9900 !important; /* Mesmo amarelo queimado */
+        border-radius: 8px 8px 0 0 !important;
+      }
+      
+      /* Notificações melhoradas - texto branco */
+      .notice {
+        background: linear-gradient(135deg, #28a745, #20c997) !important;
+        color: white !important; /* Mudado de #cc9900 para branco */
+        padding: 15px 25px !important;
+        border-radius: 10px !important;
+        margin: 20px 0 !important;
+        box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3) !important;
+      }
+      
+      .alert {
+        background: linear-gradient(135deg, #dc3545, #c82333) !important;
+        color: white !important; /* Mudado de #cc9900 para branco */
+        padding: 15px 25px !important;
+        border-radius: 10px !important;
+        margin: 20px 0 !important;
+        box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3) !important;
+      }
+      
+      /* Modais e overlays - sem branco */
+      .modal-content {
+        background-color: #cc9900 !important; /* Fundo amarelo em vez de branco */
+        color: #2c3e50 !important;
+      }
+      
+      .modal-header {
+        background-color: #a67c00 !important; /* Tom mais escuro */
+        color: #2c3e50 !important;
+        border-bottom: 1px solid #8b6914 !important;
+      }
+      
+      .modal-body {
+        background-color: #cc9900 !important;
+        color: #2c3e50 !important;
+      }
+      
+      .modal-footer {
+        background-color: #a67c00 !important;
+        border-top: 1px solid #8b6914 !important;
+      }
+      
+      /* Dropdowns e menus */
+      .dropdown-menu {
+        background-color: #cc9900 !important; /* Fundo amarelo em vez de branco */
+        border: 1px solid #a67c00 !important;
+      }
+      
+      .dropdown-item {
+        color: #2c3e50 !important;
+        background-color: transparent !important;
+      }
+      
+      .dropdown-item:hover {
+        background-color: #a67c00 !important;
+        color: #2c3e50 !important;
+      }
+      
+      /* Responsivo com centralização natural */
+      @media (max-width: 768px) {
+        .container {
+          margin: 15px auto !important; /* Auto margins centralizam naturalmente */
+          padding: 25px !important;
+          width: calc(100% - 30px) !important;
+          overflow-x: hidden !important;
+          /* Remove transformações problemáticas */
+        }
+        
+        .header .container {
+          flex-direction: column !important;
+          gap: 15px !important;
+          overflow: hidden !important;
+          width: calc(100% - 40px) !important;
+          margin: 0 auto !important;
+        }
+        
+        .footer .container {
+          width: calc(100% - 40px) !important;
+          margin: 0 auto !important;
+        }
+        
+        .nav {
+          flex-direction: column !important;
+          width: 100% !important;
+          overflow: hidden !important;
+        }
+        
+        .nav-link {
+          text-align: center !important;
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+        
+        h1 {
+          font-size: 1.8rem !important;
+          word-break: break-word !important;
+        }
+      }
+      
+      @media (min-width: 769px) {
+        .container {
+          margin: 30px auto !important; /* Auto margins centralizam naturalmente */
+          overflow-x: hidden !important;
+          /* Remove transformações problemáticas */
+        }
+        
+        .header .container, .footer .container {
+          margin: 0 auto !important; /* Centralização natural */
+        }
+      }
+      
+      /* Prevenção de overflow em qualquer zoom */
+      .lanches-grid, .card, .lanche-card {
+        overflow: hidden !important;
+        word-wrap: break-word !important;
+        box-sizing: border-box !important;
+      }
+      
+      /* Auth section estável */
+      .auth-section {
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+        flex-wrap: wrap !important;
+        overflow: hidden !important;
+        max-width: 100% !important;
+      }
+      
+      .user-greeting {
+        color: white !important;
+        font-size: 0.9rem !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        max-width: 200px !important;
+      }
+      
+      /* Elementos gerais - eliminando todo branco de forma agressiva */
+      *, *::before, *::after {
+        /* Force override de qualquer background branco */
+      }
+      
+      /* Sobrescreve qualquer elemento branco - EXCETO campos de entrada */
+      .bg-white:not(input):not(textarea):not(select):not(.form-control):not(.form-select), 
+      .background-white:not(input):not(textarea):not(select):not(.form-control):not(.form-select), 
+      [style*="background: white"]:not(input):not(textarea):not(select):not(.form-control):not(.form-select), 
+      [style*="background-color: white"]:not(input):not(textarea):not(select):not(.form-control):not(.form-select), 
+      [style*="background: #fff"]:not(input):not(textarea):not(select):not(.form-control):not(.form-select), 
+      [style*="background-color: #fff"]:not(input):not(textarea):not(select):not(.form-control):not(.form-select), 
+      [style*="background:#fff"]:not(input):not(textarea):not(select):not(.form-control):not(.form-select), 
+      [style*="background-color:#fff"]:not(input):not(textarea):not(select):not(.form-control):not(.form-select) {
+        background-color: #cc9900 !important;
+        color: #2c3e50 !important;
+      }
+      
+      /* Permite que campos de entrada mantenham fundo branco */
+      input, textarea, select, .form-control, .form-select {
+        background-color: white !important;
+        color: #2c3e50 !important;
+      }
+      
+      /* Captura qualquer div, span ou elemento com fundo branco */
+      div[style*="background"], span[style*="background"], p[style*="background"], section[style*="background"], article[style*="background"] {
+        background-color: #cc9900 !important;
+      }
+      
+      /* Textos que possam estar em branco */
+      .text-white, [style*="color: white"], [style*="color: #fff"], [style*="color:#fff"] {
+        color: #2c3e50 !important; /* Mudado para escuro para melhor contraste */
+      }
+      
+      /* Bordas brancas */
+      .border-white, [style*="border-color: white"], [style*="border-color: #fff"], [style*="border-color:#fff"] {
+        border-color: #a67c00 !important;
+      }
+      
+      /* Bootstrap classes que podem ter branco */
+      .bg-light {
+        background-color: #cc9900 !important;
+        color: #2c3e50 !important;
+      }
+      
+      .text-light {
+        color: #2c3e50 !important;
+      }
+      
+      .border-light {
+        border-color: #a67c00 !important;
+      }
+      
+      /* Qualquer elemento com classe que contenha 'white' */
+      [class*="white"], [class*="White"] {
+        background-color: #cc9900 !important;
+        color: #2c3e50 !important;
+      }
+      
+      /* Forms específicos */
+      .form-control, .form-select, .form-check-input, .form-range {
+        background-color: #cc9900 !important;
+        border-color: #a67c00 !important;
+        color: #2c3e50 !important;
+      }
+      
+      /* Labels e textos de formulário */
+      .form-label, .form-text, label {
+        color: #2c3e50 !important;
+        background-color: transparent !important;
+      }
+      
+      /* Qualquer texto que possa estar branco */
+      h1, h2, h3, h4, h5, h6, p, span, div, a, li, td, th {
+        color: #2c3e50 !important;
+      }
+      
+      /* Override para garantir que links mantenham cor adequada */
+      a {
+        color: #2c3e50 !important;
+      }
+      
+      a:hover {
+        color: #1a252f !important;
+      }
+      
+      /* Tooltips e popovers */
+      .tooltip-inner {
+        background-color: #cc9900 !important;
+        color: #2c3e50 !important;
+      }
+      
+      .popover {
+        background-color: #cc9900 !important;
+      }
+      
+      .popover-body {
+        background-color: #cc9900 !important;
+        color: #2c3e50 !important;
+      }
+      
+      /* Navegação e breadcrumbs */
+      .breadcrumb {
+        background-color: #cc9900 !important;
+      }
+      
+      .breadcrumb-item {
+        color: #2c3e50 !important;
+      }
+      
+      /* Paginação */
+      .pagination .page-link {
+        background-color: #cc9900 !important;
+        border-color: #a67c00 !important;
+        color: #2c3e50 !important;
+      }
+      
+      .pagination .page-link:hover {
+        background-color: #a67c00 !important;
+        border-color: #8b6914 !important;
+        color: #2c3e50 !important;
+      }
+      
+      /* Progress bars */
+      .progress {
+        background-color: #a67c00 !important;
+      }
+      
+      .progress-bar {
+        background-color: #cc9900 !important;
+      }
+      
+      /* Accordions */
+      .accordion-item {
+        background-color: #cc9900 !important;
+        border-color: #a67c00 !important;
+      }
+      
+      .accordion-header button {
+        background-color: #cc9900 !important;
+        color: #2c3e50 !important;
+      }
+      
+      .accordion-body {
+        background-color: #cc9900 !important;
+        color: #2c3e50 !important;
+      }
+      
+      /* Captura elementos específicos que podem ter branco */
+      .badge {
+        background-color: #a67c00 !important;
+        color: #2c3e50 !important;
+      }
+      
+      .alert-primary, .alert-secondary, .alert-success, .alert-danger, .alert-warning, .alert-info, .alert-light, .alert-dark {
+        background-color: #cc9900 !important;
+        color: #2c3e50 !important;
+        border-color: #a67c00 !important;
+      }
+      
+      /* Tabelas específicas */
+      .table-striped tbody tr:nth-of-type(odd) {
+        background-color: #d4aa00 !important;
+      }
+      
+      .table-striped tbody tr:nth-of-type(even) {
+        background-color: #cc9900 !important;
+      }
+      
+      .table-hover tbody tr:hover {
+        background-color: #a67c00 !important;
+      }
+      
+      /* Navbar e navegação */
+      .navbar, .nav {
+        background-color: transparent !important;
+      }
+      
+      .navbar-light, .navbar-dark {
+        background-color: transparent !important;
+      }
+      
+      /* Offcanvas e sidebars */
+      .offcanvas {
+        background-color: #cc9900 !important;
+        color: #2c3e50 !important;
+      }
+      
+      /* Spinners e loading */
+      .spinner-border, .spinner-grow {
+        color: #a67c00 !important;
+      }
+      
+      /* Input groups */
+      .input-group-text {
+        background-color: #a67c00 !important;
+        border-color: #8b6914 !important;
+        color: #2c3e50 !important;
+      }
+      
+      /* Close buttons */
+      .btn-close {
+        background-color: #a67c00 !important;
+        opacity: 1 !important;
+      }
+      
+      /* Cards específicos do Bootstrap */
+      .card-header {
+        background-color: #a67c00 !important;
+        color: #2c3e50 !important;
+        border-bottom: 1px solid #8b6914 !important;
+      }
+      
+      .card-footer {
+        background-color: #a67c00 !important;
+        color: #2c3e50 !important;
+        border-top: 1px solid #8b6914 !important;
+      }
+      
+      /* Override absoluto para qualquer fundo que escape */
+      body * {
+        background-color: inherit !important;
+      }
+      
+      /* Força cor de texto escura em todos os elementos */
+      body *, body *::before, body *::after {
+        color: #2c3e50 !important;
+      }
+      
+      /* Exceções específicas para manter funcionalidade */
+      .header *, .header *::before, .header *::after {
+        color: white !important; /* Mudado de #f4e4a6 para branco */
+      }
+      
+      .footer *, .footer *::before, .footer *::after {
+        color: white !important; /* Mudado de #f4e4a6 para branco */
+      }
+      
+      /* Navegação com texto branco */
+      .nav-link {
+        color: white !important;
+      }
+      
+      .user-greeting {
+        color: white !important;
+      }
+      
+      /* Textos em elementos amarelos que devem ser brancos */
+      [style*="color: #f4e4a6"], [style*="color:#f4e4a6"], .text-yellow, [class*="yellow"] {
+        color: white !important;
+      }
+      
+      /* Override super agressivo - EXCETO campos de entrada */
+      [style*="#f8f9fa"]:not(input):not(textarea):not(select):not(.form-control):not(.form-select), 
+      [style*="#fff"]:not(input):not(textarea):not(select):not(.form-control):not(.form-select), 
+      [style*="white"]:not(input):not(textarea):not(select):not(.form-control):not(.form-select), 
+      [style*="#ffffff"]:not(input):not(textarea):not(select):not(.form-control):not(.form-select) {
+        background-color: #cc9900 !important;
+        color: #2c3e50 !important;
+      }
+      
+      /* Exceção específica para campos de entrada */
+      input[style*="background"], textarea[style*="background"], select[style*="background"], 
+      .form-control[style*="background"], .form-select[style*="background"] {
+        background-color: white !important;
+        color: #2c3e50 !important;
+      }
+      
+      /* Bootstrap utilities override */
+      .bg-light, .bg-white, .bg-secondary {
+        background-color: #cc9900 !important;
+        color: #2c3e50 !important;
+      }
+      
+      .text-white, .text-light {
+        color: #2c3e50 !important;
+      }
+      
+      /* Qualquer div ou elemento com fundo claro */
+      div[style*="background: #f"], span[style*="background: #f"], section[style*="background: #f"] {
+        background-color: #cc9900 !important;
+        color: #2c3e50 !important;
+      }
+      
+      /* Input thumbnails e previews */
+      .img-thumbnail {
+        background-color: #cc9900 !important;
+        border-color: #a67c00 !important;
+      }
+    </style>
   </head>
 
   <body>
-    <% if notice %>
-      <p class="notice"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert"><%= alert %></p>
-    <% end %>
-    
-    <%= yield %>
+    <div class="main-wrapper">
+      <!-- Header Principal -->
+      <header class="header">
+        <div class="container">
+          <h1>🍔 BlackLanches 🍔</h1>
+          
+          <nav class="nav">
+            <%= link_to "🏠 Home", root_path, class: "nav-link" %>
+            <%= link_to "🍔 Lanches", lanches_path, class: "nav-link" %>
+            <%= link_to "🍟 Porções", porcaos_path, class: "nav-link" %>
+            <%= link_to "📦 Items", items_path, class: "nav-link" %>
+            <%= link_to "🛒 Compras", compras_path, class: "nav-link" %>
+          </nav>
+          
+          <div class="auth-section">
+            <% if user_signed_in? %>
+              <span class="user-greeting">👋 Olá, <%= current_user.email.split('@').first.capitalize %>!</span>
+              <%= link_to "🚪 Sair", destroy_user_session_path, method: :delete, class: "nav-link" %>
+            <% else %>
+              <%= link_to "🔑 Entrar", new_user_session_path, class: "nav-link" %>
+              <%= link_to "📝 Cadastrar", new_user_registration_path, class: "nav-link" %>
+            <% end %>
+          </div>
+        </div>
+      </header>
+
+      <!-- Container Principal -->
+      <div class="container">
+        <!-- Notificações -->
+        <% if notice %>
+          <div class="notice"><%= notice %></div>
+        <% end %>
+        <% if alert %>
+          <div class="alert"><%= alert %></div>
+        <% end %>
+        
+        <!-- Conteúdo Principal -->
+        <main class="main-content">
+          <%= yield %>
+        </main>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>🍔 © 2024 BlackLanches - O melhor da lanchonete 🍟</p>
+        <p><small>Desenvolvido com ❤️ para os amantes de lanches</small></p>
+      </div>
+    </footer>
   </body>
 </html>
