@@ -61,14 +61,14 @@
         </div>
         
           <div class="lanche-actions" style="margin-bottom: 10px;">
-            <%= button_to "⬆️", move_up_lanch_path(lanch), method: :patch, class: "btn btn-warning btn-sm", title: "Mover para cima", style: "display: inline-block; margin-right: 5px;" %>
-            <%= button_to "⬇️", move_down_lanch_path(lanch), method: :patch, class: "btn btn-warning btn-sm", title: "Mover para baixo", style: "display: inline-block;" %>
+            <%= button_to "⬆️", move_up_lanch_path(lanch), method: :patch, class: "btn btn-warning btn-sm", title: "Mover para cima", style: "display: inline-block; margin-right: 5px;", authenticity_token: true %>
+            <%= button_to "⬇️", move_down_lanch_path(lanch), method: :patch, class: "btn btn-warning btn-sm", title: "Mover para baixo", style: "display: inline-block;", authenticity_token: true %>
           </div>
           <div class="lanche-actions">
             <%= link_to "Ver", lanch, class: "btn btn-info btn-sm" %>
             <%= link_to "Editar", edit_lanch_path(lanch), class: "btn btn-warning btn-sm" %>
             <%= button_to "Excluir", lanch, method: :delete, 
-                confirm: "Tem certeza?", class: "btn btn-danger btn-sm", style: "display: inline-block;" %>
+                confirm: "Tem certeza?", class: "btn btn-danger btn-sm", style: "display: inline-block;", authenticity_token: true %>
           </div>
         </div>
       </div>
